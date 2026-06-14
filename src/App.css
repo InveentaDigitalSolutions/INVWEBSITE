@@ -602,9 +602,11 @@
 }
 
 .solution-card__photo {
+  position: relative;
   display: block;
   height: 132px;
-  background: var(--surface-alt);
+  background: var(--navy);
+  overflow: hidden;
 }
 
 .solution-card__photo img {
@@ -612,7 +614,18 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  /* desaturate so the mismatched stock colours read as one set */
+  filter: grayscale(0.7) contrast(1.03);
   transition: transform 0.5s ease;
+}
+
+/* consistent on-brand navy tint over every photo */
+.solution-card__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(22, 36, 59, 0.36) 0%, rgba(22, 36, 59, 0.54) 100%);
 }
 
 .solution-card:hover .solution-card__photo img {
