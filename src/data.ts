@@ -8,9 +8,9 @@ export const company = {
 };
 
 export const nav = [
-  { label: "Capabilities", href: "/#capabilities" },
   { label: "Solutions", href: "/#solutions" },
   { label: "Industries", href: "/#industries" },
+  { label: "Capabilities", href: "/#capabilities" },
   { label: "Technology", href: "/#technology" },
 ];
 

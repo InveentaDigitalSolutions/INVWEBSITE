@@ -15,10 +15,10 @@ export default function HomePage() {
     <main>
       <Hero />
       <Pillars />
-      <Capabilities />
       <Solutions />
       <Showcase />
       <Industries />
+      <Capabilities />
       <Technologies />
       <Approach />
       <Contact />

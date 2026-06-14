@@ -8,14 +8,10 @@ export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPre
 
   return (
     <div className="solutions__grid">
-      {items.map((s, i) => {
+      {items.map((s) => {
         const isOpen = open === s.title;
         return (
-          <article
-            key={s.title}
-            className={`solution-card reveal ${isOpen ? "is-open" : ""}`}
-            style={{ transitionDelay: `${(i % 3) * 70}ms` }}
-          >
+          <article key={s.title} className={`solution-card ${isOpen ? "is-open" : ""}`}>
             <button
               className="solution-card__head"
               onClick={() => setOpen(isOpen ? null : s.title)}
