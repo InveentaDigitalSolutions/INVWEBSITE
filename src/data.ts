@@ -5,6 +5,11 @@ export const company = {
   legalName: "Inveenta S.A.",
   tagline: "engineering intelligent business",
   email: "santiago.garciaruiz@inveenta.com",
+  // To send form submissions straight to the inbox, create a form at
+  // https://formspree.io and paste its endpoint here (e.g.
+  // "https://formspree.io/f/abcdwxyz"). While empty, the form falls back
+  // to opening the visitor's email client (mailto).
+  formEndpoint: "",
 };
 
 export const nav = [

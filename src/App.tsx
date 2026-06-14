@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import IndustryPage from "./components/IndustryPage";
+import { Privacy, Imprint } from "./components/Legal";
 import "./App.css";
 
 // Scroll to top on route change; honour in-page hash anchors.
@@ -30,6 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/industries/:slug" element={<IndustryPage />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/imprint" element={<Imprint />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />

@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react";
 import { company } from "../data";
 import Icon from "./Icon";
 
-type Status = "idle" | "submitting" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -32,12 +32,36 @@ export default function Contact() {
     setErrors(found);
     if (Object.keys(found).length > 0) return;
 
+    const name = String(data.get("name") || "");
+    const email = String(data.get("email") || "");
+    const org = String(data.get("company") || "");
+    const message = String(data.get("message") || "");
+
+    // No backend configured → open the visitor's email client (still a real send).
+    if (!company.formEndpoint) {
+      const subject = `Project enquiry from ${name}${org ? ` (${org})` : ""}`;
+      const body = `Name: ${name}\nEmail: ${email}\nCompany: ${org}\n\n${message}`;
+      window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
     setStatus("submitting");
-    // No backend yet — simulate a request. Wire this to your form handler
-    // (e.g. Formspree, Resend, or your own API) when ready.
-    await new Promise((r) => setTimeout(r, 900));
-    setStatus("success");
-    form.reset();
+    try {
+      const res = await fetch(company.formEndpoint, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, company: org, message }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -100,6 +124,13 @@ export default function Contact() {
                 />
                 {errors.message && <span className="field__error">{errors.message}</span>}
               </div>
+
+              {status === "error" && (
+                <p className="contact__formerror" role="alert">
+                  Something went wrong sending your message. Please email{" "}
+                  <a href={`mailto:${company.email}`}>{company.email}</a> directly.
+                </p>
+              )}
 
               <button className="btn btn-primary contact__submit" disabled={status === "submitting"}>
                 {status === "submitting" ? "Sending…" : "Send message"}

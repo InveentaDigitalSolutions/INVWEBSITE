@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { company, nav } from "../data";
 import Logo from "./Logo";
 
@@ -28,8 +29,8 @@ export default function Footer() {
           © {year} {company.legalName} — Optimization · Scalability · Performance
         </span>
         <div className="footer__legal">
-          <a href="#top">Privacy</a>
-          <a href="#top">Terms</a>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/imprint">Imprint</Link>
         </div>
       </div>
     </footer>

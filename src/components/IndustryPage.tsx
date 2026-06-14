@@ -3,6 +3,7 @@ import { industries, solutions } from "../data";
 import { useReveal } from "../useReveal";
 import CardGrid from "./CardGrid";
 import Icon from "./Icon";
+import Seo from "./Seo";
 
 export default function IndustryPage() {
   useReveal();
@@ -14,6 +15,7 @@ export default function IndustryPage() {
 
   return (
     <main className="industry-page">
+      <Seo title={`${industry.name} — Inveenta`} description={industry.intro} />
       {/* Hero */}
       <section className="ip-hero on-dark">
         <img className="ip-hero__img" src={`/img/${industry.image}.jpg`} alt="" />

@@ -1008,6 +1008,50 @@
   color: var(--green-deep);
 }
 
+/* ---------- Legal pages ---------- */
+.legal-page__inner {
+  max-width: 720px;
+}
+
+.legal-page__back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+.legal-page__back:hover {
+  color: var(--navy);
+}
+
+.legal-page h1 {
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.6rem);
+  margin-bottom: 26px;
+}
+
+.legal-page__body h2 {
+  font-size: 1.2rem;
+  margin: 30px 0 8px;
+}
+
+.legal-page__body p {
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+
+.legal-page__body a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-underline-offset: 2px;
+}
+
+.legal-page__body em {
+  color: var(--muted, var(--grey));
+}
+
 /* ---------- Technology ---------- */
 .technology {
   background: var(--surface-alt);
@@ -1300,6 +1344,16 @@
 .field__error {
   font-size: 0.8rem;
   color: #d23b3b;
+}
+
+.contact__formerror {
+  font-size: 0.88rem;
+  color: #d23b3b;
+}
+
+.contact__formerror a {
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .contact__submit {
