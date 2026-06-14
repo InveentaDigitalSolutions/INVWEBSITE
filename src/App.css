@@ -4,64 +4,23 @@
    text on white. Navy + topographic gradient for hero / CTA only.
    ============================================================ */
 
-/* ---------- Logo / wordmark ---------- */
+/* ---------- Logo / wordmark (outlined SVG artwork) ---------- */
 .logo {
-  display: inline-flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logo__word {
-  font-family: var(--display);
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: -0.01em;
-  font-size: 1.42rem;
-  display: inline-flex;
-  align-items: baseline;
-}
-
-.logo--light .logo__word {
-  color: var(--white);
-}
-
-.logo__i {
-  position: relative;
   display: inline-block;
+  line-height: 0;
 }
 
-.logo__dot {
-  position: absolute;
-  left: 50%;
-  top: -0.28em;
-  transform: translateX(-50%);
-  width: 0.24em;
-  height: 0.24em;
-  border-radius: 50%;
-  background: var(--green);
+.logo img {
+  display: block;
+  width: auto;
 }
 
-.logo--lg .logo__word {
-  font-size: clamp(2.2rem, 1.5rem + 2.6vw, 3rem);
+.logo--sm img {
+  height: 26px;
 }
 
-.logo__tag {
-  margin-top: 0.7em;
-  font-family: var(--font);
-  font-weight: 500;
-  font-size: 0.6rem;
-  letter-spacing: 0.32em;
-  text-transform: lowercase;
-  color: var(--grey);
-}
-
-.logo--light .logo__tag {
-  color: var(--mist);
-}
-
-.logo--lg .logo__tag {
-  font-size: 0.74rem;
-  letter-spacing: 0.4em;
+.logo--lg img {
+  height: clamp(56px, 4vw + 30px, 78px);
 }
 
 /* ---------- Navbar ---------- */
