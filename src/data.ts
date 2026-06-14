@@ -84,7 +84,7 @@ export type Solution = {
   title: string;
   short: string;
   detail: string;
-  capabilities: string[];
+  experience: string[];
   tech: string[];
 };
 
@@ -96,11 +96,11 @@ export const solutions: Solution[] = [
     short: "Decision-ready insight built on data models that stay correct as they grow.",
     detail:
       "We turn scattered, denormalized sources into governed dimensional models and translate them into reporting decision-makers actually trust. The model is designed first — so the numbers hold up as the data grows — then surfaced through clear, fast Power BI.",
-    capabilities: [
-      "Star-schema dimensional modeling",
-      "DAX measures & time-intelligence",
-      "Performance-conscious model logic",
-      "Documentation & enablement",
+    experience: [
+      "Multi-page Power BI dashboards for an automotive logistics programme",
+      "Star-schema models rebuilt from denormalized exports",
+      "Supplier and status analytics with drill-through",
+      "DAX time-intelligence and KPI bands",
     ],
     tech: ["Power BI", "DAX", "Power Query", "Dataverse"],
   },
@@ -110,11 +110,11 @@ export const solutions: Solution[] = [
     short: "Governed business applications on Power Apps & Dataverse, architected to scale.",
     detail:
       "Canvas and model-driven applications where the architecture is chosen deliberately, not by default. We design the data model, relationships and keys up front, and align environments and ALM to enterprise governance so the solution holds up in production.",
-    capabilities: [
-      "Canvas & model-driven apps",
-      "Dataverse data modeling & keys",
-      "Environment & ALM governance",
-      "Reusable UI components",
+    experience: [
+      "A portfolio of six Power Apps within one enterprise account",
+      "Dataverse models with composite and alternate keys",
+      "SharePoint consolidation replacing fragmented multi-list designs",
+      "Canvas and model-driven apps across automotive & logistics",
     ],
     tech: ["Power Apps", "Power Fx", "Dataverse", "SharePoint"],
   },
@@ -124,11 +124,11 @@ export const solutions: Solution[] = [
     short: "Clean, trustworthy data — prepared, modeled, and ready to report on.",
     detail:
       "The unglamorous work that makes everything downstream correct. Power Query (M) dataflows handle null propagation, trimming, deduplication, ISO-week logic and source filtering, feeding star-schema models built from denormalized sources.",
-    capabilities: [
-      "Power Query (M) dataflows",
-      "Cleansing & deduplication",
-      "ISO-week & date logic",
-      "Dimensional model design",
+    experience: [
+      "Power Query (M) dataflows with dedup, trimming and ISO-week logic",
+      "Dimensional models derived from denormalized sources",
+      "Data-quality clean-up feeding enterprise reporting",
+      "Source filtering and null-propagation handling",
     ],
     tech: ["Power Query", "Dataverse", "Power BI"],
   },
@@ -138,11 +138,11 @@ export const solutions: Solution[] = [
     short: "Copilot Studio agents and intelligent automation that cut manual effort.",
     detail:
       "Conversational and task agents scoped to your enterprise data and processes, plus automation of the repetitive, error-prone workflows that quietly drain teams — surfacing information where work already happens, with measurable friction reduction.",
-    capabilities: [
-      "Copilot Studio agents",
-      "Enterprise data grounding",
-      "Intelligent workflow automation",
-      "Azure & cloud integration",
+    experience: [
+      "Copilot Studio agents scoped to enterprise data",
+      "Automation of repetitive, error-prone workflows",
+      "Integrations across SharePoint, Dataverse, Azure & Google Cloud",
+      "Measurable reduction in manual effort",
     ],
     tech: ["Copilot Studio", "Power Automate", "Azure"],
   },
@@ -152,11 +152,11 @@ export const solutions: Solution[] = [
     short: "Turn your history into a credible view of what's coming next.",
     detail:
       "Demand, cost, capacity or risk — we build forecasting and predictive models grounded in your own data, with assumptions made explicit and accuracy you can monitor over time. Surfaced through dashboards and alerts so the forecast actually drives decisions.",
-    capabilities: [
-      "Demand & capacity forecasting",
-      "Trend & scenario modeling",
-      "Accuracy tracking & back-testing",
-      "Forecast-driven alerts",
+    experience: [
+      "Trend and scenario modeling on operational data",
+      "Early-warning and risk indicators in dashboards",
+      "Accuracy monitoring built into reporting",
+      "Planning scenarios for capacity and demand",
     ],
     tech: ["Power BI", "Power Query", "Azure"],
   },
@@ -166,11 +166,11 @@ export const solutions: Solution[] = [
     short: "Multi-page dashboards leaders actually use.",
     detail:
       "KPI bands, funnel charts, supplier and status heatmaps, and drill-through navigation — aligned with stakeholders through clickable mock-ups before a single measure is written, so the final report matches how people really make decisions.",
-    capabilities: [
-      "KPI bands & scorecards",
-      "Funnel & heatmap visuals",
-      "Drill-through navigation",
-      "Prototype-first design",
+    experience: [
+      "KPI bands, funnel charts and supplier/status heatmaps",
+      "Drill-through navigation across multi-page reports",
+      "Clickable mock-ups aligned with stakeholders before build",
+      "Executive reporting for portfolio oversight",
     ],
     tech: ["Power BI", "DAX", "Power Query"],
   },
@@ -180,11 +180,11 @@ export const solutions: Solution[] = [
     short: "Early-warning logic that flags problems before they escalate.",
     detail:
       "Status monitoring with thresholds and early-warning automation that pushes exceptions to the people who can act, the moment something drifts — turning controlling from a monthly look-back into a live signal.",
-    capabilities: [
-      "KPI & threshold monitoring",
-      "Early-warning automation",
-      "Exception notifications",
-      "Controlling reports",
+    experience: [
+      "Early-warning automation flagging status drift",
+      "Exception notifications via Power Automate",
+      "Controlling reports across parallel workstreams",
+      "Threshold-based KPI monitoring",
     ],
     tech: ["Power Automate", "Power BI", "Dataverse"],
   },
@@ -194,11 +194,11 @@ export const solutions: Solution[] = [
     short: "Traceable quality tracking built for regulated environments.",
     detail:
       "Defect and quality-tracking applications with audit trails, role-based access and data-quality controls — designed for automotive and logistics contexts where traceability and data integrity are non-negotiable.",
-    capabilities: [
-      "Defect & issue tracking",
-      "Audit trails",
-      "Data-quality controls",
-      "Role-based access",
+    experience: [
+      "Defect and quality tracking in regulated automotive contexts",
+      "Audit trails and role-based access",
+      "Data-quality controls protecting traceability",
+      "Goods-out and inspection workflows",
     ],
     tech: ["Power Apps", "Dataverse", "Power Automate"],
   },
@@ -208,11 +208,11 @@ export const solutions: Solution[] = [
     short: "Logistics and rail-transport tracking, end to end.",
     detail:
       "Transport tracking solutions with multi-state workflows, composite- and alternate-key data models, orchestration flows and operational dashboards — built to keep complex movement of goods visible and accountable.",
-    capabilities: [
-      "Transport state workflows",
-      "Composite / alternate-key models",
-      "Orchestration flows",
-      "Operational dashboards",
+    experience: [
+      "Rail-transport tracking with a 24-state workflow",
+      "Composite and alternate-key Dataverse models",
+      "Power Automate orchestration and notifications",
+      "Operational dashboards for logistics teams",
     ],
     tech: ["Power Apps", "Dataverse", "Power Automate", "Power BI"],
   },
@@ -222,11 +222,11 @@ export const solutions: Solution[] = [
     short: "Issue and request tracking that fits your process — not the other way around.",
     detail:
       "Custom ticketing applications with status lifecycles, assignment and routing, notifications and SLA reporting. No rigid off-the-shelf constraints: the workflow mirrors how your team actually triages and resolves.",
-    capabilities: [
-      "Configurable status lifecycles",
-      "Assignment & routing",
-      "Notifications & escalations",
-      "SLA reporting",
+    experience: [
+      "Defect-notification and request-tracking apps",
+      "Status lifecycles with assignment and routing",
+      "Automated notifications and escalations",
+      "Status reporting for stakeholders",
     ],
     tech: ["Power Apps", "Power Automate", "Dataverse"],
   },
@@ -236,11 +236,10 @@ export const solutions: Solution[] = [
     short: "Total-cost-of-ownership models your stakeholders can trust.",
     detail:
       "Calculation tools that turn cost drivers into clear, comparable scenarios, with documented logic and exportable reports — so commercial decisions rest on transparent numbers rather than a black-box spreadsheet.",
-    capabilities: [
-      "Cost-driver modeling",
-      "Scenario comparison",
-      "Documented calculation logic",
-      "Exportable reports",
+    experience: [
+      "Person-day effort and role-based pricing models",
+      "Scenario and cost comparison tooling",
+      "Documented, exportable calculations",
     ],
     tech: ["Power Apps", "Power Fx", "Power BI"],
   },
@@ -250,11 +249,11 @@ export const solutions: Solution[] = [
     short: "Project tracking across types, with milestones and early warnings.",
     detail:
       "Project-tracking solutions spanning multiple project types, with milestone visualization, early-warning automation and report exports — giving portfolio owners a single, current view instead of a stack of status emails.",
-    capabilities: [
-      "Multi-type project tracking",
-      "Milestone visualization",
-      "Early-warning automation",
-      "Report exports",
+    experience: [
+      "A project-tracking tool spanning four project types",
+      "Milestone visualization and early-warning automation",
+      "Requirement specs and phased delivery plans",
+      "Report exports for portfolio owners",
     ],
     tech: ["Power Apps", "Power Automate", "Dataverse"],
   },
@@ -264,11 +263,11 @@ export const solutions: Solution[] = [
     short: "Leaderboards and engagement mechanics that drive real adoption.",
     detail:
       "Points, achievements and leaderboard applications built within Power Apps, designed to lift participation and turn a tool people have to use into one they want to — adoption being the difference between software that ships and software that sticks.",
-    capabilities: [
-      "Leaderboards & scoring",
-      "Points & achievements",
-      "Engagement analytics",
-      "Custom branded UI",
+    experience: [
+      "Leaderboard and gamification apps in Power Apps",
+      "Points and achievement mechanics to lift adoption",
+      "Custom in-app branding and UI",
+      "Tool-discovery and knowledge apps",
     ],
     tech: ["Power Apps", "Power Fx", "Dataverse"],
   },
@@ -278,13 +277,58 @@ export const solutions: Solution[] = [
     short: "Mobile inspection apps with built-in barcode and QR scanning.",
     detail:
       "Inspection and audit applications with scan functionality that capture structured data in the field — barcodes, QR codes, photos and evidence — and sync it straight into Dataverse, replacing paper checklists and re-keying.",
-    capabilities: [
-      "Barcode & QR scanning",
-      "Structured field capture",
-      "Photo & evidence attach",
-      "Dataverse sync",
+    experience: [
+      "A document-scanning app with barcode capture",
+      "Structured field capture syncing to Dataverse",
+      "Photo and evidence attachment",
+      "Replacing paper checklists and re-keying",
     ],
     tech: ["Power Apps", "Dataverse", "Power Automate"],
+  },
+  {
+    icon: "lock",
+    title: "Governance & Security",
+    short: "Role-based access, audit trails and ALM that stand up to scrutiny.",
+    detail:
+      "Security and governance built in from day one, not bolted on — row- and object-level access, audit trails, and environment, connection and ALM configuration aligned to enterprise practice. Data handling designed for regulated environments where access and traceability are reviewed.",
+    experience: [
+      "Role-based and object-level access models",
+      "Environment, connection and ALM governance",
+      "Audit trails and data-handling controls",
+      "Solution and environment-variable management",
+    ],
+    tech: ["Dataverse", "Power Platform", "Azure"],
+  },
+];
+
+// Solution categories — used for the filter chips on the Solutions section.
+export const solutionCategories: { name: string; titles: string[] }[] = [
+  {
+    name: "Analytics & BI",
+    titles: [
+      "Business Intelligence",
+      "Data Analytics",
+      "Reporting Dashboards",
+      "Forecasting & Predictive Models",
+    ],
+  },
+  {
+    name: "Apps & Automation",
+    titles: [
+      "Enterprise Solutions",
+      "AI Solutions",
+      "Ticket Systems",
+      "Project Management",
+      "Gamification",
+    ],
+  },
+  {
+    name: "Operations",
+    titles: ["Monitoring & Controlling", "Transport Management", "TCO Tools"],
+  },
+  {
+    name: "Quality & Governance",
+    titles: ["Quality Management", "Inspection Tools", "Governance & Security"],
   },
 ];
 
@@ -329,7 +373,7 @@ export const techGroups: { group: string; items: Tech[] }[] = [
 export const techAlso = ["DAX", "Power Fx", "Power Query (M)", "PAC CLI", "HTML / SVG"];
 
 export const stats = [
-  { value: "13+", label: "Solution types" },
+  { value: "15+", label: "Solution types" },
   { value: "3×", label: "Faster delivery" },
   { value: "3", label: "Working languages" },
   { value: "100%", label: "Custom-built" },
