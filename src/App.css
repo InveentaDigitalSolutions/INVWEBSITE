@@ -6,21 +6,17 @@
 
 /* ---------- Logo / wordmark (outlined SVG artwork) ---------- */
 .logo {
-  display: inline-block;
+  display: block;
+  width: auto;
   line-height: 0;
 }
 
-.logo img {
-  display: block;
-  width: auto;
+.logo--sm {
+  height: 31px;
 }
 
-.logo--sm img {
-  height: 26px;
-}
-
-.logo--lg img {
-  height: clamp(56px, 4vw + 30px, 78px);
+.logo--lg {
+  height: clamp(52px, 4vw + 28px, 72px);
 }
 
 /* ---------- Navbar ---------- */

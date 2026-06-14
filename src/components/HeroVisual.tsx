@@ -50,8 +50,9 @@ export default function HeroVisual() {
           <text x="128" y="356" className="hv-label">People</text>
         </g>
         <g className="hv-node hv-node--d">
-          <circle cx="362" cy="306" r="6" fill="rgba(255,255,255,0.08)" stroke="rgba(231,234,239,0.4)" />
-          <circle cx="362" cy="306" r="2.5" fill="#b7da4c" />
+          <circle cx="362" cy="306" r="8" fill="rgba(255,255,255,0.1)" stroke="rgba(231,234,239,0.5)" />
+          <circle cx="362" cy="306" r="3" fill="#e7eaef" />
+          <text x="362" y="332" className="hv-label">Processes</text>
         </g>
 
         {/* centre brand node */}
