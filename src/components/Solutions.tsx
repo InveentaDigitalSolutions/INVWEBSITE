@@ -23,7 +23,7 @@ export default function Solutions() {
             return (
               <article
                 key={s.title}
-                className={`solution-card ${isOpen ? "is-open" : ""}`}
+                className={`solution-card reveal ${isOpen ? "is-open" : ""}`}
               >
                 <button
                   className="solution-card__head"

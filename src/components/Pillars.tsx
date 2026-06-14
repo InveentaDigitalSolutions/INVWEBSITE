@@ -1,14 +1,14 @@
 import { pillars } from "../data";
 
-// The three brand pillars, rendered on the dark navy theme from the identity sheet.
+// The three brand pillars, on a light surface with the green square as the spark.
 export default function Pillars() {
   return (
     <section className="pillars">
       <div className="container">
         <div className="pillars__grid">
-          {pillars.map((p, i) => (
-            <div className="pillar" key={p.title}>
-              <span className="pillar__num">0{i + 1}</span>
+          {pillars.map((p) => (
+            <div className="pillar reveal" key={p.title}>
+              <span className="pillar__mark" aria-hidden="true" />
               <h3 className="pillar__title">{p.title}</h3>
               <p className="pillar__body">{p.body}</p>
             </div>

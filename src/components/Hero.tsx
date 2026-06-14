@@ -1,67 +1,43 @@
 import { stats } from "../data";
 import Icon from "./Icon";
+import Motif from "./Motif";
 
 export default function Hero() {
   return (
-    <section className="hero" id="top">
+    <section className="hero on-dark" id="top">
+      <div className="hero__texture" aria-hidden="true" />
       <div className="container hero__inner">
-        <span className="hero__badge">
-          <span className="hero__badge-dot" /> Now taking on new partners
-        </span>
+        <Motif className="hero__motif" />
 
         <h1 className="hero__title">
-          We engineer <span className="hero__title-accent">intelligent business</span>.
+          We engineer
+          <br />
+          intelligent business.
         </h1>
 
         <p className="hero__lead">
           Inveenta designs and builds enterprise solutions on the Microsoft Power Platform — turning
           complex, manual operations into governed, scalable systems engineered for optimization,
-          scalability, and performance, so your team spends less time fighting tools and more time
-          doing the work that matters.
+          scalability and performance.
         </p>
 
         <div className="hero__actions">
           <a href="#contact" className="btn btn-primary">
             Start a project <Icon name="arrow" className="btn__icon" />
           </a>
-          <a href="#services" className="btn btn-ghost">
-            See what we do
+          <a href="#solutions" className="btn btn-ghost-light">
+            Explore solutions
           </a>
         </div>
 
-        <div className="hero__panel" aria-hidden="true">
-          <div className="hero__panel-bar">
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="hero__panel-body">
-            <div className="hero__panel-side">
-              <div className="hero__chip is-active" />
-              <div className="hero__chip" />
-              <div className="hero__chip" />
-              <div className="hero__chip" />
+        <dl className="hero__kpis">
+          {stats.map((s) => (
+            <div className="kpi" key={s.label}>
+              <dd className="kpi__figure">{s.value}</dd>
+              <dt className="kpi__label">{s.label}</dt>
             </div>
-            <div className="hero__panel-main">
-              <div className="hero__cards">
-                {stats.map((s) => (
-                  <div className="hero__stat" key={s.label}>
-                    <strong>{s.value}</strong>
-                    <span>{s.label}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="hero__graph">
-                <div style={{ height: "42%" }} />
-                <div style={{ height: "66%" }} />
-                <div style={{ height: "54%" }} />
-                <div style={{ height: "80%" }} />
-                <div style={{ height: "72%" }} />
-                <div style={{ height: "95%" }} />
-              </div>
-            </div>
-          </div>
-        </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

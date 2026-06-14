@@ -16,7 +16,7 @@ export default function Technologies() {
 
         <div className="tech-groups">
           {techGroups.map((g) => (
-            <div className="tech-group" key={g.group}>
+            <div className="tech-group reveal" key={g.group}>
               <span className="tech-group__title">{g.group}</span>
               <div className="tech-group__items">
                 {g.items.map((t) => (

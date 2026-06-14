@@ -13,11 +13,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Transparent over the dark hero; solid white once scrolled or the menu is open.
+  const solid = scrolled || open;
+
   return (
-    <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
+    <header className={`nav ${solid ? "nav--solid" : "nav--top on-dark"}`}>
       <div className="container nav__inner">
         <a href="#top" className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
-          <Logo size="sm" />
+          <Logo size="sm" variant={solid ? "dark" : "light"} />
         </a>
 
         <nav className={`nav__links ${open ? "is-open" : ""}`}>

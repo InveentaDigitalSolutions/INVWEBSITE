@@ -41,7 +41,8 @@ export default function Contact() {
   }
 
   return (
-    <section className="section contact" id="contact">
+    <section className="section contact on-dark" id="contact">
+      <div className="contact__texture" aria-hidden="true" />
       <div className="container contact__grid">
         <div className="contact__intro">
           <span className="eyebrow">Contact</span>

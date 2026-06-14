@@ -1,31 +1,37 @@
 :root {
-  /* Brand color */
-  --ink: #182b3d; /* deep navy — primary */
-  --ink-2: #213750; /* lighter navy surface */
-  --ink-soft: #455369;
-  --muted: #6f7a89;
+  /* ---- Brand tokens (Inveenta Brand & Color Guidelines v1.0) ---- */
+  --navy: #16243b; /* structure, text, dark surfaces */
+  --green: #b7da4c; /* the single official accent */
+  --green-screen: #dbfc52; /* large numerals on dark only */
+  --green-deep: #a4c93c; /* hover for green buttons */
+  --green-wash: #f1f6e1; /* faint decorative tint only */
+  --white: #ffffff;
+  --mist: #e7eaef; /* soft text/elements on dark */
+  --grey: #5e5f64; /* secondary text, captions, taglines */
+
+  /* signature topographic dark gradient — hero / CTA / dividers only */
+  --grad-top: #505968;
+  --grad-mid: #323949;
+  --grad-base: #252d40;
+  --gradient-dark: linear-gradient(165deg, #424b5b 0%, #2d3444 52%, #1c2438 100%);
+
+  /* neutrals derived for light UI */
   --line: #e4e7ec;
   --line-soft: #eef0f3;
   --surface: #ffffff;
-  --surface-alt: #f6f8fa;
+  --surface-alt: #f6f7f9;
+  --ink-soft: #3b475a;
 
-  --green: #8dc63f; /* lime accent */
-  --green-dark: #79b32c;
-  --green-tint: #eef6e0;
+  /* type */
+  --font: "Montserrat", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --display: "Montserrat", "Segoe UI", system-ui, sans-serif;
 
-  --on-dark: #d8dfe7; /* light text on navy */
-  --on-dark-soft: #9aa7b6;
-
-  /* Typography */
-  --display: "Questrial", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-  /* Layout */
-  --maxw: 1140px;
-  --radius: 14px;
+  /* layout */
+  --maxw: 1160px;
+  --radius: 16px;
   --radius-sm: 10px;
-  --shadow-sm: 0 1px 2px rgba(24, 43, 61, 0.05), 0 1px 3px rgba(24, 43, 61, 0.07);
-  --shadow-md: 0 14px 36px -16px rgba(24, 43, 61, 0.28);
+  --shadow-sm: 0 1px 2px rgba(22, 36, 59, 0.05), 0 1px 3px rgba(22, 36, 59, 0.07);
+  --shadow-md: 0 18px 44px -20px rgba(22, 36, 59, 0.32);
 
   color-scheme: light;
 }
@@ -46,9 +52,9 @@ html {
 
 body {
   font-family: var(--font);
-  color: var(--ink);
-  background: var(--surface);
-  line-height: 1.6;
+  color: var(--navy);
+  background: var(--white);
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -57,10 +63,10 @@ h1,
 h2,
 h3 {
   font-family: var(--display);
+  font-weight: 700;
   line-height: 1.12;
-  letter-spacing: -0.01em;
-  font-weight: 400;
-  color: var(--ink);
+  letter-spacing: -0.018em;
+  color: var(--navy);
 }
 
 a {
@@ -78,13 +84,18 @@ button {
   cursor: pointer;
 }
 
+::selection {
+  background: var(--green);
+  color: var(--navy);
+}
+
 :focus-visible {
   outline: 2px solid var(--green);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* ---------- Shared primitives ---------- */
+/* ---------------- Shared primitives ---------------- */
 .container {
   width: 100%;
   max-width: var(--maxw);
@@ -93,56 +104,103 @@ button {
 }
 
 .section {
-  padding-block: 96px;
+  padding-block: 104px;
 }
 
+/* Section kicker — grey label with a green dash spark (never green text) */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
+  gap: 10px;
+  font-size: 0.76rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--green-dark);
-  margin-bottom: 16px;
+  color: var(--grey);
+  margin-bottom: 18px;
 }
 
 .eyebrow::before {
   content: "";
-  width: 18px;
+  width: 20px;
   height: 2px;
   background: var(--green);
-  border-radius: 2px;
+}
+
+.on-dark .eyebrow {
+  color: var(--mist);
 }
 
 .section-head {
-  max-width: 660px;
-  margin-bottom: 56px;
+  max-width: 680px;
+  margin-bottom: 60px;
 }
 
 .section-head h2 {
-  font-size: clamp(1.9rem, 1.2rem + 2.6vw, 2.85rem);
+  font-size: clamp(1.9rem, 1.2rem + 2.7vw, 2.9rem);
 }
 
 .section-head p {
-  margin-top: 16px;
+  margin-top: 18px;
   font-size: 1.0625rem;
-  color: var(--muted);
+  color: var(--grey);
 }
 
+.on-dark .section-head h2 {
+  color: var(--white);
+}
+
+.on-dark .section-head p {
+  color: var(--mist);
+}
+
+/* Three-square motif — fixed order green · navy · white */
+.motif {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.motif span {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+
+.motif span:nth-child(1) {
+  background: var(--green);
+}
+.motif span:nth-child(2) {
+  background: var(--navy);
+}
+.motif span:nth-child(3) {
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.on-dark .motif span:nth-child(2) {
+  background: var(--white);
+  opacity: 0.55;
+  box-shadow: none;
+}
+.on-dark .motif span:nth-child(3) {
+  background: var(--white);
+  box-shadow: none;
+}
+
+/* Buttons — green carries dark text per brand */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
+  font-family: var(--font);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 12px 22px;
+  padding: 13px 24px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease,
-    box-shadow 0.15s ease, color 0.15s ease;
+    color 0.15s ease;
 }
 
 .btn:active {
@@ -151,38 +209,67 @@ button {
 
 .btn-primary {
   background: var(--green);
-  color: var(--ink);
-  box-shadow: var(--shadow-sm);
+  color: var(--navy);
 }
 
 .btn-primary:hover {
-  background: var(--green-dark);
-  color: #fff;
-}
-
-.btn-dark {
-  background: var(--ink);
-  color: #fff;
-}
-
-.btn-dark:hover {
-  background: var(--ink-2);
+  background: var(--green-deep);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--ink);
+  color: var(--navy);
   border-color: var(--line);
 }
 
 .btn-ghost:hover {
-  border-color: var(--ink-soft);
-  background: var(--surface-alt);
+  border-color: var(--navy);
+}
+
+.btn-ghost-light {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(231, 234, 239, 0.4);
+}
+
+.btn-ghost-light:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* KPI pattern — green figure over uppercase letter-spaced label */
+.kpi__figure {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--green-screen);
+}
+
+.kpi__label {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
 }
 
 @media (max-width: 640px) {
   .section {
-    padding-block: 64px;
+    padding-block: 72px;
   }
 }
 
@@ -190,7 +277,12 @@ button {
   html {
     scroll-behavior: auto;
   }
-  * {
+  *,
+  .reveal {
     transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

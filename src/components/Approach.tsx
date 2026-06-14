@@ -18,7 +18,7 @@ export default function Approach() {
 
         <ol className="approach__steps">
           {process.map((p) => (
-            <li className="approach-step" key={p.step}>
+            <li className="approach-step reveal" key={p.step}>
               <span className="approach-step__num">{p.step}</span>
               <div className="approach-step__body">
                 <h3>{p.title}</h3>

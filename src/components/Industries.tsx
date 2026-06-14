@@ -15,7 +15,7 @@ export default function Industries() {
 
         <div className="industries__grid">
           {industries.map((ind) => (
-            <article className="industry-card" key={ind.name}>
+            <article className="industry-card reveal" key={ind.name}>
               <img
                 className="industry-card__img"
                 src={`/img/${ind.image}.jpg`}
