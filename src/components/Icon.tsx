@@ -101,6 +101,13 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M12 14.5v2.5" />
     </>
   ),
+  flow: (
+    <>
+      <rect x="3" y="4.5" width="6.5" height="5" rx="1.5" />
+      <rect x="14.5" y="14.5" width="6.5" height="5" rx="1.5" />
+      <path d="M6.25 9.5v3.5a3 3 0 0 0 3 3h5.25" />
+    </>
+  ),
   // --- ui glyphs ---
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   search: (

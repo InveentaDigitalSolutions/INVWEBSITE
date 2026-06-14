@@ -5,6 +5,7 @@ export default function Hero() {
   return (
     <section className="hero on-dark" id="top">
       <div className="hero__aurora" aria-hidden="true" />
+      <div className="hero__beam" aria-hidden="true" />
       <div className="hero__texture" aria-hidden="true" />
       <div className="container hero__inner">
         <span className="hero__kicker">
@@ -13,9 +14,9 @@ export default function Hero() {
         </span>
 
         <h1 className="hero__title">
-          Complex operations,
+          Software that runs
           <br />
-          made simple.
+          your operations.
         </h1>
 
         <p className="hero__lead">

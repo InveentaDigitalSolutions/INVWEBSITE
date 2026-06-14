@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Pillars from "./components/Pillars";
+import Capabilities from "./components/Capabilities";
 import Solutions from "./components/Solutions";
 import Industries from "./components/Industries";
 import Technologies from "./components/Technologies";
@@ -18,6 +19,7 @@ function App() {
       <main>
         <Hero />
         <Pillars />
+        <Capabilities />
         <Solutions />
         <Industries />
         <Technologies />

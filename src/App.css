@@ -159,21 +159,47 @@
   }
 }
 
+/* faint engineered grid that slowly drifts */
 .hero__texture {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: repeating-radial-gradient(
-      circle at 88% 8%,
-      rgba(255, 255, 255, 0.05) 0 1px,
-      transparent 1px 30px
-    ),
-    repeating-radial-gradient(
-      circle at 6% 96%,
-      rgba(183, 218, 76, 0.06) 0 1px,
-      transparent 1px 34px
-    );
-  mask-image: radial-gradient(120% 100% at 50% 30%, transparent 38%, #000 80%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(125% 115% at 50% 0%, #000 26%, transparent 72%);
+  -webkit-mask-image: radial-gradient(125% 115% at 50% 0%, #000 26%, transparent 72%);
+  animation: heroGrid 32s linear infinite;
+}
+
+@keyframes heroGrid {
+  to {
+    background-position: 46px 46px;
+  }
+}
+
+/* a slow green sweep of light for a touch of motion */
+.hero__beam {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    42% 60% at 50% -10%,
+    rgba(183, 218, 76, 0.12),
+    transparent 70%
+  );
+  animation: heroBeam 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroBeam {
+  from {
+    opacity: 0.5;
+    transform: translateX(-6%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(6%);
+  }
 }
 
 .hero__inner {
@@ -309,7 +335,8 @@
   .hero__actions,
   .hero__kpis,
   .hero__texture,
-  .hero__aurora {
+  .hero__aurora,
+  .hero__beam {
     animation: none !important;
     opacity: 1;
     transform: none;
