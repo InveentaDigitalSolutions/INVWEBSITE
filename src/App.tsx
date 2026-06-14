@@ -1,8 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Pillars from "./components/Pillars";
-import About from "./components/About";
-import Services from "./components/Services";
+import Solutions from "./components/Solutions";
+import Industries from "./components/Industries";
+import Technologies from "./components/Technologies";
+import Approach from "./components/Approach";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./App.css";
@@ -14,8 +16,10 @@ function App() {
       <main>
         <Hero />
         <Pillars />
-        <About />
-        <Services />
+        <Solutions />
+        <Industries />
+        <Technologies />
+        <Approach />
         <Contact />
       </main>
       <Footer />

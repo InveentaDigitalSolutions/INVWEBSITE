@@ -14,9 +14,10 @@ export default function Hero() {
         </h1>
 
         <p className="hero__lead">
-          Inveenta builds software that turns complex, manual operations into clear, fast systems —
-          engineered for optimization, scalability, and performance, so your team spends less time
-          fighting tools and more time doing the work that matters.
+          Inveenta designs and builds enterprise solutions on the Microsoft Power Platform — turning
+          complex, manual operations into governed, scalable systems engineered for optimization,
+          scalability, and performance, so your team spends less time fighting tools and more time
+          doing the work that matters.
         </p>
 
         <div className="hero__actions">
