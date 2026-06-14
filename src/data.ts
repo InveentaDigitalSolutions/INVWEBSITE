@@ -149,11 +149,11 @@ export const solutions: Offering[] = [
     icon: "truck",
     image: "sol-transport",
     title: "Transport Management",
-    short: "Logistics and rail-transport tracking, end to end.",
+    short: "Multimodal transport tracking — road, rail and sea, end to end.",
     detail:
-      "Transport tracking with multi-state workflows, composite- and alternate-key data models, orchestration flows and operational dashboards — built to keep complex movement of goods visible and accountable.",
+      "Transport tracking across road, rail and sea, with multi-state workflows, composite- and alternate-key data models, orchestration flows and operational dashboards — built to keep complex movement of goods visible and accountable.",
     experience: [
-      "Rail-transport tracking with a 24-state workflow",
+      "Multi-state transport tracking (incl. a 24-state rail workflow)",
       "Composite and alternate-key Dataverse models",
       "Power Automate orchestration and notifications",
       "Operational dashboards for logistics teams",
@@ -228,20 +228,6 @@ export const solutions: Offering[] = [
       "Documented, exportable calculations",
     ],
   },
-  {
-    icon: "trophy",
-    image: "sol-gamification",
-    title: "Gamification",
-    short: "Leaderboards and engagement mechanics that drive real adoption.",
-    detail:
-      "Points, achievements and leaderboard applications built within Power Apps, designed to lift participation and turn a tool people have to use into one they want to — adoption being the difference between software that ships and software that sticks.",
-    experience: [
-      "Leaderboard and gamification apps in Power Apps",
-      "Points and achievement mechanics to lift adoption",
-      "Custom in-app branding and UI",
-      "Tool-discovery and knowledge apps",
-    ],
-  },
 ];
 
 // Industries served — each maps to the solutions most relevant to it.
@@ -314,7 +300,7 @@ export const industries: Industry[] = [
       "Disconnected shop-floor and office systems",
       "Low adoption of new tools",
     ],
-    solutions: ["Quality Management", "Project Management", "Monitoring & Controlling", "Gamification"],
+    solutions: ["Quality Management", "Project Management", "Monitoring & Controlling", "Cost & TCO"],
   },
 ];
 
