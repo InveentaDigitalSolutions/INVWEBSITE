@@ -1,13 +1,15 @@
 import { stats } from "../data";
 import Icon from "./Icon";
-import Motif from "./Motif";
 
 export default function Hero() {
   return (
     <section className="hero on-dark" id="top">
       <div className="hero__texture" aria-hidden="true" />
       <div className="container hero__inner">
-        <Motif className="hero__motif" />
+        <span className="hero__kicker">
+          <span className="hero__kicker-dot" aria-hidden="true" />
+          engineering intelligent business
+        </span>
 
         <h1 className="hero__title">
           We engineer
@@ -16,9 +18,9 @@ export default function Hero() {
         </h1>
 
         <p className="hero__lead">
-          Inveenta designs and builds enterprise solutions on the Microsoft Power Platform — turning
-          complex, manual operations into governed, scalable systems engineered for optimization,
-          scalability and performance.
+          Inveenta designs and builds custom enterprise software — turning complex, manual
+          operations into governed, scalable systems engineered for optimization, scalability and
+          performance.
         </p>
 
         <div className="hero__actions">

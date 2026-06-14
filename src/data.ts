@@ -280,7 +280,7 @@ export type Tech = { name: string; logo: string };
 
 export const techGroups: { group: string; items: Tech[] }[] = [
   {
-    group: "Microsoft Power Platform",
+    group: "Power Platform",
     items: [
       { name: "Power Platform", logo: "powerplatform" },
       { name: "Power Apps", logo: "powerapps" },

@@ -8,9 +8,8 @@ export default function Technologies() {
           <span className="eyebrow">Technology</span>
           <h2>The stack behind every build.</h2>
           <p>
-            Deep, deliberate expertise across the Microsoft Power Platform and the enterprise systems
-            and clouds around it — so the right technology is chosen for the job, not the other way
-            around.
+            Deep, deliberate expertise across the platforms, clouds and tools we build on — so the
+            right technology is chosen for the job, not the other way around.
           </p>
         </div>
 

@@ -1,6 +1,5 @@
 import { company, nav } from "../data";
 import Logo from "./Logo";
-import Motif from "./Motif";
 
 export default function Footer() {
   const year = 2026;
@@ -11,7 +10,6 @@ export default function Footer() {
           <a href="#top" aria-label="inveenta home">
             <Logo size="lg" variant="light" withTagline />
           </a>
-          <Motif className="footer__motif" />
         </div>
 
         <nav className="footer__links" aria-label="Footer">

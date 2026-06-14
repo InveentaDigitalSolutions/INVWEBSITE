@@ -154,16 +154,17 @@ button {
   color: var(--mist);
 }
 
-/* Three-square motif — fixed order green · navy · white */
+/* Brand dot motif — three dots, fixed order green · navy · white */
 .motif {
   display: inline-flex;
-  gap: 5px;
+  align-items: center;
+  gap: 7px;
 }
 
 .motif span {
   width: 11px;
   height: 11px;
-  border-radius: 2px;
+  border-radius: 50%;
 }
 
 .motif span:nth-child(1) {
@@ -255,14 +256,15 @@ button {
   color: var(--mist);
 }
 
-/* Scroll-reveal */
-.reveal {
+/* Scroll-reveal — only hides once JS marks the doc ready, so content is
+   never stranded invisible if the observer doesn't run. */
+.reveal-ready .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal.is-in {
+.reveal-ready .reveal.is-in {
   opacity: 1;
   transform: none;
 }
@@ -277,11 +279,10 @@ button {
   html {
     scroll-behavior: auto;
   }
-  *,
-  .reveal {
+  * {
     transition: none !important;
   }
-  .reveal {
+  .reveal-ready .reveal {
     opacity: 1;
     transform: none;
   }

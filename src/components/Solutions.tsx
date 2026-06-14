@@ -10,7 +10,7 @@ export default function Solutions() {
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">What we build</span>
-          <h2>Custom solutions, engineered on the Microsoft Power Platform.</h2>
+          <h2>Custom solutions, engineered end to end.</h2>
           <p>
             Thirteen solution types, one approach: governed, scalable systems built around your real
             workflows — never off-the-shelf. Select any solution to go deeper.
@@ -23,7 +23,7 @@ export default function Solutions() {
             return (
               <article
                 key={s.title}
-                className={`solution-card reveal ${isOpen ? "is-open" : ""}`}
+                className={`solution-card ${isOpen ? "is-open" : ""}`}
               >
                 <button
                   className="solution-card__head"

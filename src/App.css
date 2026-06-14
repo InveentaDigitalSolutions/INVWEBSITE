@@ -73,21 +73,21 @@
   border-bottom: 1px solid transparent;
 }
 
-.nav--top {
-  background: transparent;
-}
-
 .nav--solid {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom-color: var(--line);
+}
+
+.nav--scrolled {
+  box-shadow: 0 6px 20px -16px rgba(22, 36, 59, 0.5);
 }
 
 .nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 74px;
 }
 
 .nav__links {
@@ -103,24 +103,12 @@
   transition: color 0.15s ease;
 }
 
-.nav--top .nav__links a {
-  color: var(--mist);
-}
-
 .nav__links a:hover {
   color: var(--navy);
 }
 
-.nav--top .nav__links a:hover {
-  color: var(--white);
-}
-
 .nav__cta {
   padding: 9px 18px;
-}
-
-.nav--top .nav__cta {
-  color: var(--navy);
 }
 
 .nav__toggle {
@@ -137,10 +125,6 @@
   height: 2px;
   border-radius: 2px;
   background: var(--navy);
-}
-
-.nav--top .nav__toggle span {
-  background: var(--white);
 }
 
 /* ---------- Hero (topographic gradient) ---------- */
@@ -178,8 +162,28 @@
   text-align: center;
 }
 
-.hero__motif {
-  margin-bottom: 30px;
+.hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 28px;
+  padding: 8px 18px 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(231, 234, 239, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: lowercase;
+  color: var(--mist);
+}
+
+.hero__kicker-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(183, 218, 76, 0.16);
 }
 
 .hero__title {
@@ -241,9 +245,9 @@
 
 .pillar__mark {
   display: block;
-  width: 16px;
-  height: 16px;
-  border-radius: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
   background: var(--green);
   margin-bottom: 20px;
 }
