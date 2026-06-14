@@ -6,8 +6,10 @@ type LogoProps = {
   withTagline?: boolean;
 };
 
+import { asset } from "../asset";
+
 // Official wordmark, rendered from outlined SVG artwork in /public/brand.
 export default function Logo({ size = "sm", variant = "dark", withTagline }: LogoProps) {
   const file = `${size === "lg" || withTagline ? "wordmark" : "mark"}-${variant}.svg`;
-  return <img className={`logo logo--${size}`} src={`/brand/${file}`} alt="inveenta" />;
+  return <img className={`logo logo--${size}`} src={asset(`brand/${file}`)} alt="inveenta" />;
 }

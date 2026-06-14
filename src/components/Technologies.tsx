@@ -1,4 +1,5 @@
 import { techGroups, techAlso } from "../data";
+import { asset } from "../asset";
 
 export default function Technologies() {
   return (
@@ -21,7 +22,7 @@ export default function Technologies() {
                 {g.items.map((t) => (
                   <div className="tech-tile" key={t.name} title={t.name}>
                     <span className="tech-tile__badge">
-                      <img src={`/logos/${t.logo}.svg`} alt={`${t.name} logo`} loading="lazy" />
+                      <img src={asset(`logos/${t.logo}.svg`)} alt={`${t.name} logo`} loading="lazy" />
                     </span>
                     <span className="tech-tile__name">{t.name}</span>
                   </div>

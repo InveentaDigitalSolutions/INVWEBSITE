@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { nav } from "../data";
 import Logo from "./Logo";
+import { asset } from "../asset";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,17 +18,17 @@ export default function Navbar() {
   return (
     <header className={`nav nav--solid ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="container nav__inner">
-        <a href="/" className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
+        <a href={asset("/")} className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
           <Logo size="sm" variant="dark" />
         </a>
 
         <nav className={`nav__links ${open ? "is-open" : ""}`}>
           {nav.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <a key={item.href} href={asset(item.href)} onClick={() => setOpen(false)}>
               {item.label}
             </a>
           ))}
-          <a href="/#contact" className="btn btn-primary nav__cta" onClick={() => setOpen(false)}>
+          <a href={asset("/#contact")} className="btn btn-primary nav__cta" onClick={() => setOpen(false)}>
             Get in touch
           </a>
         </nav>

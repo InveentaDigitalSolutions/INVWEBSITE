@@ -1,4 +1,5 @@
 import { process } from "../data";
+import { asset } from "../asset";
 
 export default function Approach() {
   return (
@@ -13,7 +14,7 @@ export default function Approach() {
             technical and business sides aligned. We do all three — and run discovery, design and
             delivery in German, English or Spanish.
           </p>
-          <img className="approach__img" src="/img/team.jpg" alt="Working session" loading="lazy" />
+          <img className="approach__img" src={asset("img/team.jpg")} alt="Working session" loading="lazy" />
         </div>
 
         <ol className="approach__steps">

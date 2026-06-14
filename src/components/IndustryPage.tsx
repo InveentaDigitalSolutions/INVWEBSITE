@@ -4,6 +4,7 @@ import { useReveal } from "../useReveal";
 import CardGrid from "./CardGrid";
 import Icon from "./Icon";
 import Seo from "./Seo";
+import { asset } from "../asset";
 
 export default function IndustryPage() {
   useReveal();
@@ -18,7 +19,7 @@ export default function IndustryPage() {
       <Seo title={`${industry.name} — Inveenta`} description={industry.intro} />
       {/* Hero */}
       <section className="ip-hero on-dark">
-        <img className="ip-hero__img" src={`/img/${industry.image}.jpg`} alt="" />
+        <img className="ip-hero__img" src={asset(`img/${industry.image}.jpg`)} alt="" />
         <div className="ip-hero__overlay" />
         <div className="container ip-hero__inner">
           <nav className="ip-breadcrumb" aria-label="Breadcrumb">
@@ -31,7 +32,7 @@ export default function IndustryPage() {
           <span className="eyebrow">Industry</span>
           <h1 className="ip-hero__title">{industry.name}</h1>
           <p className="ip-hero__lead">{industry.intro}</p>
-          <a href="/#contact" className="btn btn-primary">
+          <a href={asset("/#contact")} className="btn btn-primary">
             Talk to us <Icon name="arrow" className="btn__icon" />
           </a>
         </div>
@@ -69,7 +70,7 @@ export default function IndustryPage() {
           <CardGrid items={related} idPrefix={`ind-${industry.slug}`} />
           <p className="solutions__note">
             <Link to="/#solutions">See all solutions</Link> · or{" "}
-            <a href="/#contact">tell us what you're trying to solve</a>.
+            <a href={asset("/#contact")}>tell us what you're trying to solve</a>.
           </p>
         </div>
       </section>

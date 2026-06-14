@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { industries } from "../data";
 import Icon from "./Icon";
+import { asset } from "../asset";
 
 export default function Industries() {
   return (
@@ -24,7 +25,7 @@ export default function Industries() {
             >
               <img
                 className="industry-card__img"
-                src={`/img/${ind.image}.jpg`}
+                src={asset(`img/${ind.image}.jpg`)}
                 alt={ind.name}
                 loading="lazy"
               />

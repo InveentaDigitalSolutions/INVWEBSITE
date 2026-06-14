@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { company, nav } from "../data";
 import Logo from "./Logo";
+import { asset } from "../asset";
 
 export default function Footer() {
   const year = 2026;
@@ -8,7 +9,7 @@ export default function Footer() {
     <footer className="footer on-dark">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <a href="/" aria-label="inveenta home">
+          <a href={asset("/")} aria-label="inveenta home">
             <Logo size="lg" variant="light" withTagline />
           </a>
         </div>
@@ -16,7 +17,7 @@ export default function Footer() {
         <nav className="footer__links" aria-label="Footer">
           <span className="footer__links-head">Navigate</span>
           {nav.map((item) => (
-            <a key={item.href} href={item.href}>
+            <a key={item.href} href={asset(item.href)}>
               {item.label}
             </a>
           ))}
