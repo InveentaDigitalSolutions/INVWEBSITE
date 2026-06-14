@@ -358,6 +358,7 @@ export const techGroups: { group: string; items: Tech[] }[] = [
     group: "Enterprise & cloud",
     items: [
       { name: "SAP", logo: "sap" },
+      { name: "Snowflake", logo: "snowflake" },
       { name: "Google", logo: "google" },
       { name: "Google Cloud", logo: "googlecloud" },
     ],
