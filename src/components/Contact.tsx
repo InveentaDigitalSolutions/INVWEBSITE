@@ -72,13 +72,9 @@ export default function Contact() {
           <span className="eyebrow">Contact</span>
           <h2>Let's build something that works.</h2>
           <p>
-            Tell us what you're trying to solve. We'll reply within one business day with honest
-            thoughts on scope, timeline, and whether we're the right fit.
+            Tell us what you're trying to solve using the form. We'll reply within one business day
+            with honest thoughts on scope, timeline, and whether we're the right fit.
           </p>
-          <a className="contact__email" href={`mailto:${company.email}`}>
-            <Icon name="mail" className="contact__email-icon" />
-            {company.email}
-          </a>
         </div>
 
         <div className="contact__form-wrap">
@@ -127,8 +123,7 @@ export default function Contact() {
 
               {status === "error" && (
                 <p className="contact__formerror" role="alert">
-                  Something went wrong sending your message. Please email{" "}
-                  <a href={`mailto:${company.email}`}>{company.email}</a> directly.
+                  Something went wrong sending your message. Please try again in a moment.
                 </p>
               )}
 

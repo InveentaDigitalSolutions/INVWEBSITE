@@ -21,7 +21,7 @@ export default function Footer() {
               {item.label}
             </a>
           ))}
-          <a href={`mailto:${company.email}`}>{company.email}</a>
+          <a href={asset("/#contact")}>Contact</a>
         </nav>
       </div>
 

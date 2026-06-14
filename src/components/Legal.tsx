@@ -49,12 +49,12 @@ export function Privacy() {
         <p>We keep enquiry data only as long as needed to handle your request and any follow-up.</p>
         <h2>Your rights</h2>
         <p>
-          You may request access to, correction of, or deletion of your personal data at any time by
-          emailing <a href={`mailto:${company.email}`}>{company.email}</a>.
+          You may request access to, correction of, or deletion of your personal data at any time
+          via the <Link to="/#contact">contact form</Link> on this website.
         </p>
         <h2>Contact</h2>
         <p>
-          {company.legalName} · <a href={`mailto:${company.email}`}>{company.email}</a>
+          {company.legalName} — please use the <Link to="/#contact">contact form</Link>.
           <br />
           <em>[Registered address and any supervisory-authority details to be added.]</em>
         </p>
@@ -79,13 +79,15 @@ export function Imprint() {
         </p>
         <h2>Contact</h2>
         <p>
-          Email: <a href={`mailto:${company.email}`}>{company.email}</a>
+          Please use the <Link to="/#contact">contact form</Link> on this website.
         </p>
         <h2>Represented by</h2>
-        <p>Santiago García Ruiz</p>
+        <p>
+          <em>[Legal representative — to be completed]</em>
+        </p>
         <h2>Responsible for content</h2>
         <p>
-          Santiago García Ruiz · <a href={`mailto:${company.email}`}>{company.email}</a>
+          <em>[To be completed]</em>
         </p>
       </LegalLayout>
     </>
