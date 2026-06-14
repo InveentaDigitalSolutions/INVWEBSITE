@@ -1,7 +1,22 @@
-import { techGroups, techAlso } from "../data";
+import { techGroups, techAlso, type Tech } from "../data";
 import { asset } from "../asset";
 
+function Tile({ t }: { t: Tech }) {
+  return (
+    <div className="tech-tile" title={t.name}>
+      <span className="tech-tile__badge">
+        <img src={asset(`logos/${t.logo}.svg`)} alt={`${t.name} logo`} loading="lazy" />
+      </span>
+      <span className="tech-tile__name">{t.name}</span>
+    </div>
+  );
+}
+
 export default function Technologies() {
+  const all = techGroups.flatMap((g) => g.items);
+  const mid = Math.ceil(all.length / 2);
+  const rows = [all.slice(0, mid), all.slice(mid)];
+
   return (
     <section className="section technology" id="technology">
       <div className="container">
@@ -13,25 +28,20 @@ export default function Technologies() {
             right technology is chosen for the job, not the other way around.
           </p>
         </div>
+      </div>
 
-        <div className="tech-groups">
-          {techGroups.map((g) => (
-            <div className="tech-group reveal" key={g.group}>
-              <span className="tech-group__title">{g.group}</span>
-              <div className="tech-group__items">
-                {g.items.map((t) => (
-                  <div className="tech-tile" key={t.name} title={t.name}>
-                    <span className="tech-tile__badge">
-                      <img src={asset(`logos/${t.logo}.svg`)} alt={`${t.name} logo`} loading="lazy" />
-                    </span>
-                    <span className="tech-tile__name">{t.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="tech-marquee">
+        {rows.map((row, r) => (
+          <div className={`tech-track ${r === 1 ? "tech-track--right" : ""}`} key={r}>
+            {/* duplicated once for a seamless loop */}
+            {[...row, ...row].map((t, i) => (
+              <Tile t={t} key={`${t.name}-${i}`} />
+            ))}
+          </div>
+        ))}
+      </div>
 
+      <div className="container">
         <p className="tech-also">
           <span>Also fluent in</span>
           {techAlso.map((t) => (

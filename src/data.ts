@@ -339,6 +339,7 @@ export const techGroups: { group: string; items: Tech[] }[] = [
       { name: "Power Apps", logo: "powerapps" },
       { name: "Power Automate", logo: "powerautomate" },
       { name: "Power BI", logo: "powerbi" },
+      { name: "Power Pages", logo: "powerpages" },
       { name: "Copilot Studio", logo: "copilot" },
       { name: "Dataverse", logo: "dataverse" },
     ],
@@ -359,6 +360,7 @@ export const techGroups: { group: string; items: Tech[] }[] = [
     items: [
       { name: "SAP", logo: "sap" },
       { name: "Snowflake", logo: "snowflake" },
+      { name: "Databricks", logo: "databricks" },
       { name: "Google", logo: "google" },
       { name: "Google Cloud", logo: "googlecloud" },
     ],
@@ -368,16 +370,19 @@ export const techGroups: { group: string; items: Tech[] }[] = [
     items: [
       { name: "Claude", logo: "claude" },
       { name: "OpenAI", logo: "openai" },
-      { name: "Obsidian", logo: "obsidian" },
+      { name: "React", logo: "react" },
+      { name: "TypeScript", logo: "typescript" },
+      { name: "Azure DevOps", logo: "azuredevops" },
       { name: "VS Code", logo: "vscode" },
       { name: "Git", logo: "git" },
       { name: "GitHub", logo: "github" },
+      { name: "Obsidian", logo: "obsidian" },
     ],
   },
 ];
 
 // Skills without a standard product logo — listed as a caption.
-export const techAlso = ["DAX", "Power Fx", "Power Query (M)", "PAC CLI", "HTML / SVG"];
+export const techAlso = ["Python", "SQL", "DAX", "Power Fx", "Power Query (M)", "PAC CLI", "HTML / SVG"];
 
 export const stats = [
   { value: "7", label: "Core capabilities" },

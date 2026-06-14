@@ -16,10 +16,18 @@ export default function HeroVisual() {
 
         {/* connecting lines */}
         <g stroke="rgba(231,234,239,0.28)" strokeWidth="1.25">
-          <line className="hv-line" x1="220" y1="205" x2="78" y2="86" />
-          <line className="hv-line" x1="220" y1="205" x2="372" y2="104" />
-          <line className="hv-line" x1="220" y1="205" x2="128" y2="330" />
-          <line className="hv-line" x1="220" y1="205" x2="362" y2="306" />
+          <line className="hv-line hv-flow" x1="220" y1="205" x2="78" y2="86" />
+          <line className="hv-line hv-flow" x1="220" y1="205" x2="372" y2="104" />
+          <line className="hv-line hv-flow" x1="220" y1="205" x2="128" y2="330" />
+          <line className="hv-line hv-flow" x1="220" y1="205" x2="362" y2="306" />
+        </g>
+
+        {/* sparks travelling from each node into the centre */}
+        <g>
+          <circle className="hv-spark hv-spark--a" cx="220" cy="205" r="3.4" fill="#b7da4c" />
+          <circle className="hv-spark hv-spark--b" cx="220" cy="205" r="3.4" fill="#dbfc52" />
+          <circle className="hv-spark hv-spark--c" cx="220" cy="205" r="3.4" fill="#b7da4c" />
+          <circle className="hv-spark hv-spark--d" cx="220" cy="205" r="3.4" fill="#dbfc52" />
         </g>
 
         {/* slow dashed ring */}
