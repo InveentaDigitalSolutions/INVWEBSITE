@@ -18,15 +18,17 @@ export default function Hero() {
             </span>
 
             <h1 className="hero__title">
-              Software that runs
+              Run leaner.
               <br />
-              your operations.
+              Scale faster.
+              <br />
+              Perform better.
             </h1>
 
             <p className="hero__lead">
-              Inveenta designs and builds custom enterprise software — turning complex, manual
-              operations into governed, scalable systems engineered for optimization, scalability
-              and performance.
+              Inveenta designs and builds custom enterprise software that turns complex, manual
+              operations into governed, scalable systems — engineered around how your business
+              actually works.
             </p>
 
             <div className="hero__actions">

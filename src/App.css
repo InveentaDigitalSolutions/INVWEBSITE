@@ -244,9 +244,10 @@
 
 .hero__title {
   font-size: clamp(2.4rem, 1.4rem + 3.6vw, 3.9rem);
+  line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--white);
-  max-width: 16ch;
+  max-width: 18ch;
 }
 
 .hero__lead {

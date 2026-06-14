@@ -391,7 +391,7 @@ export const techAlso = ["DAX", "Power Fx", "Power Query (M)", "PAC CLI", "HTML 
 
 export const stats = [
   { value: "7", label: "Core capabilities" },
-  { value: "8", label: "Built solutions" },
-  { value: "3", label: "Working languages" },
+  { value: "150+", label: "Built solutions" },
+  { value: "4", label: "Working languages" },
   { value: "100%", label: "Custom-built" },
 ];
