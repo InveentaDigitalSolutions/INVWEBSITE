@@ -675,10 +675,12 @@
 
 .industry-card {
   position: relative;
+  display: block;
   height: 380px;
   border-radius: var(--radius);
   overflow: hidden;
   isolation: isolate;
+  color: inherit;
 }
 
 .industry-card__img {
@@ -733,6 +735,123 @@
   font-size: 0.9rem;
   color: rgba(231, 234, 239, 0.85);
   line-height: 1.5;
+}
+
+.industry-card__cta {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--green);
+}
+
+.industry-card__arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.18s ease;
+}
+
+.industry-card:hover .industry-card__arrow {
+  transform: translateX(4px);
+}
+
+/* ---------- Industry deep-dive page ---------- */
+.ip-hero {
+  position: relative;
+  color: var(--white);
+  padding-top: 132px;
+  padding-bottom: 72px;
+  overflow: hidden;
+}
+
+.ip-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ip-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(22, 36, 59, 0.78) 0%,
+      rgba(22, 36, 59, 0.86) 100%
+    ),
+    radial-gradient(60% 80% at 80% 0%, rgba(22, 36, 59, 0.3), transparent 70%);
+}
+
+.ip-hero__inner {
+  position: relative;
+  max-width: 760px;
+}
+
+.ip-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.84rem;
+  color: var(--mist);
+  margin-bottom: 22px;
+}
+
+.ip-breadcrumb a:hover {
+  color: var(--green);
+}
+
+.ip-breadcrumb span {
+  color: rgba(231, 234, 239, 0.5);
+}
+
+.ip-breadcrumb__current {
+  color: var(--white);
+}
+
+.ip-hero__title {
+  font-size: clamp(2.4rem, 1.5rem + 3.4vw, 3.6rem);
+  color: var(--white);
+}
+
+.ip-hero__lead {
+  margin: 18px 0 30px;
+  font-size: 1.12rem;
+  color: var(--mist);
+}
+
+.ip-challenges {
+  background: var(--surface);
+}
+
+.ip-challenge-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.ip-challenge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 24px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.ip-challenge__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--green-deep);
 }
 
 /* ---------- Technology ---------- */
@@ -1166,6 +1285,9 @@
   }
   .industries__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .ip-challenge-list {
+    grid-template-columns: 1fr;
   }
   .pillars__grid {
     grid-template-columns: 1fr;

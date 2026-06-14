@@ -8,10 +8,10 @@ export const company = {
 };
 
 export const nav = [
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Industries", href: "#industries" },
-  { label: "Technology", href: "#technology" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Technology", href: "/#technology" },
 ];
 
 // The three brand pillars from the identity.
@@ -242,12 +242,30 @@ export const solutions: Offering[] = [
 ];
 
 // Industries served — each maps to the solutions most relevant to it.
-export const industries = [
+export type Industry = {
+  slug: string;
+  image: string;
+  name: string;
+  body: string;
+  intro: string;
+  challenges: string[];
+  solutions: string[];
+};
+
+export const industries: Industry[] = [
   {
     slug: "automotive",
     image: "automotive",
     name: "Automotive",
     body: "Traceable, data-quality-first solutions for OEMs and suppliers — where every record has to hold up.",
+    intro:
+      "From OEMs to tier-N suppliers, automotive runs on traceability. We build the tools that keep every part, process and approval auditable — and the reporting that makes that data usable on the line and in the boardroom.",
+    challenges: [
+      "Traceability and data quality under audit",
+      "Fragmented systems across plants and suppliers",
+      "Manual quality and inspection processes",
+      "Reporting that can't keep up with the line",
+    ],
     solutions: ["Quality Management", "Transport Management", "Inspection Tools", "Monitoring & Controlling"],
   },
   {
@@ -255,6 +273,14 @@ export const industries = [
     image: "logistics",
     name: "Logistics & Rail",
     body: "Transport tracking and operational visibility across complex, multi-party supply chains.",
+    intro:
+      "Goods move across many hands and many systems. We make the movement visible — state by state — and surface the exceptions before they turn into delays, so operations teams act on signals, not surprises.",
+    challenges: [
+      "Visibility across multi-party supply chains",
+      "Complex, multi-state transport workflows",
+      "Manual status chasing and re-keying",
+      "Operational reporting that lags reality",
+    ],
     solutions: ["Transport Management", "Monitoring & Controlling", "Inspection Tools", "Project Management"],
   },
   {
@@ -262,6 +288,14 @@ export const industries = [
     image: "finance",
     name: "Finance",
     body: "Controlling, reporting and cost-transparency tools that stand up to commercial scrutiny.",
+    intro:
+      "Controlling and commercial teams need numbers they can defend. We build the cost-transparency, monitoring and reporting tools that replace black-box spreadsheets with transparent, governed figures.",
+    challenges: [
+      "Cost transparency and TCO across the business",
+      "Monthly look-back instead of live signals",
+      "Spreadsheet-bound, black-box calculations",
+      "Governance and access under review",
+    ],
     solutions: ["Monitoring & Controlling", "TCO Tools", "Project Management", "Ticket Systems"],
   },
   {
@@ -269,6 +303,14 @@ export const industries = [
     image: "manufacturing",
     name: "Manufacturing",
     body: "Quality, inspection and process tools that connect the shop floor to the people who run it.",
+    intro:
+      "The shop floor generates data the office can't see. We connect the two — quality, inspection and process tools that turn floor activity into decisions, and that people actually want to use.",
+    challenges: [
+      "Paper checklists and manual re-keying",
+      "Quality and defect traceability",
+      "Disconnected shop-floor and office systems",
+      "Low adoption of new tools",
+    ],
     solutions: ["Quality Management", "Inspection Tools", "Monitoring & Controlling", "Gamification"],
   },
 ];

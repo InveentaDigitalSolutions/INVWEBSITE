@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer on-dark">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <a href="#top" aria-label="inveenta home">
+          <a href="/" aria-label="inveenta home">
             <Logo size="lg" variant="light" withTagline />
           </a>
         </div>

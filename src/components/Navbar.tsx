@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <header className={`nav nav--solid ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="container nav__inner">
-        <a href="#top" className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
+        <a href="/" className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
           <Logo size="sm" variant="dark" />
         </a>
 
@@ -27,7 +27,7 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <a href="#contact" className="btn btn-primary nav__cta" onClick={() => setOpen(false)}>
+          <a href="/#contact" className="btn btn-primary nav__cta" onClick={() => setOpen(false)}>
             Get in touch
           </a>
         </nav>
