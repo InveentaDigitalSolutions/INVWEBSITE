@@ -8,9 +8,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
 dist-ssr
 *.local
+# dist/ is committed on purpose — it holds the pre-built static site for
+# GitHub Pages "Static HTML" deploy (no CI build). Re-run `npm run build`
+# and commit dist/ after any source change.
 
 # Editor directories and files
 .vscode/*

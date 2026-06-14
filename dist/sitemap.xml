@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Update the domain to your live URL before submitting to search engines. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://inveenta.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://inveenta.com/industries/automotive</loc><priority>0.8</priority></url>
+  <url><loc>https://inveenta.com/industries/logistics</loc><priority>0.8</priority></url>
+  <url><loc>https://inveenta.com/industries/finance</loc><priority>0.8</priority></url>
+  <url><loc>https://inveenta.com/industries/manufacturing</loc><priority>0.8</priority></url>
+  <url><loc>https://inveenta.com/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://inveenta.com/imprint</loc><priority>0.3</priority></url>
+</urlset>
