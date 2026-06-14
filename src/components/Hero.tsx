@@ -1,5 +1,6 @@
 import { stats } from "../data";
 import Icon from "./Icon";
+import CountUp from "./CountUp";
 
 export default function Hero() {
   return (
@@ -37,7 +38,9 @@ export default function Hero() {
         <dl className="hero__kpis">
           {stats.map((s) => (
             <div className="kpi" key={s.label}>
-              <dd className="kpi__figure">{s.value}</dd>
+              <dd className="kpi__figure">
+                <CountUp value={s.value} />
+              </dd>
               <dt className="kpi__label">{s.label}</dt>
             </div>
           ))}

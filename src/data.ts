@@ -360,6 +360,7 @@ export const techGroups: { group: string; items: Tech[] }[] = [
       { name: "Microsoft", logo: "microsoft" },
       { name: "Azure", logo: "azure" },
       { name: "Microsoft Foundry", logo: "foundry" },
+      { name: "Microsoft Fabric", logo: "fabric" },
       { name: "SQL Server", logo: "sql" },
       { name: "SharePoint", logo: "sharepoint" },
     ],

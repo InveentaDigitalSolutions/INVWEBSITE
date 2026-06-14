@@ -2,6 +2,7 @@ import Hero from "./Hero";
 import Pillars from "./Pillars";
 import Capabilities from "./Capabilities";
 import Solutions from "./Solutions";
+import Showcase from "./Showcase";
 import Industries from "./Industries";
 import Technologies from "./Technologies";
 import Approach from "./Approach";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Pillars />
       <Capabilities />
       <Solutions />
+      <Showcase />
       <Industries />
       <Technologies />
       <Approach />

@@ -259,6 +259,11 @@
 .btn__icon {
   width: 18px;
   height: 18px;
+  transition: transform 0.18s ease;
+}
+
+.btn:hover .btn__icon {
+  transform: translateX(3px);
 }
 
 .hero__kpis {
@@ -756,6 +761,47 @@
 
 .industry-card:hover .industry-card__arrow {
   transform: translateX(4px);
+}
+
+/* ---------- Showcase band ---------- */
+.showcase {
+  position: relative;
+  overflow: hidden;
+  padding-block: 104px;
+  color: var(--white);
+}
+
+.showcase__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcase__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(22, 36, 59, 0.84), rgba(22, 36, 59, 0.9)),
+    radial-gradient(70% 90% at 50% 50%, rgba(22, 36, 59, 0.2), rgba(22, 36, 59, 0.86));
+}
+
+.showcase__inner {
+  position: relative;
+  max-width: 760px;
+}
+
+.showcase__inner h2 {
+  font-size: clamp(1.9rem, 1.2rem + 2.7vw, 2.9rem);
+  color: var(--white);
+  max-width: 20ch;
+}
+
+.showcase__inner p {
+  margin-top: 18px;
+  font-size: 1.08rem;
+  color: var(--mist);
+  max-width: 52ch;
 }
 
 /* ---------- Industry deep-dive page ---------- */
