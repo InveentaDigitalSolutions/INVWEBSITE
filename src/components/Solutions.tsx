@@ -12,7 +12,7 @@ export default function Solutions() {
           <span className="eyebrow">What we build</span>
           <h2>Custom solutions, engineered end to end.</h2>
           <p>
-            Thirteen solution types, one approach: governed, scalable systems built around your real
+            Fourteen solution types, one approach: governed, scalable systems built around your real
             workflows — never off-the-shelf. Select any solution to go deeper.
           </p>
         </div>

@@ -147,6 +147,20 @@ export const solutions: Solution[] = [
     tech: ["Copilot Studio", "Power Automate", "Azure"],
   },
   {
+    icon: "forecast",
+    title: "Forecasting & Predictive Models",
+    short: "Turn your history into a credible view of what's coming next.",
+    detail:
+      "Demand, cost, capacity or risk — we build forecasting and predictive models grounded in your own data, with assumptions made explicit and accuracy you can monitor over time. Surfaced through dashboards and alerts so the forecast actually drives decisions.",
+    capabilities: [
+      "Demand & capacity forecasting",
+      "Trend & scenario modeling",
+      "Accuracy tracking & back-testing",
+      "Forecast-driven alerts",
+    ],
+    tech: ["Power BI", "Power Query", "Azure"],
+  },
+  {
     icon: "gauge",
     title: "Reporting Dashboards",
     short: "Multi-page dashboards leaders actually use.",

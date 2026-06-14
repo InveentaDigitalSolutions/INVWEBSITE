@@ -88,6 +88,12 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M8 8v8M11 8v8M14 8v8M16.5 8v8" />
     </>
   ),
+  forecast: (
+    <>
+      <path d="M3 17l5-5 3.5 3.5L20 7" />
+      <path d="M15 7h5v5" />
+    </>
+  ),
   // --- ui glyphs ---
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   check: <path d="m5 12 4.5 4.5L19 7" />,

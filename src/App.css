@@ -231,6 +231,68 @@
   font-size: clamp(2.2rem, 1.4rem + 2.4vw, 3.1rem);
 }
 
+/* Hero entrance — staggered fade-up on load + slow gradient drift */
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero__kicker,
+.hero__title,
+.hero__lead,
+.hero__actions,
+.hero__kpis {
+  animation: heroIn 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero__kicker {
+  animation-delay: 0.06s;
+}
+.hero__title {
+  animation-delay: 0.16s;
+}
+.hero__lead {
+  animation-delay: 0.3s;
+}
+.hero__actions {
+  animation-delay: 0.42s;
+}
+.hero__kpis {
+  animation-delay: 0.54s;
+}
+
+@keyframes heroDrift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-2.5%, 1.5%, 0) scale(1.07);
+  }
+}
+
+.hero__texture {
+  animation: heroDrift 26s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__kicker,
+  .hero__title,
+  .hero__lead,
+  .hero__actions,
+  .hero__kpis,
+  .hero__texture {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- Pillars (light) ---------- */
 .pillars {
   border-bottom: 1px solid var(--line);
