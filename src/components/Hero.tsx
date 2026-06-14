@@ -2,13 +2,14 @@ import { stats } from "../data";
 import Icon from "./Icon";
 import CountUp from "./CountUp";
 import HeroVisual from "./HeroVisual";
+import { asset } from "../asset";
 
 export default function Hero() {
   return (
     <section className="hero on-dark" id="top">
+      <img className="hero__bg" src={asset("img/hero-bg.jpg")} alt="" aria-hidden="true" />
+      <div className="hero__overlay" aria-hidden="true" />
       <div className="hero__aurora" aria-hidden="true" />
-      <div className="hero__beam" aria-hidden="true" />
-      <div className="hero__texture" aria-hidden="true" />
       <div className="container hero__inner">
         <div className="hero__top">
           <div className="hero__content">

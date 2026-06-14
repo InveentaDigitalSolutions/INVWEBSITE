@@ -5,17 +5,20 @@ export const company = {
   legalName: "Inveenta S.A.",
   tagline: "engineering intelligent business",
   email: "santiago.garciaruiz@inveenta.com",
-  // To send form submissions straight to the inbox, create a form at
-  // https://formspree.io and paste its endpoint here (e.g.
-  // "https://formspree.io/f/abcdwxyz"). While empty, the form falls back
-  // to opening the visitor's email client (mailto).
-  formEndpoint: "",
+  // Web3Forms access key for PRIVATE form delivery — submissions are emailed
+  // to your inbox and your address NEVER appears in the site code (the key is a
+  // random ID). Get a free key in ~30s at https://web3forms.com (enter your
+  // inbox email → the key is emailed to you), then paste it here.
+  // While empty, the form temporarily falls back to a mailto (which does reveal
+  // the address); add the key to make it fully private.
+  formAccessKey: "",
 };
 
 export const nav = [
   { label: "Solutions", href: "/#solutions" },
   { label: "Industries", href: "/#industries" },
   { label: "Capabilities", href: "/#capabilities" },
+  { label: "About", href: "/#about" },
   { label: "Technology", href: "/#technology" },
 ];
 
@@ -42,6 +45,7 @@ export type Offering = {
   short: string;
   detail: string;
   experience: string[];
+  image?: string; // optional photo (filename in /public/img) — used on solution cards
 };
 
 // CAPABILITIES — the disciplines / "how we work" (horizontal).
@@ -143,6 +147,7 @@ export const capabilities: Offering[] = [
 export const solutions: Offering[] = [
   {
     icon: "truck",
+    image: "sol-transport",
     title: "Transport Management",
     short: "Logistics and rail-transport tracking, end to end.",
     detail:
@@ -156,6 +161,7 @@ export const solutions: Offering[] = [
   },
   {
     icon: "shield",
+    image: "sol-quality",
     title: "Quality Management",
     short: "Traceable quality tracking built for regulated environments.",
     detail:
@@ -169,6 +175,7 @@ export const solutions: Offering[] = [
   },
   {
     icon: "scan",
+    image: "sol-inspection",
     title: "Inspection Tools",
     short: "Mobile inspection apps with built-in barcode and QR scanning.",
     detail:
@@ -182,6 +189,7 @@ export const solutions: Offering[] = [
   },
   {
     icon: "ticket",
+    image: "sol-ticketing",
     title: "Ticket Systems",
     short: "Issue and request tracking that fits your process — not the other way around.",
     detail:
@@ -195,6 +203,7 @@ export const solutions: Offering[] = [
   },
   {
     icon: "tasks",
+    image: "sol-project",
     title: "Project Management",
     short: "Project tracking across types, with milestones and early warnings.",
     detail:
@@ -208,6 +217,7 @@ export const solutions: Offering[] = [
   },
   {
     icon: "pulse",
+    image: "sol-monitoring",
     title: "Monitoring & Controlling",
     short: "Early-warning logic that flags problems before they escalate.",
     detail:
@@ -221,6 +231,7 @@ export const solutions: Offering[] = [
   },
   {
     icon: "calculator",
+    image: "sol-tco",
     title: "TCO Tools",
     short: "Total-cost-of-ownership models your stakeholders can trust.",
     detail:
@@ -233,6 +244,7 @@ export const solutions: Offering[] = [
   },
   {
     icon: "trophy",
+    image: "sol-gamification",
     title: "Gamification",
     short: "Leaderboards and engagement mechanics that drive real adoption.",
     detail:

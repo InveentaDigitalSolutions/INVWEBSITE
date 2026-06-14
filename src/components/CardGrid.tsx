@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Offering } from "../data";
 import Icon from "./Icon";
+import { asset } from "../asset";
 
 // Shared expandable card grid, used by both Capabilities and Solutions.
 export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPrefix: string }) {
@@ -11,7 +12,15 @@ export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPre
       {items.map((s) => {
         const isOpen = open === s.title;
         return (
-          <article key={s.title} className={`solution-card ${isOpen ? "is-open" : ""}`}>
+          <article
+            key={s.title}
+            className={`solution-card ${s.image ? "has-photo" : ""} ${isOpen ? "is-open" : ""}`}
+          >
+            {s.image && (
+              <span className="solution-card__photo" aria-hidden="true">
+                <img src={asset(`img/${s.image}.jpg`)} alt="" loading="lazy" />
+              </span>
+            )}
             <button
               className="solution-card__head"
               onClick={() => setOpen(isOpen ? null : s.title)}

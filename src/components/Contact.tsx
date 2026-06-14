@@ -37,8 +37,8 @@ export default function Contact() {
     const org = String(data.get("company") || "");
     const message = String(data.get("message") || "");
 
-    // No backend configured → open the visitor's email client (still a real send).
-    if (!company.formEndpoint) {
+    // No key configured yet → temporary mailto fallback (reveals the address).
+    if (!company.formAccessKey) {
       const subject = `Project enquiry from ${name}${org ? ` (${org})` : ""}`;
       const body = `Name: ${name}\nEmail: ${email}\nCompany: ${org}\n\n${message}`;
       window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(
@@ -49,14 +49,24 @@ export default function Contact() {
       return;
     }
 
+    // Web3Forms — private delivery to the inbox; your address is never in the code.
     setStatus("submitting");
     try {
-      const res = await fetch(company.formEndpoint, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company: org, message }),
+        body: JSON.stringify({
+          access_key: company.formAccessKey,
+          subject: `Project enquiry from ${name}${org ? ` (${org})` : ""}`,
+          from_name: name,
+          name,
+          email,
+          company: org,
+          message,
+        }),
       });
-      if (!res.ok) throw new Error("Request failed");
+      const json = await res.json();
+      if (!json.success) throw new Error("Request failed");
       setStatus("success");
       form.reset();
     } catch {
