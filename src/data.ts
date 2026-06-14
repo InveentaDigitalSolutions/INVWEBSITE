@@ -163,28 +163,14 @@ export const solutions: Offering[] = [
     icon: "shield",
     image: "sol-quality",
     title: "Quality Management",
-    short: "Traceable quality tracking built for regulated environments.",
+    short: "Traceable quality tracking and mobile inspection for regulated environments.",
     detail:
-      "Defect and quality-tracking applications with audit trails, role-based access and data-quality controls — designed for automotive and logistics contexts where traceability and data integrity are non-negotiable.",
+      "Defect and quality-tracking applications with audit trails, role-based access and data-quality controls — plus mobile inspection with barcode and QR scanning that captures structured data in the field. Designed for automotive and logistics contexts where traceability and data integrity are non-negotiable.",
     experience: [
       "Defect and quality tracking in regulated automotive contexts",
-      "Audit trails and role-based access",
-      "Data-quality controls protecting traceability",
-      "Goods-out and inspection workflows",
-    ],
-  },
-  {
-    icon: "scan",
-    image: "sol-inspection",
-    title: "Inspection Tools",
-    short: "Mobile inspection apps with built-in barcode and QR scanning.",
-    detail:
-      "Inspection and audit applications with scan functionality that capture structured data in the field — barcodes, QR codes, photos and evidence — and sync it straight into Dataverse, replacing paper checklists and re-keying.",
-    experience: [
-      "A document-scanning app with barcode capture",
-      "Structured field capture syncing to Dataverse",
-      "Photo and evidence attachment",
-      "Replacing paper checklists and re-keying",
+      "Mobile inspection with barcode & QR scanning",
+      "Audit trails, role-based access and data-quality controls",
+      "Photo and evidence capture synced to Dataverse — replacing paper checklists",
     ],
   },
   {
@@ -232,13 +218,13 @@ export const solutions: Offering[] = [
   {
     icon: "calculator",
     image: "sol-tco",
-    title: "TCO Tools",
-    short: "Total-cost-of-ownership models your stakeholders can trust.",
+    title: "Cost & TCO",
+    short: "Total-cost-of-ownership and cost models your stakeholders can trust.",
     detail:
-      "Calculation tools that turn cost drivers into clear, comparable scenarios, with documented logic and exportable reports — so commercial decisions rest on transparent numbers rather than a black-box spreadsheet.",
+      "Cost and total-cost-of-ownership models that turn cost drivers into clear, comparable scenarios, with documented logic and exportable reports — so commercial decisions rest on transparent numbers rather than a black-box spreadsheet.",
     experience: [
       "Person-day effort and role-based pricing models",
-      "Scenario and cost comparison tooling",
+      "Scenario and cost comparison",
       "Documented, exportable calculations",
     ],
   },
@@ -283,7 +269,7 @@ export const industries: Industry[] = [
       "Manual quality and inspection processes",
       "Reporting that can't keep up with the line",
     ],
-    solutions: ["Quality Management", "Transport Management", "Inspection Tools", "Monitoring & Controlling"],
+    solutions: ["Quality Management", "Transport Management", "Monitoring & Controlling", "Cost & TCO"],
   },
   {
     slug: "logistics",
@@ -298,7 +284,7 @@ export const industries: Industry[] = [
       "Manual status chasing and re-keying",
       "Operational reporting that lags reality",
     ],
-    solutions: ["Transport Management", "Monitoring & Controlling", "Inspection Tools", "Project Management"],
+    solutions: ["Transport Management", "Monitoring & Controlling", "Quality Management", "Project Management"],
   },
   {
     slug: "finance",
@@ -313,7 +299,7 @@ export const industries: Industry[] = [
       "Spreadsheet-bound, black-box calculations",
       "Governance and access under review",
     ],
-    solutions: ["Monitoring & Controlling", "TCO Tools", "Project Management", "Ticket Systems"],
+    solutions: ["Monitoring & Controlling", "Cost & TCO", "Project Management", "Ticket Systems"],
   },
   {
     slug: "manufacturing",
@@ -328,7 +314,7 @@ export const industries: Industry[] = [
       "Disconnected shop-floor and office systems",
       "Low adoption of new tools",
     ],
-    solutions: ["Quality Management", "Inspection Tools", "Monitoring & Controlling", "Gamification"],
+    solutions: ["Quality Management", "Project Management", "Monitoring & Controlling", "Gamification"],
   },
 ];
 
