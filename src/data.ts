@@ -367,6 +367,14 @@ export const techGroups: { group: string; items: Tech[] }[] = [
       { name: "VS Code", logo: "vscode" },
     ],
   },
+  {
+    group: "AI & tools",
+    items: [
+      { name: "Claude", logo: "claude" },
+      { name: "OpenAI", logo: "openai" },
+      { name: "Obsidian", logo: "obsidian" },
+    ],
+  },
 ];
 
 // Skills without a standard product logo — listed as a caption.
