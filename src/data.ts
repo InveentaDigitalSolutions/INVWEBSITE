@@ -364,15 +364,17 @@ export const techGroups: { group: string; items: Tech[] }[] = [
       { name: "SAP", logo: "sap" },
       { name: "Google", logo: "google" },
       { name: "Google Cloud", logo: "googlecloud" },
-      { name: "VS Code", logo: "vscode" },
     ],
   },
   {
-    group: "AI & tools",
+    group: "AI, dev & tools",
     items: [
       { name: "Claude", logo: "claude" },
       { name: "OpenAI", logo: "openai" },
       { name: "Obsidian", logo: "obsidian" },
+      { name: "VS Code", logo: "vscode" },
+      { name: "Git", logo: "git" },
+      { name: "GitHub", logo: "github" },
     ],
   },
 ];
