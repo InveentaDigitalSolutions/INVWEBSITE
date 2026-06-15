@@ -263,9 +263,9 @@ export const solutions: Offering[] = [
     icon: "merge",
     image: "sol-pmi",
     title: "Post-Merger Integration",
-    short: "Track and steer the integration of two organizations into one.",
+    short: "A digital solution to plan, track and steer the integration of two organizations into one.",
     detail:
-      "Tooling for post-merger integration (PMI) — workstreams, milestones, synergies and risks across the combining organizations in one governed view. So integration leads can steer the programme, track value capture, and flag what's slipping before it costs the deal.",
+      "A digital solution for post-merger integration (PMI) — workstreams, milestones, synergies and risks across the combining organizations in one governed view. So integration leads can steer the programme, track value capture, and flag what's slipping before it costs the deal.",
     experience: [
       "Workstream and milestone tracking across both organizations",
       "Synergy and value-capture monitoring against targets",
