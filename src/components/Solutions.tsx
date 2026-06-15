@@ -1,22 +1,20 @@
-import { solutions } from "../data";
+import { useC, useLp } from "../i18n/LocaleContext";
 import CardGrid from "./CardGrid";
 
 export default function Solutions() {
+  const { solutionsSection, solutions } = useC();
+  const lp = useLp();
   return (
     <section className="section solutions" id="solutions">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">What we build</span>
-          <h2>Solutions, ready to make your own.</h2>
-          <p>
-            Productized use-cases we've delivered before — each one custom-fitted to your data and
-            process, and mapped to the industries we work in.
-          </p>
+          <span className="eyebrow">{solutionsSection.eyebrow}</span>
+          <h2>{solutionsSection.h2}</h2>
+          <p>{solutionsSection.p}</p>
         </div>
         <CardGrid items={solutions} idPrefix="sol" />
         <p className="solutions__note">
-          Don't see your exact use case? Every engagement is custom —
-          <a href="#contact"> tell us what you're trying to solve</a>.
+          {solutionsSection.note} <a href={`${lp("/")}#contact`}>{solutionsSection.noteLink}</a>.
         </p>
       </div>
     </section>

@@ -1,19 +1,21 @@
 import type { CSSProperties } from "react";
+import { useC } from "../i18n/LocaleContext";
 
 // A stylised "intelligent operation" dashboard — KPIs, a live bar chart and a
 // trend line — to show the kind of system Inveenta builds (not a real product).
 const bars = [44, 60, 52, 74, 58, 86, 70, 92];
 
 export default function HeroVisual() {
+  const { heroVisual } = useC();
   return (
     <div className="hv" aria-hidden="true">
       <div className="dash__glow" />
       <div className="dash">
         <div className="dash__top">
           <span className="dash__live">
-            <span className="dash__livedot" /> live
+            <span className="dash__livedot" /> {heroVisual.live}
           </span>
-          <span className="dash__title">operations overview</span>
+          <span className="dash__title">{heroVisual.overview}</span>
           <span className="dash__dots">
             <i />
             <i />
@@ -22,18 +24,12 @@ export default function HeroVisual() {
         </div>
 
         <div className="dash__kpis">
-          <div className="dash__kpi">
-            <strong>−40%</strong>
-            <span>Manual work</span>
-          </div>
-          <div className="dash__kpi dash__kpi--accent">
-            <strong>5×</strong>
-            <span>ROI</span>
-          </div>
-          <div className="dash__kpi">
-            <strong>98%</strong>
-            <span>On-time</span>
-          </div>
+          {heroVisual.kpis.map((k, i) => (
+            <div className={`dash__kpi ${i === 1 ? "dash__kpi--accent" : ""}`} key={k.label}>
+              <strong>{k.value}</strong>
+              <span>{k.label}</span>
+            </div>
+          ))}
         </div>
 
         <div className="dash__chart">
@@ -60,7 +56,7 @@ export default function HeroVisual() {
         </div>
 
         <div className="dash__status">
-          <span className="dash__statusdot" /> All systems on track
+          <span className="dash__statusdot" /> {heroVisual.status}
         </div>
       </div>
     </div>

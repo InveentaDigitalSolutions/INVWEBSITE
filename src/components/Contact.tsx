@@ -1,10 +1,12 @@
 import { useState, type FormEvent } from "react";
 import { company } from "../data";
+import { useC } from "../i18n/LocaleContext";
 import Icon from "./Icon";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
+  const { contact } = useC();
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -14,12 +16,10 @@ export default function Contact() {
     const email = (data.get("email") as string)?.trim();
     const message = (data.get("message") as string)?.trim();
 
-    if (!name) next.name = "Please enter your name.";
-    if (!email) next.email = "Please enter your email.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      next.email = "That email doesn't look right.";
-    if (!message || message.length < 10)
-      next.message = "Tell us a little more (at least 10 characters).";
+    if (!name) next.name = contact.errors.name;
+    if (!email) next.email = contact.errors.email;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = contact.errors.emailInvalid;
+    if (!message || message.length < 10) next.message = contact.errors.message;
 
     return next;
   }
@@ -46,7 +46,6 @@ export default function Contact() {
     const org = String(data.get("company") || "");
     const message = String(data.get("message") || "");
 
-    // Web3Forms — private delivery to the inbox; your address is never in the code.
     setStatus("submitting");
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -54,7 +53,7 @@ export default function Contact() {
         headers: { Accept: "application/json", "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: company.formAccessKey,
-          subject: `Project enquiry from ${name}${org ? ` (${org})` : ""}`,
+          subject: `${contact.subject} ${name}${org ? ` (${org})` : ""}`,
           from_name: name,
           name,
           email,
@@ -76,12 +75,9 @@ export default function Contact() {
       <div className="contact__texture" aria-hidden="true" />
       <div className="container contact__grid">
         <div className="contact__intro">
-          <span className="eyebrow">Contact</span>
-          <h2>Let's build something that works.</h2>
-          <p>
-            Tell us what you're trying to solve using the form. We'll reply within one business day
-            with honest thoughts on scope, timeline, and whether we're the right fit.
-          </p>
+          <span className="eyebrow">{contact.eyebrow}</span>
+          <h2>{contact.h2}</h2>
+          <p>{contact.p}</p>
         </div>
 
         <div className="contact__form-wrap">
@@ -90,10 +86,10 @@ export default function Contact() {
               <div className="contact__success-icon">
                 <Icon name="check" />
               </div>
-              <h3>Thanks — message sent.</h3>
-              <p>We'll be in touch shortly at the email you provided.</p>
+              <h3>{contact.success.title}</h3>
+              <p>{contact.success.body}</p>
               <button className="btn btn-ghost" onClick={() => setStatus("idle")}>
-                Send another
+                {contact.success.again}
               </button>
             </div>
           ) : (
@@ -108,43 +104,43 @@ export default function Contact() {
                 style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
               />
               <div className="field">
-                <label htmlFor="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Jane Cooper" />
+                <label htmlFor="name">{contact.labels.name}</label>
+                <input id="name" name="name" type="text" placeholder={contact.placeholders.name} />
                 {errors.name && <span className="field__error">{errors.name}</span>}
               </div>
 
               <div className="field">
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="jane@company.com" />
+                <label htmlFor="email">{contact.labels.email}</label>
+                <input id="email" name="email" type="email" placeholder={contact.placeholders.email} />
                 {errors.email && <span className="field__error">{errors.email}</span>}
               </div>
 
               <div className="field">
                 <label htmlFor="company">
-                  Company <span className="field__opt">(optional)</span>
+                  {contact.labels.company} <span className="field__opt">{contact.labels.optional}</span>
                 </label>
-                <input id="company" name="company" type="text" placeholder="Acme Inc." />
+                <input id="company" name="company" type="text" placeholder={contact.placeholders.company} />
               </div>
 
               <div className="field">
-                <label htmlFor="message">How can we help?</label>
+                <label htmlFor="message">{contact.labels.message}</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
-                  placeholder="Briefly describe what you're trying to build or improve…"
+                  placeholder={contact.placeholders.message}
                 />
                 {errors.message && <span className="field__error">{errors.message}</span>}
               </div>
 
               {status === "error" && (
                 <p className="contact__formerror" role="alert">
-                  Something went wrong sending your message. Please try again in a moment.
+                  {contact.errors.submit}
                 </p>
               )}
 
               <button className="btn btn-primary contact__submit" disabled={status === "submitting"}>
-                {status === "submitting" ? "Sending…" : "Send message"}
+                {status === "submitting" ? contact.submit.sending : contact.submit.idle}
                 {status !== "submitting" && <Icon name="arrow" className="btn__icon" />}
               </button>
             </form>

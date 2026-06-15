@@ -51,6 +51,38 @@
   }
 }
 
+/* Language switcher — compact segmented pill */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.lang-switch__btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--grey);
+  padding: 5px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.lang-switch__btn:hover {
+  color: var(--navy);
+}
+.lang-switch__btn.is-active {
+  background: var(--navy);
+  color: #fff;
+}
+
 /* ---------- Navbar ---------- */
 .nav {
   position: sticky;

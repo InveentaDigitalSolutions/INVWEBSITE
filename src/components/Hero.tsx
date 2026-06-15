@@ -1,10 +1,11 @@
-import { stats } from "../data";
+import { useC } from "../i18n/LocaleContext";
 import Icon from "./Icon";
 import CountUp from "./CountUp";
 import HeroVisual from "./HeroVisual";
 import { asset } from "../asset";
 
 export default function Hero() {
+  const { hero, stats } = useC();
   return (
     <section className="hero on-dark" id="top">
       <img className="hero__bg" src={asset("img/hero-bg.jpg")} alt="" aria-hidden="true" />
@@ -15,29 +16,26 @@ export default function Hero() {
           <div className="hero__content">
             <span className="hero__kicker">
               <span className="hero__kicker-dot" aria-hidden="true" />
-              engineering intelligent business
+              {hero.kicker}
             </span>
 
             <h1 className="hero__title">
-              Run leaner.
-              <br />
-              Scale faster.
-              <br />
-              Perform better.
+              {hero.titleLines.map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < hero.titleLines.length - 1 && <br />}
+                </span>
+              ))}
             </h1>
 
-            <p className="hero__lead">
-              Inveenta designs and builds custom enterprise software that turns complex, manual
-              operations into governed, scalable systems — engineered around how your business
-              actually works.
-            </p>
+            <p className="hero__lead">{hero.lead}</p>
 
             <div className="hero__actions">
               <a href="#contact" className="btn btn-primary">
-                Start a project <Icon name="arrow" className="btn__icon" />
+                {hero.primary} <Icon name="arrow" className="btn__icon" />
               </a>
               <a href="#solutions" className="btn btn-ghost-light">
-                Explore solutions
+                {hero.ghost}
               </a>
             </div>
           </div>

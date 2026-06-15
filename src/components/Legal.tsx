@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { company } from "../data";
+import { useC, useLp } from "../i18n/LocaleContext";
 import Seo from "./Seo";
 
 function LegalLayout({
@@ -9,11 +10,13 @@ function LegalLayout({
   title: string;
   children: React.ReactNode;
 }) {
+  const { industryPage } = useC();
+  const lp = useLp();
   return (
     <main className="section legal-page" id="main">
       <div className="container legal-page__inner">
-        <Link to="/" className="legal-page__back">
-          ← Back to home
+        <Link to={lp("/")} className="legal-page__back">
+          ← {industryPage.breadcrumbHome}
         </Link>
         <h1>{title}</h1>
         <div className="legal-page__body">{children}</div>
@@ -25,9 +28,10 @@ function LegalLayout({
 // NOTE: These are starting templates. Have them reviewed by legal counsel and
 // complete the bracketed details before relying on them publicly.
 export function Privacy() {
+  const { seo } = useC();
   return (
     <>
-      <Seo title="Privacy Policy — Inveenta" description="How Inveenta handles your data." />
+      <Seo title={seo.privacyTitle} description="How Inveenta handles your data." />
       <LegalLayout title="Privacy Policy">
         <p>
           This Privacy Policy explains how {company.legalName} ("Inveenta", "we") handles personal
@@ -64,9 +68,10 @@ export function Privacy() {
 }
 
 export function Imprint() {
+  const { seo } = useC();
   return (
     <>
-      <Seo title="Imprint — Inveenta" description="Legal information for Inveenta." />
+      <Seo title={seo.imprintTitle} description="Legal information for Inveenta." />
       <LegalLayout title="Imprint">
         <p>Information in accordance with applicable disclosure requirements.</p>
         <h2>Company</h2>

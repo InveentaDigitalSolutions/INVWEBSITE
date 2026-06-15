@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Update the domain to your live URL before submitting to search engines. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- English (default) -->
   <url><loc>https://inveenta.com/</loc><priority>1.0</priority></url>
   <url><loc>https://inveenta.com/industries/automotive</loc><priority>0.8</priority></url>
   <url><loc>https://inveenta.com/industries/logistics</loc><priority>0.8</priority></url>
@@ -8,4 +8,16 @@
   <url><loc>https://inveenta.com/industries/manufacturing</loc><priority>0.8</priority></url>
   <url><loc>https://inveenta.com/privacy</loc><priority>0.3</priority></url>
   <url><loc>https://inveenta.com/imprint</loc><priority>0.3</priority></url>
+  <!-- German -->
+  <url><loc>https://inveenta.com/de</loc><priority>0.9</priority></url>
+  <url><loc>https://inveenta.com/de/industries/automotive</loc><priority>0.7</priority></url>
+  <url><loc>https://inveenta.com/de/industries/logistics</loc><priority>0.7</priority></url>
+  <url><loc>https://inveenta.com/de/industries/finance</loc><priority>0.7</priority></url>
+  <url><loc>https://inveenta.com/de/industries/manufacturing</loc><priority>0.7</priority></url>
+  <!-- Spanish -->
+  <url><loc>https://inveenta.com/es</loc><priority>0.9</priority></url>
+  <url><loc>https://inveenta.com/es/industries/automotive</loc><priority>0.7</priority></url>
+  <url><loc>https://inveenta.com/es/industries/logistics</loc><priority>0.7</priority></url>
+  <url><loc>https://inveenta.com/es/industries/finance</loc><priority>0.7</priority></url>
+  <url><loc>https://inveenta.com/es/industries/manufacturing</loc><priority>0.7</priority></url>
 </urlset>

@@ -1,17 +1,15 @@
-import { capabilities } from "../data";
+import { useC } from "../i18n/LocaleContext";
 import CardGrid from "./CardGrid";
 
 export default function Capabilities() {
+  const { capabilitiesSection, capabilities } = useC();
   return (
     <section className="section capabilities" id="expertise">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">What we do</span>
-          <h2>Expertise, applied end to end.</h2>
-          <p>
-            The disciplines we bring to every engagement — from data and BI to automation, AI and
-            governance. The how behind everything we build.
-          </p>
+          <span className="eyebrow">{capabilitiesSection.eyebrow}</span>
+          <h2>{capabilitiesSection.h2}</h2>
+          <p>{capabilitiesSection.p}</p>
         </div>
         <CardGrid items={capabilities} idPrefix="cap" />
       </div>

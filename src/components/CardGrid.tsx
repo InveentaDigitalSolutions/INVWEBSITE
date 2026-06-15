@@ -1,19 +1,21 @@
 import { useState } from "react";
-import type { Offering } from "../data";
+import type { Offering } from "../i18n/types";
+import { useC } from "../i18n/LocaleContext";
 import Icon from "./Icon";
 import { asset } from "../asset";
 
 // Shared expandable card grid, used by both Capabilities and Solutions.
 export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPrefix: string }) {
   const [open, setOpen] = useState<string | null>(null);
+  const { cardGrid } = useC();
 
   return (
     <div className="solutions__grid">
       {items.map((s) => {
-        const isOpen = open === s.title;
+        const isOpen = open === s.id;
         return (
           <article
-            key={s.title}
+            key={s.id}
             className={`solution-card ${s.image ? "has-photo" : ""} ${isOpen ? "is-open" : ""}`}
           >
             {s.image && (
@@ -23,9 +25,9 @@ export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPre
             )}
             <button
               className="solution-card__head"
-              onClick={() => setOpen(isOpen ? null : s.title)}
+              onClick={() => setOpen(isOpen ? null : s.id)}
               aria-expanded={isOpen}
-              aria-controls={`${idPrefix}-${s.title}`}
+              aria-controls={`${idPrefix}-${s.id}`}
             >
               <span className="solution-card__icon">
                 <Icon name={s.icon} />
@@ -40,9 +42,9 @@ export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPre
             </button>
 
             {isOpen && (
-              <div className="solution-card__detail" id={`${idPrefix}-${s.title}`}>
+              <div className="solution-card__detail" id={`${idPrefix}-${s.id}`}>
                 <p className="solution-card__body">{s.detail}</p>
-                <span className="solution-card__label">What we've delivered</span>
+                <span className="solution-card__label">{cardGrid.whatWeBuilt}</span>
                 <ul className="solution-card__list">
                   {s.experience.map((e) => (
                     <li key={e}>

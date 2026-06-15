@@ -1,7 +1,8 @@
-import { pillars } from "../data";
+import { useC } from "../i18n/LocaleContext";
 
 // The three brand pillars, on a light surface with the green square as the spark.
 export default function Pillars() {
+  const { pillars } = useC();
   return (
     <section className="pillars">
       <div className="container">

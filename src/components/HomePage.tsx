@@ -11,15 +11,14 @@ import Approach from "./Approach";
 import Contact from "./Contact";
 import Seo from "./Seo";
 import { useReveal } from "../useReveal";
+import { useC } from "../i18n/LocaleContext";
 
 export default function HomePage() {
   useReveal();
+  const { seo } = useC();
   return (
     <main id="main">
-      <Seo
-        title="Inveenta — engineering intelligent business"
-        description="Custom enterprise software that turns complex, manual operations into governed, scalable systems. Run leaner. Scale faster. Perform better."
-      />
+      <Seo title={seo.homeTitle} description={seo.homeDescription} />
       <Hero />
       <Pillars />
       <Solutions />

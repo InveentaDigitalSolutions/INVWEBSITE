@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import IndustryPage from "./components/IndustryPage";
 import { Privacy, Imprint } from "./components/Legal";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { LocaleProvider } from "./i18n/LocaleContext";
 import "./App.css";
 
 // Scroll to top on route change; honour in-page hash anchors.
@@ -26,9 +27,9 @@ function ScrollManager() {
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
 
-function App() {
+function Shell() {
   return (
-    <BrowserRouter basename={basename}>
+    <>
       <a href="#main" className="skip-link">
         Skip to content
       </a>
@@ -36,14 +37,30 @@ function App() {
       <Navbar />
       <ErrorBoundary>
         <Routes>
+          {/* English (no prefix) */}
           <Route path="/" element={<HomePage />} />
           <Route path="/industries/:slug" element={<IndustryPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/imprint" element={<Imprint />} />
+          {/* Locale-prefixed (de, es) */}
+          <Route path="/:locale" element={<HomePage />} />
+          <Route path="/:locale/industries/:slug" element={<IndustryPage />} />
+          <Route path="/:locale/privacy" element={<Privacy />} />
+          <Route path="/:locale/imprint" element={<Imprint />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter basename={basename}>
+      <LocaleProvider>
+        <Shell />
+      </LocaleProvider>
     </BrowserRouter>
   );
 }

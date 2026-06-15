@@ -1,32 +1,19 @@
 import Icon from "./Icon";
 import { asset } from "../asset";
-
-const points = [
-  "Architecture, development and analysis in one team",
-  "Built for regulated, enterprise-grade delivery",
-  "Senior, hands-on engineering from discovery to handover",
-  "You own the code and the data",
-];
+import { useC } from "../i18n/LocaleContext";
 
 export default function About() {
+  const { about } = useC();
   return (
     <section className="section about" id="about">
       <div className="container about__grid">
         <div className="about__copy">
-          <span className="eyebrow">About</span>
-          <h2>One partner for the whole build.</h2>
-          <p>
-            Inveenta is a senior engineering practice that pairs solution architecture, hands-on
-            development and business analysis in one place — the people who run discovery also write
-            the code. We design systems that hold up under real data and real scrutiny, and stay
-            close while they grow.
-          </p>
-          <p>
-            Delivery is built for regulated, enterprise environments — automotive, logistics and
-            finance — and stays in one pair of hands from the first question to the final handover.
-          </p>
+          <span className="eyebrow">{about.eyebrow}</span>
+          <h2>{about.h2}</h2>
+          <p>{about.p1}</p>
+          <p>{about.p2}</p>
           <ul className="about__points">
-            {points.map((p) => (
+            {about.points.map((p) => (
               <li key={p}>
                 <Icon name="check" className="about__check" />
                 {p}
@@ -35,7 +22,7 @@ export default function About() {
           </ul>
         </div>
         <div className="about__media reveal">
-          <img src={asset("img/about.jpg")} alt="Inveenta at work" loading="lazy" />
+          <img src={asset("img/about.jpg")} alt={about.imgAlt} loading="lazy" />
         </div>
       </div>
     </section>
