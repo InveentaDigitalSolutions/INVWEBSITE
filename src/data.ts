@@ -383,6 +383,6 @@ export const techAlso = ["Python", "SQL", "DAX", "Power Fx", "Power Query (M)", 
 export const stats = [
   { value: "7", label: "Core expertise" },
   { value: "150+", label: "Built solutions" },
-  { value: "4", label: "Working languages" },
+  { value: "3×", label: "Faster delivery" },
   { value: "100%", label: "Custom-built" },
 ];
