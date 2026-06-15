@@ -282,7 +282,7 @@ export const industries: Industry[] = [
   {
     slug: "logistics",
     image: "logistics",
-    name: "Logistics & Rail",
+    name: "Logistics & Transport",
     body: "Transport tracking and operational visibility across complex, multi-party supply chains.",
     intro:
       "Goods move across many hands and many systems. We make the movement visible — state by state — and surface the exceptions before they turn into delays, so operations teams act on signals, not surprises.",
@@ -300,7 +300,7 @@ export const industries: Industry[] = [
   {
     slug: "finance",
     image: "finance",
-    name: "Finance",
+    name: "Finance & Controlling",
     body: "Controlling, reporting and cost-transparency tools that stand up to commercial scrutiny.",
     intro:
       "Controlling and commercial teams need numbers they can defend. We build the cost-transparency, monitoring and reporting tools that replace black-box spreadsheets with transparent, governed figures.",
