@@ -191,6 +191,20 @@ export const solutions: Offering[] = [
     ],
   },
   {
+    icon: "bolt",
+    image: "sol-software",
+    title: "Software Maturity Tracking",
+    short: "Track software updates and release maturity across high-voltage systems.",
+    detail:
+      "A tracking solution for the software inside high-voltage systems — versions, update status and maturity level across every component and supplier, in one governed view. So engineering and quality teams always know what's released, what's still in test, and what's mature enough to ship.",
+    experience: [
+      "Version and update tracking across HV components and ECUs",
+      "Maturity-level status from in-development to release-ready",
+      "Supplier-spanning visibility in a single governed model",
+      "Early-warning flags on components lagging the release plan",
+    ],
+  },
+  {
     icon: "ticket",
     image: "sol-ticketing",
     title: "Ticket Systems",
@@ -245,6 +259,20 @@ export const solutions: Offering[] = [
       "Documented, exportable calculations",
     ],
   },
+  {
+    icon: "merge",
+    image: "sol-pmi",
+    title: "Post-Merger Integration",
+    short: "Track and steer the integration of two organizations into one.",
+    detail:
+      "Tooling for post-merger integration (PMI) — workstreams, milestones, synergies and risks across the combining organizations in one governed view. So integration leads can steer the programme, track value capture, and flag what's slipping before it costs the deal.",
+    experience: [
+      "Workstream and milestone tracking across both organizations",
+      "Synergy and value-capture monitoring against targets",
+      "Risk and dependency flags with early warnings",
+      "Consolidated reporting for steering committees",
+    ],
+  },
 ];
 
 // Industries served — each maps to the solutions most relevant to it.
@@ -277,7 +305,13 @@ export const industries: Industry[] = [
     approach:
       "We start at the traceability gaps — the records that break under audit — model the data so every part and approval is accountable, then wire reporting on top so the line and the boardroom read from the same numbers.",
     stat: { value: "100%", label: "Auditable records, by design" },
-    solutions: ["Quality Management", "Transport Management", "Monitoring & Controlling", "Cost & TCO"],
+    solutions: [
+      "Quality Management",
+      "Software Maturity Tracking",
+      "Transport Management",
+      "Monitoring & Controlling",
+      "Cost & TCO",
+    ],
   },
   {
     slug: "logistics",
@@ -313,7 +347,13 @@ export const industries: Industry[] = [
     approach:
       "We replace the black-box spreadsheet with documented, governed cost and controlling models — every driver and assumption made explicit — then surface them through reporting that turns a monthly look-back into a live, defensible signal.",
     stat: { value: "0", label: "Black-box spreadsheets left behind" },
-    solutions: ["Monitoring & Controlling", "Cost & TCO", "Project Management", "Ticket Systems"],
+    solutions: [
+      "Post-Merger Integration",
+      "Monitoring & Controlling",
+      "Cost & TCO",
+      "Project Management",
+      "Ticket Systems",
+    ],
   },
   {
     slug: "manufacturing",

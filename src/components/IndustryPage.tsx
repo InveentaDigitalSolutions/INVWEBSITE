@@ -12,7 +12,10 @@ export default function IndustryPage() {
   const industry = industries.find((i) => i.slug === slug);
   if (!industry) return <Navigate to="/" replace />;
 
-  const related = solutions.filter((s) => industry.solutions.includes(s.title));
+  // Order follows the industry's own solutions list (not the global order).
+  const related = industry.solutions
+    .map((title) => solutions.find((s) => s.title === title))
+    .filter((s): s is (typeof solutions)[number] => Boolean(s));
 
   return (
     <main className="industry-page">

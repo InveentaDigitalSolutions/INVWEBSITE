@@ -108,6 +108,14 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M6.25 9.5v3.5a3 3 0 0 0 3 3h5.25" />
     </>
   ),
+  bolt: <path d="M13 2 5 13h6l-1 9 8-11h-6l1-9Z" />,
+  merge: (
+    <>
+      <circle cx="6" cy="6" r="3" />
+      <circle cx="18" cy="18" r="3" />
+      <path d="M6 21V9a9 9 0 0 0 9 9" />
+    </>
+  ),
   // --- ui glyphs ---
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   search: (
