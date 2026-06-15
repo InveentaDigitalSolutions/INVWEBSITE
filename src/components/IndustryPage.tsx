@@ -56,6 +56,20 @@ export default function IndustryPage() {
         </div>
       </section>
 
+      {/* How we'd approach it */}
+      <section className="section ip-approach">
+        <div className="container ip-approach__inner">
+          <div className="ip-approach__text">
+            <span className="eyebrow">How we'd approach it</span>
+            <p>{industry.approach}</p>
+          </div>
+          <div className="ip-approach__stat">
+            <strong>{industry.stat.value}</strong>
+            <span>{industry.stat.label}</span>
+          </div>
+        </div>
+      </section>
+
       {/* Related solutions */}
       <section className="section solutions" id="solutions">
         <div className="container">

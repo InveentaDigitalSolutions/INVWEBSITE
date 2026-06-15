@@ -10,6 +10,7 @@ export default function Pillars() {
             <div className="pillar reveal" key={p.title}>
               <span className="pillar__index">0{i + 1}</span>
               <h3 className="pillar__title">{p.title}</h3>
+              <p className="pillar__outcome">{p.outcome}</p>
               <p className="pillar__body">{p.body}</p>
             </div>
           ))}

@@ -13,23 +13,45 @@ export const nav = [
   { label: "Solutions", href: "/#solutions" },
   { label: "Industries", href: "/#industries" },
   { label: "Expertise", href: "/#expertise" },
-  { label: "About", href: "/#about" },
   { label: "Technology", href: "/#technology" },
+  { label: "About", href: "/#about" },
 ];
 
-// The three brand pillars from the identity.
+// The three brand pillars — each tied to a concrete outcome.
 export const pillars = [
   {
     title: "Optimization",
-    body: "We remove the friction in how work flows — cutting manual steps, waste, and waiting so every process runs lean.",
+    outcome: "Less busywork, more output",
+    body: "We strip the manual steps, waiting and double-entry out of how work flows — so the same team gets more done with less effort.",
   },
   {
     title: "Scalability",
-    body: "Systems designed to grow with you. What handles ten users handles ten thousand, without a rebuild.",
+    outcome: "Built once, runs at any size",
+    body: "Architected so the system that serves ten users serves ten thousand — no rebuild, no migration, no surprises as you grow.",
   },
   {
     title: "Performance",
-    body: "Fast where it counts. We engineer for speed and reliability your team and customers can feel.",
+    outcome: "Seconds-fast, solid under load",
+    body: "Reports that load in seconds and apps that hold up under real data and real load — speed your team and customers actually feel.",
+  },
+];
+
+// Why Inveenta — the differentiators vs. an agency / big SI.
+export const whyPoints = [
+  {
+    icon: "flow",
+    title: "One team, end to end",
+    body: "Architecture, development and analysis in one place — no hand-offs, no telephone game between the people who plan and the people who build.",
+  },
+  {
+    icon: "lock",
+    title: "You own everything",
+    body: "The code, the data and the solution are yours, hosted wherever you need. No lock-in, no black box, no hostage situation.",
+  },
+  {
+    icon: "gauge",
+    title: "Weeks, not quarters",
+    body: "Iterative delivery puts a working first version in your hands in weeks — so you course-correct early, before it gets expensive.",
   },
 ];
 
@@ -233,6 +255,8 @@ export type Industry = {
   body: string;
   intro: string;
   challenges: string[];
+  approach: string;
+  stat: { value: string; label: string };
   solutions: string[];
 };
 
@@ -250,6 +274,9 @@ export const industries: Industry[] = [
       "Manual quality and inspection processes",
       "Reporting that can't keep up with the line",
     ],
+    approach:
+      "We start at the traceability gaps — the records that break under audit — model the data so every part and approval is accountable, then wire reporting on top so the line and the boardroom read from the same numbers.",
+    stat: { value: "100%", label: "Auditable records, by design" },
     solutions: ["Quality Management", "Transport Management", "Monitoring & Controlling", "Cost & TCO"],
   },
   {
@@ -265,6 +292,9 @@ export const industries: Industry[] = [
       "Manual status chasing and re-keying",
       "Operational reporting that lags reality",
     ],
+    approach:
+      "We map the movement of goods state by state across every party and system, build the tracking model that holds it together, and push exceptions to operations the moment something drifts — so teams act on signals, not status calls.",
+    stat: { value: "24", label: "States in one rail workflow we built" },
     solutions: ["Transport Management", "Monitoring & Controlling", "Quality Management", "Project Management"],
   },
   {
@@ -280,6 +310,9 @@ export const industries: Industry[] = [
       "Spreadsheet-bound, black-box calculations",
       "Governance and access under review",
     ],
+    approach:
+      "We replace the black-box spreadsheet with documented, governed cost and controlling models — every driver and assumption made explicit — then surface them through reporting that turns a monthly look-back into a live, defensible signal.",
+    stat: { value: "0", label: "Black-box spreadsheets left behind" },
     solutions: ["Monitoring & Controlling", "Cost & TCO", "Project Management", "Ticket Systems"],
   },
   {
@@ -295,6 +328,9 @@ export const industries: Industry[] = [
       "Disconnected shop-floor and office systems",
       "Low adoption of new tools",
     ],
+    approach:
+      "We connect the shop floor to the office — mobile inspection and quality capture that replaces paper, feeding the same models that drive controlling — and design for adoption first, so the people on the floor actually want to use it.",
+    stat: { value: "3×", label: "Faster from floor data to decision" },
     solutions: ["Quality Management", "Project Management", "Monitoring & Controlling", "Cost & TCO"],
   },
 ];
@@ -375,10 +411,19 @@ export const techGroups: { group: string; items: Tech[] }[] = [
       { name: "Obsidian", logo: "obsidian" },
     ],
   },
+  {
+    group: "Languages & query",
+    items: [
+      { name: "Python", logo: "python" },
+      { name: "SQL", logo: "sql" },
+      { name: "DAX", logo: "dax" },
+      { name: "Power Fx", logo: "powerfx" },
+      { name: "Power Query (M)", logo: "powerquery" },
+      { name: "PAC CLI", logo: "paccli" },
+      { name: "HTML / SVG", logo: "html5" },
+    ],
+  },
 ];
-
-// Skills without a standard product logo — listed as a caption.
-export const techAlso = ["Python", "SQL", "DAX", "Power Fx", "Power Query (M)", "PAC CLI", "HTML / SVG"];
 
 export const stats = [
   { value: "7", label: "Core expertise" },

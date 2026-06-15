@@ -1,4 +1,4 @@
-import { techGroups, techAlso, type Tech } from "../data";
+import { techGroups, type Tech } from "../data";
 import { asset } from "../asset";
 
 function Tile({ t }: { t: Tech }) {
@@ -39,17 +39,6 @@ export default function Technologies() {
             ))}
           </div>
         ))}
-      </div>
-
-      <div className="container">
-        <p className="tech-also">
-          <span>Also fluent in</span>
-          {techAlso.map((t) => (
-            <span className="tech-also__tag" key={t}>
-              {t}
-            </span>
-          ))}
-        </p>
       </div>
     </section>
   );

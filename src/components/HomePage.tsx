@@ -4,6 +4,7 @@ import Capabilities from "./Capabilities";
 import Solutions from "./Solutions";
 import Showcase from "./Showcase";
 import Industries from "./Industries";
+import Why from "./Why";
 import About from "./About";
 import Technologies from "./Technologies";
 import Approach from "./Approach";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Solutions />
       <Showcase />
       <Industries />
+      <Why />
       <Capabilities />
       <Technologies />
       <About />

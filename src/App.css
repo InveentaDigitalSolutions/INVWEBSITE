@@ -52,14 +52,33 @@
 }
 
 .nav__links a {
+  position: relative;
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--ink-soft);
   transition: color 0.15s ease;
 }
 
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--green);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
 .nav__links a:hover {
   color: var(--navy);
+}
+
+.nav__links a:hover::after {
+  transform: scaleX(1);
 }
 
 .nav__cta {
@@ -725,6 +744,13 @@
   margin-top: 14px;
 }
 
+.pillar__outcome {
+  font-weight: 600;
+  font-size: 1.06rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
 .pillar__body {
   color: var(--grey);
   font-size: 1rem;
@@ -846,7 +872,7 @@
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  transition: box-shadow 0.18s ease, border-color 0.18s ease;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
 
 .solution-card.has-photo {
@@ -884,9 +910,10 @@
   transform: scale(1.05);
 }
 
-.solution-card:hover {
+.solution-card:not(.is-open):hover {
   border-color: #d2d6dd;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
 
 .solution-card.is-open {
@@ -1226,6 +1253,58 @@
   box-shadow: var(--shadow-md);
 }
 
+/* ---------- Why Inveenta ---------- */
+.why {
+  background: var(--surface-alt);
+  border-block: 1px solid var(--line);
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.why__item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.why__item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: #d7dae1;
+}
+
+.why__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--green-wash);
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+
+.why__icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.why__item h3 {
+  font-size: 1.22rem;
+  margin-bottom: 10px;
+}
+
+.why__item p {
+  color: var(--grey);
+  font-size: 0.98rem;
+}
+
 /* ---------- Industry deep-dive page ---------- */
 .ip-hero {
   position: relative;
@@ -1320,6 +1399,50 @@
   height: 20px;
   flex-shrink: 0;
   color: var(--green-deep);
+}
+
+/* How we'd approach it — dark band with a single proof stat */
+.ip-approach {
+  background: var(--navy);
+  color: #fff;
+}
+
+.ip-approach__inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.ip-approach__text .eyebrow {
+  color: var(--green);
+}
+
+.ip-approach__text p {
+  margin-top: 14px;
+  font-size: 1.22rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ip-approach__stat {
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  padding-left: 48px;
+}
+
+.ip-approach__stat strong {
+  display: block;
+  font-size: clamp(3.4rem, 6vw, 4.6rem);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--green-screen);
+}
+
+.ip-approach__stat span {
+  display: block;
+  margin-top: 12px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ---------- Legal pages ---------- */
@@ -1747,10 +1870,16 @@
 .footer__links a {
   font-size: 0.94rem;
   color: var(--mist);
+  background-image: linear-gradient(var(--green), var(--green));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: color 0.15s ease, background-size 0.2s ease;
 }
 
 .footer__links a:hover {
   color: var(--green);
+  background-size: 100% 1.5px;
 }
 
 .footer__bottom {
@@ -1798,11 +1927,24 @@
   .solutions__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .why__grid {
+    grid-template-columns: 1fr;
+  }
   .industries__grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .ip-challenge-list {
     grid-template-columns: 1fr;
+  }
+  .ip-approach__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .ip-approach__stat {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-left: 0;
+    padding-top: 32px;
   }
   .pillars__grid {
     grid-template-columns: 1fr;
