@@ -892,8 +892,9 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  /* desaturate so the mismatched stock colours read as one set */
-  filter: grayscale(0.7) contrast(1.03);
+  /* desaturate lightly so mismatched stock colours read as one set,
+     while keeping enough colour for the images to feel alive */
+  filter: grayscale(0.4) contrast(1.03);
   transition: transform 0.5s ease;
 }
 
@@ -903,7 +904,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(160deg, rgba(22, 36, 59, 0.36) 0%, rgba(22, 36, 59, 0.54) 100%);
+  background: linear-gradient(160deg, rgba(22, 36, 59, 0.24) 0%, rgba(22, 36, 59, 0.42) 100%);
 }
 
 .solution-card:hover .solution-card__photo img {
