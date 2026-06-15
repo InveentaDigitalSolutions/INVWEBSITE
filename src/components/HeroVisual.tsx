@@ -27,8 +27,8 @@ export default function HeroVisual() {
             <span>On-time</span>
           </div>
           <div className="dash__kpi dash__kpi--accent">
-            <strong>99.9%</strong>
-            <span>Uptime</span>
+            <strong>40+</strong>
+            <span>Sources</span>
           </div>
           <div className="dash__kpi">
             <strong>−40%</strong>
