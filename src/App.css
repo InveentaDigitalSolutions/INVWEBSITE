@@ -458,6 +458,180 @@
   100% { transform: translate(0, 0); opacity: 0; }
 }
 
+/* ---- Hero dashboard panel ---- */
+.dash__glow {
+  position: absolute;
+  inset: 4% -8% -12% -8%;
+  background: radial-gradient(58% 55% at 50% 55%, rgba(183, 218, 76, 0.16), transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.dash {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(231, 234, 239, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(6px);
+  padding: 18px;
+  box-shadow: 0 26px 60px -26px rgba(0, 0, 0, 0.6);
+}
+
+.dash__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.dash__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.dash__livedot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: dashLive 2s ease-out infinite;
+}
+
+@keyframes dashLive {
+  0% { box-shadow: 0 0 0 0 rgba(183, 218, 76, 0.5); }
+  70%, 100% { box-shadow: 0 0 0 7px rgba(183, 218, 76, 0); }
+}
+
+.dash__title {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: rgba(231, 234, 239, 0.5);
+}
+
+.dash__dots {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 5px;
+}
+.dash__dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(231, 234, 239, 0.2);
+}
+
+.dash__kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.dash__kpi {
+  border-radius: 11px;
+  border: 1px solid rgba(231, 234, 239, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px;
+}
+.dash__kpi strong {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  line-height: 1;
+}
+.dash__kpi--accent strong {
+  color: var(--green-screen);
+}
+.dash__kpi span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.64rem;
+  letter-spacing: 0.03em;
+  color: rgba(231, 234, 239, 0.55);
+}
+
+.dash__chart {
+  position: relative;
+  height: 104px;
+  border-radius: 11px;
+  border: 1px solid rgba(231, 234, 239, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.dash__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 100%;
+}
+.dash__bar {
+  flex: 1;
+  height: var(--h);
+  min-height: 6px;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, var(--green), rgba(183, 218, 76, 0.22));
+  opacity: 0.82;
+  animation: dashBar 4.5s ease-in-out infinite;
+}
+.dash__bar:last-child {
+  opacity: 1;
+}
+
+@keyframes dashBar {
+  0%, 100% { height: var(--h); }
+  50% { height: calc(var(--h) * 0.78); }
+}
+
+.dash__spark {
+  position: absolute;
+  inset: 14px;
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
+  overflow: visible;
+}
+.dash__sparkline {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dashDraw 2.8s ease-out forwards;
+  filter: drop-shadow(0 0 4px rgba(183, 218, 76, 0.5));
+}
+@keyframes dashDraw {
+  to { stroke-dashoffset: 0; }
+}
+.dash__sparkdot {
+  animation: dashDot 2s ease-in-out infinite;
+}
+@keyframes dashDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.dash__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  color: var(--mist);
+}
+.dash__statusdot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(183, 218, 76, 0.18);
+}
+
 @keyframes heroDrift {
   from {
     transform: translate3d(0, 0, 0) scale(1);
@@ -497,6 +671,15 @@
   .tech-track {
     animation: none !important;
     transform: none;
+  }
+  .dash__bar,
+  .dash__livedot,
+  .dash__sparkdot {
+    animation: none !important;
+  }
+  .dash__sparkline {
+    animation: none !important;
+    stroke-dashoffset: 0;
   }
 }
 
