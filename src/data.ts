@@ -294,7 +294,7 @@ export const industries: Industry[] = [
     ],
     approach:
       "We map the movement of goods state by state across every party and system, build the tracking model that holds it together, and push exceptions to operations the moment something drifts — so teams act on signals, not status calls.",
-    stat: { value: "24", label: "States in one rail workflow we built" },
+    stat: { value: "3", label: "Transport modes unified — road, rail & sea" },
     solutions: ["Transport Management", "Monitoring & Controlling", "Quality Management", "Project Management"],
   },
   {
