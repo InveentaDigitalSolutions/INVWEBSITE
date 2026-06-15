@@ -35,6 +35,9 @@
     />
     <meta name="twitter:image" content="https://inveenta.com/og-image.jpg" />
 
+    <!-- Preload the hero background — it's the largest paint (LCP). -->
+    <link rel="preload" as="image" href="%BASE_URL%img/hero-bg.jpg" fetchpriority="high" />
+
     <!-- Self-hosted Montserrat (variable) — no third-party font CDN (GDPR). -->
     <link
       rel="preload"

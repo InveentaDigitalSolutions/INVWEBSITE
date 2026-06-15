@@ -15,7 +15,7 @@ import { useReveal } from "../useReveal";
 export default function HomePage() {
   useReveal();
   return (
-    <main>
+    <main id="main">
       <Seo
         title="Inveenta — engineering intelligent business"
         description="Custom enterprise software that turns complex, manual operations into governed, scalable systems. Run leaner. Scale faster. Perform better."

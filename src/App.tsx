@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import IndustryPage from "./components/IndustryPage";
 import { Privacy, Imprint } from "./components/Legal";
+import ErrorBoundary from "./components/ErrorBoundary";
 import "./App.css";
 
 // Scroll to top on route change; honour in-page hash anchors.
@@ -28,15 +29,20 @@ const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
 function App() {
   return (
     <BrowserRouter basename={basename}>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <ScrollManager />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/industries/:slug" element={<IndustryPage />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/imprint" element={<Imprint />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/industries/:slug" element={<IndustryPage />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/imprint" element={<Imprint />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </ErrorBoundary>
       <Footer />
     </BrowserRouter>
   );

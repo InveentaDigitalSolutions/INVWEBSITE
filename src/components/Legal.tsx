@@ -10,7 +10,7 @@ function LegalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="section legal-page">
+    <main className="section legal-page" id="main">
       <div className="container legal-page__inner">
         <Link to="/" className="legal-page__back">
           ← Back to home

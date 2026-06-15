@@ -44,7 +44,7 @@ export default function IndustryPage() {
     .filter((s): s is (typeof solutions)[number] => Boolean(s));
 
   return (
-    <main className="industry-page">
+    <main className="industry-page" id="main">
       <Seo title={`${industry.name} — Inveenta`} description={industry.intro} jsonLd={jsonLd} />
       {/* Hero */}
       <section className="ip-hero on-dark">

@@ -5,6 +5,25 @@
    ============================================================ */
 
 /* ---------- Logo / wordmark (outlined SVG artwork) ---------- */
+/* Accessibility: skip-to-content link, visible only on keyboard focus */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transform: translateY(-150%);
+  transition: transform 0.18s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--green);
+}
+
 .logo {
   display: block;
   width: auto;
