@@ -4,7 +4,7 @@ import { asset } from "../asset";
 const points = [
   "Architecture, development and analysis in one team",
   "Built for regulated, enterprise-grade delivery",
-  "Fluent in German, English, Spanish and Italian",
+  "Senior, hands-on engineering from discovery to handover",
   "You own the code and the data",
 ];
 
@@ -23,8 +23,7 @@ export default function About() {
           </p>
           <p>
             Delivery is built for regulated, enterprise environments — automotive, logistics and
-            finance — and runs in German, English, Spanish or Italian, from the first question to
-            the final handover.
+            finance — and stays in one pair of hands from the first question to the final handover.
           </p>
           <ul className="about__points">
             {points.map((p) => (

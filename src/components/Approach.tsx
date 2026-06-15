@@ -11,8 +11,8 @@ export default function Approach() {
           <p>
             Most engagements need three things they rarely find in one place: architecture that holds
             up under real data, development that ships, and stakeholder communication that keeps the
-            technical and business sides aligned. We do all three — and run discovery, design and
-            delivery in German, English, Spanish or Italian.
+            technical and business sides aligned. We do all three — across discovery, design and
+            delivery.
           </p>
           <img className="approach__img" src={asset("img/team.jpg")} alt="Working session" loading="lazy" />
         </div>
