@@ -19,6 +19,19 @@
   height: clamp(52px, 4vw + 28px, 72px);
 }
 
+/* Header: full wordmark on desktop, compact "inv" mark on mobile */
+.nav__brand .logo--compact {
+  display: none;
+}
+@media (max-width: 600px) {
+  .nav__brand .logo--word {
+    display: none;
+  }
+  .nav__brand .logo--compact {
+    display: block;
+  }
+}
+
 /* ---------- Navbar ---------- */
 .nav {
   position: sticky;

@@ -19,7 +19,8 @@ export default function Navbar() {
     <header className={`nav nav--solid ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="container nav__inner">
         <a href={asset("/")} className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
-          <Logo size="sm" variant="dark" />
+          <Logo size="sm" variant="dark" className="logo--word" />
+          <Logo size="sm" variant="dark" compact className="logo--compact" />
         </a>
 
         <nav className={`nav__links ${open ? "is-open" : ""}`}>
