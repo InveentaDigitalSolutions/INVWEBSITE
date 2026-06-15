@@ -21,7 +21,7 @@ export const nav = [
 export const pillars = [
   {
     title: "Optimization",
-    outcome: "Less busywork, more output",
+    outcome: "Less manual effort, more output",
     body: "We strip the manual steps, waiting and double-entry out of how work flows — so the same team gets more done with less effort.",
   },
   {
@@ -41,12 +41,12 @@ export const whyPoints = [
   {
     icon: "flow",
     title: "One team, end to end",
-    body: "Architecture, development and analysis in one place — no hand-offs, no telephone game between the people who plan and the people who build.",
+    body: "Architecture, development and analysis in one place — no hand-offs, and nothing lost between the people who plan the solution and the people who build it.",
   },
   {
     icon: "lock",
     title: "You own everything",
-    body: "The code, the data and the solution are yours, hosted wherever you need. No lock-in, no black box, no hostage situation.",
+    body: "The code, the data and the solution are yours, hosted wherever you need — no lock-in, no black box, and no dependence on us to keep it running.",
   },
   {
     icon: "gauge",

@@ -6,7 +6,7 @@ export default function Showcase() {
       <img className="showcase__img" src={asset("img/showcase.jpg")} alt="" loading="lazy" />
       <div className="showcase__overlay" />
       <div className="container showcase__inner reveal">
-        <span className="eyebrow">Why inveenta</span>
+        <span className="eyebrow">Engineering intelligent business</span>
         <h2>We connect your data, systems and people into one intelligent operation.</h2>
         <p>
           Optimization, scalability and performance — engineered to hold up under real data, real
