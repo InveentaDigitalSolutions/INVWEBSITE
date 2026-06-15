@@ -1546,30 +1546,19 @@
 
 .footer__inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 48px;
+  gap: 28px 40px;
   flex-wrap: wrap;
-  padding-bottom: 44px;
+  padding-bottom: 36px;
   border-bottom: 1px solid rgba(231, 234, 239, 0.14);
-}
-
-.footer__motif {
-  margin-top: 22px;
 }
 
 .footer__links {
   display: flex;
-  flex-direction: column;
-  gap: 13px;
-  align-items: flex-start;
-}
-
-.footer__links-head {
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(231, 234, 239, 0.6);
-  margin-bottom: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
 }
 
 .footer__links a {

@@ -15,7 +15,6 @@ export default function Footer() {
         </div>
 
         <nav className="footer__links" aria-label="Footer">
-          <span className="footer__links-head">Navigate</span>
           {nav.map((item) => (
             <a key={item.href} href={asset(item.href)}>
               {item.label}

@@ -373,6 +373,7 @@ export const techGroups: { group: string; items: Tech[] }[] = [
       { name: "React", logo: "react" },
       { name: "TypeScript", logo: "typescript" },
       { name: "Azure DevOps", logo: "azuredevops" },
+      { name: "Jira", logo: "jira" },
       { name: "VS Code", logo: "vscode" },
       { name: "Git", logo: "git" },
       { name: "GitHub", logo: "github" },
