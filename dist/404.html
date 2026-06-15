@@ -35,31 +35,47 @@
     />
     <meta name="twitter:image" content="https://inveenta.com/og-image.jpg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Self-hosted Montserrat (variable) — no third-party font CDN (GDPR). -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/fonts/montserrat-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <title>Inveenta — engineering intelligent business</title>
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": ["Organization", "ProfessionalService"],
         "name": "Inveenta",
         "legalName": "Inveenta S.A.",
         "url": "https://inveenta.com",
         "logo": "https://inveenta.com/og-image.jpg",
+        "image": "https://inveenta.com/og-image.jpg",
         "slogan": "engineering intelligent business",
         "description": "Inveenta engineers intelligent business — custom enterprise software built for optimization, scalability and performance.",
-        "knowsLanguage": ["en", "de", "es", "it"],
-        "areaServed": "Worldwide",
-        "knowsAbout": ["Business Intelligence", "Process Automation", "AI Agents", "Application Development", "Data Engineering", "Governance & Security"]
+        "areaServed": ["Automotive", "Logistics & Transport", "Finance & Controlling", "Manufacturing"],
+        "knowsAbout": ["Business Intelligence", "Process Automation", "AI Agents", "Application Development", "Data Engineering", "Governance & Security", "Microsoft Power Platform"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Solutions",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transport Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quality Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software Maturity Tracking" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ticket Systems" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Project Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Monitoring & Controlling" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cost & TCO" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Post-Merger Integration" } }
+          ]
+        }
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-TCsAYudd.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C2GOPZ_N.css">
+    <script type="module" crossorigin src="/assets/index-D5VG9PYy.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CQNwKaxh.css">
   </head>
   <body>
     <div id="root"></div>

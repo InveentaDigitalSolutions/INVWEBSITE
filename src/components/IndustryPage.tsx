@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { industries, solutions } from "../data";
 import { useReveal } from "../useReveal";
@@ -10,6 +11,31 @@ export default function IndustryPage() {
   useReveal();
   const { slug } = useParams();
   const industry = industries.find((i) => i.slug === slug);
+  const jsonLd = useMemo(
+    () =>
+      industry
+        ? {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://inveenta.com/" },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Industries",
+                item: "https://inveenta.com/#industries",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: industry.name,
+                item: `https://inveenta.com/industries/${industry.slug}`,
+              },
+            ],
+          }
+        : undefined,
+    [industry],
+  );
   if (!industry) return <Navigate to="/" replace />;
 
   // Order follows the industry's own solutions list (not the global order).
@@ -19,7 +45,7 @@ export default function IndustryPage() {
 
   return (
     <main className="industry-page">
-      <Seo title={`${industry.name} — Inveenta`} description={industry.intro} />
+      <Seo title={`${industry.name} — Inveenta`} description={industry.intro} jsonLd={jsonLd} />
       {/* Hero */}
       <section className="ip-hero on-dark">
         <img className="ip-hero__img" src={asset(`img/${industry.image}.jpg`)} alt="" />

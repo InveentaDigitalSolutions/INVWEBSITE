@@ -28,6 +28,15 @@ export default function Contact() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
+
+    // Honeypot — bots fill hidden fields; humans never see them. Silently
+    // pretend success so we don't tip off the bot, but send nothing.
+    if (String(data.get("company_website") || "").trim() !== "") {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
     const found = validate(data);
     setErrors(found);
     if (Object.keys(found).length > 0) return;
@@ -89,6 +98,15 @@ export default function Contact() {
             </div>
           ) : (
             <form className="contact__form" onSubmit={handleSubmit} noValidate>
+              {/* Honeypot — hidden from users & assistive tech; bait for bots. */}
+              <input
+                type="text"
+                name="company_website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+              />
               <div className="field">
                 <label htmlFor="name">Name</label>
                 <input id="name" name="name" type="text" placeholder="Jane Cooper" />
