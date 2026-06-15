@@ -37,18 +37,6 @@ export default function Contact() {
     const org = String(data.get("company") || "");
     const message = String(data.get("message") || "");
 
-    // No key configured yet → temporary mailto fallback (reveals the address).
-    if (!company.formAccessKey) {
-      const subject = `Project enquiry from ${name}${org ? ` (${org})` : ""}`;
-      const body = `Name: ${name}\nEmail: ${email}\nCompany: ${org}\n\n${message}`;
-      window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`;
-      setStatus("success");
-      form.reset();
-      return;
-    }
-
     // Web3Forms — private delivery to the inbox; your address is never in the code.
     setStatus("submitting");
     try {

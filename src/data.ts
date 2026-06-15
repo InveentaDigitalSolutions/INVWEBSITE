@@ -4,20 +4,15 @@ export const company = {
   name: "inveenta",
   legalName: "Inveenta S.A.",
   tagline: "engineering intelligent business",
-  email: "santiago.garciaruiz@inveenta.com",
-  // Web3Forms access key for PRIVATE form delivery — submissions are emailed
-  // to your inbox and your address NEVER appears in the site code (the key is a
-  // random ID). Get a free key in ~30s at https://web3forms.com (enter your
-  // inbox email → the key is emailed to you), then paste it here.
-  // While empty, the form temporarily falls back to a mailto (which does reveal
-  // the address); add the key to make it fully private.
-  formAccessKey: "",
+  // Web3Forms access key — form submissions are delivered privately to the
+  // inbox registered with this key; the email address never appears in code.
+  formAccessKey: "06fdea02-a200-4c9e-b7a9-eac653fc169c",
 };
 
 export const nav = [
   { label: "Solutions", href: "/#solutions" },
   { label: "Industries", href: "/#industries" },
-  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Expertise", href: "/#expertise" },
   { label: "About", href: "/#about" },
   { label: "Technology", href: "/#technology" },
 ];
@@ -386,7 +381,7 @@ export const techGroups: { group: string; items: Tech[] }[] = [
 export const techAlso = ["Python", "SQL", "DAX", "Power Fx", "Power Query (M)", "PAC CLI", "HTML / SVG"];
 
 export const stats = [
-  { value: "7", label: "Core capabilities" },
+  { value: "7", label: "Core expertise" },
   { value: "150+", label: "Built solutions" },
   { value: "4", label: "Working languages" },
   { value: "100%", label: "Custom-built" },

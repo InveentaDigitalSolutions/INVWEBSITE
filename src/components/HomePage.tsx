@@ -25,8 +25,8 @@ export default function HomePage() {
       <Showcase />
       <Industries />
       <Capabilities />
-      <About />
       <Technologies />
+      <About />
       <Approach />
       <Contact />
     </main>
