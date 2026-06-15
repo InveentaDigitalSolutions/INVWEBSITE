@@ -51,36 +51,108 @@
   }
 }
 
-/* Language switcher — compact segmented pill */
-.lang-switch {
+/* Language switcher — globe trigger + dropdown */
+.lang {
+  position: relative;
+}
+.lang__trigger {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
-  padding: 3px;
-  background: var(--surface-alt);
+  gap: 6px;
+  appearance: none;
   border: 1px solid var(--line);
+  background: var(--surface);
   border-radius: 999px;
+  padding: 6px 10px 6px 11px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
-.lang-switch__btn {
+.lang__trigger:hover {
+  color: var(--navy);
+  border-color: #d2d6dd;
+}
+.lang__globe {
+  width: 16px;
+  height: 16px;
+}
+.lang__chev {
+  width: 13px;
+  height: 13px;
+  opacity: 0.55;
+  transition: transform 0.18s ease;
+}
+.lang.is-open .lang__chev {
+  transform: rotate(180deg);
+}
+
+.lang__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 176px;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  z-index: 80;
+  animation: lang-pop 0.14s ease;
+}
+@keyframes lang-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+.lang__opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
   appearance: none;
   border: 0;
   background: transparent;
   font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 9px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.lang__opt:hover {
+  background: var(--surface-alt);
+  color: var(--navy);
+}
+.lang__opt.is-active {
+  color: var(--navy);
+  font-weight: 600;
+}
+.lang__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line);
+  flex-shrink: 0;
+}
+.lang__opt.is-active .lang__dot {
+  background: var(--green);
+}
+.lang__code {
+  margin-left: auto;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--grey);
-  padding: 5px 11px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: color 0.15s ease, background 0.15s ease;
-}
-.lang-switch__btn:hover {
-  color: var(--navy);
-}
-.lang-switch__btn.is-active {
-  background: var(--navy);
-  color: #fff;
 }
 
 /* ---------- Navbar ---------- */

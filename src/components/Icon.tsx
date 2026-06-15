@@ -116,6 +116,14 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M6 21V9a9 9 0 0 0 9 9" />
     </>
   ),
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3c2.4 2.5 3.6 5.7 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.7-3.6-9S9.6 5.5 12 3Z" />
+    </>
+  ),
+  chevron: <path d="m6 9 6 6 6-6" />,
   // --- ui glyphs ---
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   search: (
