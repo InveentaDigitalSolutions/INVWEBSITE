@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" width="720" height="540" role="img">
+<defs>
+<radialGradient id="field" cx="32%" cy="26%" r="95%">
+  <stop offset="0%" stop-color="#21324e"/><stop offset="55%" stop-color="#182741"/><stop offset="100%" stop-color="#0f1a2e"/>
+</radialGradient>
+<linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#b7da4c"/><stop offset="100%" stop-color="#dbfc52"/>
+</linearGradient>
+<linearGradient id="accfade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#b7da4c" stop-opacity="0.28"/><stop offset="100%" stop-color="#b7da4c" stop-opacity="0"/>
+</linearGradient>
+<pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+  <circle cx="1" cy="1" r="1" fill="#ffffff" fill-opacity="0.05"/>
+</pattern>
+<filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+  <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<radialGradient id="vig" cx="50%" cy="42%" r="75%">
+  <stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.34"/>
+</radialGradient>
+
+</defs>
+<rect width="720" height="540" fill="url(#field)"/>
+<rect width="720" height="540" fill="url(#grid)"/><g fill="none" stroke="#aebbcd" stroke-opacity="0.28" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><line x1="150" y1="165" x2="360" y2="120"/><line x1="150" y1="165" x2="360" y2="225"/><line x1="150" y1="165" x2="360" y2="325"/><line x1="150" y1="165" x2="360" y2="425"/><line x1="150" y1="270" x2="360" y2="120"/><line x1="150" y1="270" x2="360" y2="225"/><line x1="150" y1="270" x2="360" y2="325"/><line x1="150" y1="270" x2="360" y2="425"/><line x1="150" y1="375" x2="360" y2="120"/><line x1="150" y1="375" x2="360" y2="225"/><line x1="150" y1="375" x2="360" y2="325"/><line x1="150" y1="375" x2="360" y2="425"/><line x1="360" y1="120" x2="565" y2="205"/><line x1="360" y1="120" x2="565" y2="330"/><line x1="360" y1="225" x2="565" y2="205"/><line x1="360" y1="225" x2="565" y2="330"/><line x1="360" y1="325" x2="565" y2="205"/><line x1="360" y1="325" x2="565" y2="330"/><line x1="360" y1="425" x2="565" y2="205"/><line x1="360" y1="425" x2="565" y2="330"/></g><g fill="none" stroke="url(#acc)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"><line x1="150" y1="165" x2="360" y2="225"/><line x1="150" y1="270" x2="360" y2="225"/><line x1="150" y1="375" x2="360" y2="225"/><line x1="360" y1="225" x2="565" y2="205"/><line x1="360" y1="225" x2="565" y2="330"/></g><circle cx="150" cy="165" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="150" cy="270" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="150" cy="375" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="360" cy="120" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="360" cy="325" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="360" cy="425" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="565" cy="205" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="565" cy="330" r="7" fill="#16243b" stroke="#aebbcd" stroke-opacity="0.55" stroke-width="1.4"/><circle cx="360" cy="225" r="13" fill="#b7da4c" fill-opacity="0.16"/><circle cx="360" cy="225" r="8" fill="url(#acc)" filter="url(#glow)"/><rect width="720" height="540" fill="url(#vig)"/></svg>

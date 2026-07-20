@@ -21,7 +21,7 @@ export default function About() {
             ))}
           </ul>
         </div>
-        <div className="about__media reveal">
+        <div className="about__media photo reveal">
           <img src={asset("img/about.jpg")} alt={about.imgAlt} loading="lazy" />
         </div>
       </div>

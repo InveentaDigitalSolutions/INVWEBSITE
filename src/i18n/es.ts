@@ -14,57 +14,25 @@ const es: SiteContent = {
   cta: { getInTouch: "Contactar", contact: "Contacto" },
 
   hero: {
-    kicker: "engineering intelligent business",
-    titleLines: ["Opere con menos.", "Escale más rápido.", "Rinda mejor."],
-    lead: "Inveenta diseña y desarrolla software empresarial a medida que convierte operaciones complejas y manuales en sistemas gobernados y escalables — diseñados en torno a cómo funciona realmente su negocio.",
+    kicker: "Software a medida · IA integrada",
+    titleLines: ["Si existiera, ya", "lo habría comprado."],
+    lead: "Así que lo creamos — software a medida con IA integrada donde importa, para los problemas que ningún producto resuelve. Diseñado para producción y de su propiedad.",
     primary: "Iniciar un proyecto",
     ghost: "Explorar soluciones",
   },
-  heroVisual: {
-    live: "en vivo",
-    overview: "visión de operaciones",
-    status: "Todos los sistemas en orden",
-    kpis: [
-      { value: "−40%", label: "Trabajo manual" },
-      { value: "5×", label: "ROI" },
-      { value: "98%", label: "A tiempo" },
-    ],
-  },
   stats: [
-    { value: "7", label: "Competencias clave" },
-    { value: "150+", label: "Soluciones creadas" },
-    { value: "3×", label: "Entrega más rápida" },
     { value: "100%", label: "A medida" },
+    { value: "7", label: "Áreas de expertise" },
+    { value: "3", label: "Sectores regulados" },
+    { value: "1", label: "Equipo, de principio a fin" },
   ],
 
-  pillars: [
-    {
-      title: "Optimización",
-      outcome: "Menos trabajo manual, más resultado",
-      body: "Quitamos los pasos manuales, las esperas y la doble captura del flujo de trabajo — para que el mismo equipo logre más con menos esfuerzo.",
-    },
-    {
-      title: "Escalabilidad",
-      outcome: "Construido una vez, sólido a cualquier escala",
-      body: "Diseñado para que el sistema que atiende a diez usuarios atienda a diez mil — sin reconstruir, sin migrar, sin sorpresas al crecer.",
-    },
-    {
-      title: "Rendimiento",
-      outcome: "Veloz en segundos, sólido bajo carga",
-      body: "Informes que cargan en segundos y aplicaciones que resisten datos y carga reales — velocidad que su equipo y sus clientes notan de verdad.",
-    },
-  ],
 
-  showcase: {
-    eyebrow: "engineering intelligent business",
-    h2: "Conectamos sus datos, sistemas y personas en una sola operación inteligente.",
-    p: "Optimización, escalabilidad y rendimiento — diseñados para resistir datos reales, escala real y escrutinio real.",
-  },
 
   solutionsSection: {
     eyebrow: "Lo que construimos",
-    h2: "Soluciones, listas para hacerlas suyas.",
-    p: "Casos de uso productizados que ya hemos entregado — cada uno ajustado a sus datos y procesos, y mapeado a los sectores en los que trabajamos.",
+    h2: "Sistemas a medida, creados en torno a su problema.",
+    p: "Una muestra de lo que hemos creado — cada uno hecho a medida para los datos, procesos y restricciones de un cliente. Su solución parte de su problema, no de un catálogo.",
     note: "¿No ve su caso de uso exacto? Cada proyecto es a medida —",
     noteLink: "díganos qué quiere resolver",
   },
@@ -192,13 +160,29 @@ const es: SiteContent = {
 
   capabilitiesSection: {
     eyebrow: "Lo que hacemos",
-    h2: "Expertise, aplicado de extremo a extremo.",
-    p: "Las disciplinas que aportamos a cada proyecto — de los datos y el BI a la automatización, la IA y la gobernanza. El cómo detrás de todo lo que construimos.",
+    h2: "IA e ingeniería, de principio a fin.",
+    p: "Las disciplinas detrás de cada solución a medida — desde IA y analítica predictiva hasta automatización, integración y gobernanza. El cómo detrás de todo lo que construimos.",
   },
   capabilities: [
+
     {
+      id: "cap-ai",
+      icon: "sparkle",
+      image: "cap-ai",
+      title: "IA & Agentes",
+      short: "Agentes de Copilot Studio y automatización inteligente que reducen el esfuerzo manual.",
+      detail:
+        "Agentes conversacionales y de tareas acotados a sus datos y procesos empresariales, más la automatización de los flujos repetitivos y propensos a error que agotan a los equipos en silencio — mostrando la información donde ya se trabaja, con una reducción de fricción medible.",
+      experience: [
+        "Agentes de Copilot Studio acotados a datos empresariales",
+        "Automatización de flujos repetitivos y propensos a error",
+        "Integraciones en SharePoint, Dataverse, Azure & cloud",
+        "Reducción medible del esfuerzo manual",
+      ],
+    },    {
       id: "cap-bi",
       icon: "chart",
+      image: "cap-bi",
       title: "Datos & Business Intelligence",
       short: "Información lista para decidir sobre modelos de datos que siguen siendo correctos al crecer.",
       detail:
@@ -213,6 +197,7 @@ const es: SiteContent = {
     {
       id: "cap-forecast",
       icon: "forecast",
+      image: "cap-forecast",
       title: "Forecasting & Analítica Predictiva",
       short: "Convierta su histórico en una visión creíble de lo que viene.",
       detail:
@@ -227,6 +212,7 @@ const es: SiteContent = {
     {
       id: "cap-apps",
       icon: "grid",
+      image: "cap-apps",
       title: "Desarrollo de Aplicaciones",
       short: "Apps de negocio y portales gobernados sobre Power Apps, Power Pages & Dataverse.",
       detail:
@@ -241,6 +227,7 @@ const es: SiteContent = {
     {
       id: "cap-automation",
       icon: "flow",
+      image: "cap-automation",
       title: "Automatización de Procesos",
       short: "Aprobaciones, orquestación e integraciones que funcionan sin que nadie las persiga.",
       detail:
@@ -253,22 +240,9 @@ const es: SiteContent = {
       ],
     },
     {
-      id: "cap-ai",
-      icon: "sparkle",
-      title: "IA & Agentes",
-      short: "Agentes de Copilot Studio y automatización inteligente que reducen el esfuerzo manual.",
-      detail:
-        "Agentes conversacionales y de tareas acotados a sus datos y procesos empresariales, más la automatización de los flujos repetitivos y propensos a error que agotan a los equipos en silencio — mostrando la información donde ya se trabaja, con una reducción de fricción medible.",
-      experience: [
-        "Agentes de Copilot Studio acotados a datos empresariales",
-        "Automatización de flujos repetitivos y propensos a error",
-        "Integraciones en SharePoint, Dataverse, Azure & cloud",
-        "Reducción medible del esfuerzo manual",
-      ],
-    },
-    {
       id: "cap-data-eng",
       icon: "database",
+      image: "cap-data-eng",
       title: "Integración & Data Engineering",
       short: "Datos limpios y conectados que fluyen entre los sistemas que ya usa.",
       detail:
@@ -283,6 +257,7 @@ const es: SiteContent = {
     {
       id: "cap-governance",
       icon: "lock",
+      image: "cap-governance",
       title: "Gobernanza & Seguridad",
       short: "Acceso por roles, pistas de auditoría y ALM que resisten el escrutinio.",
       detail:

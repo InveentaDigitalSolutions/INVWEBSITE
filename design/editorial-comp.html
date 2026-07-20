@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inveenta — editorial direction comp</title>
+<style>
+@font-face{
+  font-family:"Montserrat";
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url("../public/fonts/montserrat-latin.woff2") format("woff2");
+}
+
+:root{
+  --navy:#16243b;
+  --green:#b7da4c;
+  --green-screen:#dbfc52;
+  --white:#fff;
+  --mist:#e7eaef;
+  --grey:#5e5f64;
+  --line:#e4e7ec;
+  --ink-soft:#3b475a;
+
+  --mont:"Montserrat","Segoe UI",system-ui,sans-serif;
+  /* Route B — neo-grotesque (true Swiss). Self-hosted as Inter/Söhne in production. */
+  --grotesk:"Helvetica Neue","Inter",Helvetica,Arial,sans-serif;
+  /* Route C — editorial serif. Self-hosted as GT Sectra/Freight in production. */
+  --serif:"Baskerville","Hoefler Text",Georgia,serif;
+  /* Labels / indices / data */
+  --mono:"SF Mono","Menlo","IBM Plex Mono",ui-monospace,monospace;
+
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+body{
+  font-family:var(--mont);
+  color:var(--navy);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+
+/* ---------- comp scaffolding (not part of the design) ---------- */
+.comp-note{
+  background:#111827;color:#9ca3af;
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 24px;
+}
+.comp-note b{color:var(--green-screen);font-weight:400}
+
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:40px}
+
+/* ---------- shared editorial primitives ---------- */
+.rule{border-top:1px solid var(--line)}
+.rule-dark{border-top:1px solid rgba(231,234,239,.16)}
+
+.idx{
+  font-family:var(--mono);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--grey);
+}
+.on-dark .idx{color:rgba(231,234,239,.62)}
+.idx .spark{color:var(--green);}
+
+/* =====================================================================
+   PART 1 — TYPE ROUTES
+   ===================================================================== */
+.routes{padding:96px 0 40px}
+.routes h2.comp-h{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--grey);font-weight:400;margin-bottom:56px;
+}
+.route{padding:56px 0;border-top:1px solid var(--line)}
+.route__tag{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--grey);margin-bottom:28px;display:flex;gap:16px;align-items:baseline;
+}
+.route__tag b{color:var(--navy);font-weight:600;letter-spacing:.16em}
+.route__tag em{font-style:normal;color:#9aa1ad;letter-spacing:0}
+
+.route__demo{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:end}
+
+.rA h3{
+  font-family:var(--mont);font-weight:800;
+  font-size:clamp(2.6rem,6.4vw,5.6rem);line-height:.94;letter-spacing:-.035em;
+}
+.rB h3{
+  font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(2.7rem,6.8vw,6rem);line-height:.92;letter-spacing:-.038em;
+}
+.rC h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.9rem,7.2vw,6.4rem);line-height:.96;letter-spacing:-.02em;
+}
+.route__body{
+  font-size:.95rem;color:var(--grey);line-height:1.62;
+  padding-bottom:6px;
+}
+.route__body .label{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--navy);display:block;margin-bottom:10px;
+}
+
+/* =====================================================================
+   PART 2 — HERO (route B applied)
+   ===================================================================== */
+.hero{
+  position:relative;background:var(--navy);color:var(--white);
+  min-height:88vh;display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero__media{position:absolute;inset:0;background:var(--navy)}
+.hero__media img{
+  width:100%;height:100%;object-fit:cover;object-position:62% 40%;
+  filter:grayscale(1) contrast(1.16) brightness(1.02);
+  mix-blend-mode:luminosity;opacity:.34;
+}
+.hero__media::after{
+  content:"";position:absolute;inset:0;
+  background-image:var(--grain);opacity:.24;pointer-events:none;
+}
+.hero__scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(75deg,rgba(22,36,59,.94) 0%,rgba(22,36,59,.72) 46%,rgba(22,36,59,.34) 100%);
+}
+.hero__inner{position:relative;width:100%;padding-block:0 72px}
+.hero__top{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding-block:26px;margin-bottom:clamp(80px,16vh,180px);
+  border-bottom:1px solid rgba(231,234,239,.14);
+}
+.hero__brand{
+  font-family:var(--grotesk);font-weight:700;font-size:1.15rem;letter-spacing:-.02em;
+}
+.hero__brand i{color:var(--green);font-style:normal}
+.hero__nav{display:flex;gap:34px;font-size:.82rem;color:rgba(231,234,239,.78);
+  font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase}
+
+.hero h1{
+  font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(3rem,8.4vw,7.2rem);line-height:.9;letter-spacing:-.04em;
+  max-width:15ch;
+}
+.hero__kicker{margin-bottom:30px}
+.hero__foot{
+  display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:end;
+  margin-top:clamp(48px,7vh,88px);
+}
+.hero__lead{
+  color:var(--mist);font-size:1.02rem;line-height:1.66;max-width:46ch;
+  border-top:1px solid rgba(231,234,239,.18);padding-top:22px;
+}
+.hero__cta{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--navy);background:var(--green);padding:15px 26px;text-decoration:none;
+}
+
+/* stat row — hairline, mono, no round numbers */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(231,234,239,.18)}
+.stats div{padding:22px 20px 0 0}
+.stats strong{
+  display:block;font-family:var(--grotesk);font-weight:700;
+  font-size:2rem;letter-spacing:-.03em;line-height:1;color:var(--white);
+}
+.stats span{
+  display:block;margin-top:9px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(231,234,239,.6);line-height:1.5;
+}
+
+/* =====================================================================
+   PART 3 — SOLUTIONS AS AN EDITORIAL INDEX
+   ===================================================================== */
+.sec{padding-block:clamp(88px,13vh,170px)}
+.sec__head{display:grid;grid-template-columns:220px 1fr;gap:48px;margin-bottom:72px}
+.sec__head h2{
+  font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.02;letter-spacing:-.032em;max-width:18ch;
+}
+.sec__head p{color:var(--grey);max-width:52ch;margin-top:20px;font-size:1rem}
+
+.index{border-top:1px solid var(--line)}
+.row{
+  position:relative;
+  display:grid;grid-template-columns:64px 1.05fr 200px 1fr 40px;
+  gap:28px;align-items:center;
+  padding:30px 0;border-bottom:1px solid var(--line);
+  transition:background .3s ease,padding .3s ease;
+}
+.row:hover{background:#fafbfc}
+.row__n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#a8aeb9}
+.row__t{
+  font-family:var(--grotesk);font-weight:600;
+  font-size:1.42rem;letter-spacing:-.024em;line-height:1.14;
+}
+.row__sector{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);
+}
+.row__d{color:var(--grey);font-size:.93rem;line-height:1.58}
+.row__a{
+  justify-self:end;font-size:1.1rem;color:var(--navy);
+  opacity:.25;transition:opacity .3s ease,transform .3s ease;
+}
+.row:hover .row__a{opacity:1;transform:translateX(4px)}
+.row:hover .row__sector{color:var(--navy)}
+
+/* hover-reveal image — the premium move: photography used sparingly */
+.row__img{
+  position:absolute;right:78px;top:50%;
+  width:190px;height:236px;
+  transform:translateY(-50%) scale(.97);
+  opacity:0;pointer-events:none;
+  background:var(--navy);overflow:hidden;
+  transition:opacity .38s ease,transform .38s ease;
+  z-index:2;
+}
+.row:hover .row__img{opacity:1;transform:translateY(-50%) scale(1)}
+.row__img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1) contrast(1.18) brightness(1.04);
+  mix-blend-mode:luminosity;opacity:.88;
+}
+.row__img::after{
+  content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.2;
+}
+
+/* =====================================================================
+   PART 4 — INDUSTRIES, TALL DUOTONE CROPS
+   ===================================================================== */
+.inds{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line)}
+.ind{position:relative;background:var(--navy);aspect-ratio:4/5;overflow:hidden}
+.ind img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1) contrast(1.2) brightness(1);
+  mix-blend-mode:luminosity;opacity:.62;
+  transition:opacity .5s ease,transform 1.1s cubic-bezier(.2,.7,.3,1);
+}
+.ind:hover img{opacity:.82;transform:scale(1.045)}
+.ind::after{
+  content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.18;pointer-events:none;
+}
+.ind__c{
+  position:absolute;inset:auto 0 0 0;padding:26px 24px;z-index:2;
+  background:linear-gradient(to top,rgba(22,36,59,.92),transparent);
+}
+.ind__n{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--green);display:block;margin-bottom:10px}
+.ind__t{
+  font-family:var(--grotesk);font-weight:600;color:#fff;
+  font-size:1.24rem;letter-spacing:-.022em;line-height:1.1;
+}
+
+/* =====================================================================
+   PART 5 — GRADING BEFORE / AFTER
+   ===================================================================== */
+.grade{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.grade figure{position:relative;margin:0;background:var(--navy);aspect-ratio:3/2;overflow:hidden}
+.grade img{width:100%;height:100%;object-fit:cover}
+.grade .after img{
+  filter:grayscale(1) contrast(1.18) brightness(1.03);
+  mix-blend-mode:luminosity;opacity:.86;
+}
+.grade .after::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.2}
+.grade figcaption{
+  position:absolute;left:0;bottom:0;z-index:3;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--navy);color:#fff;padding:8px 14px;
+}
+.grade .after figcaption{background:var(--green);color:var(--navy)}
+
+.footnote{padding:64px 0 110px;color:var(--grey);font-size:.9rem;max-width:64ch;line-height:1.7}
+</style>
+</head>
+<body>
+
+<div class="comp-note">Design comp — <b>not the live site</b> — Inveenta editorial direction · existing imagery, brand palette unchanged</div>
+
+<!-- ============ PART 1 : TYPE ROUTES ============ -->
+<section class="routes wrap">
+  <h2 class="comp-h">Part 1 — Type routes · same headline, three treatments</h2>
+
+  <div class="route rA">
+    <div class="route__tag"><b>Route A</b> <em>Montserrat only · extreme scale contrast · zero brand risk</em></div>
+    <div class="route__demo">
+      <h3>Run leaner.<br>Scale faster.</h3>
+      <div class="route__body">
+        <span class="label">Assessment</span>
+        Safest option — no change to your brand guidelines. Montserrat is geometric and very widely
+        used, so it stays recognisable as "startup" even at this scale. Improves on today, but
+        doesn't fully escape the stereotype.
+      </div>
+    </div>
+  </div>
+
+  <div class="route rB">
+    <div class="route__tag"><b>Route B</b> <em>Neo-grotesque display + Montserrat body + mono labels · true Swiss</em></div>
+    <div class="route__demo">
+      <h3>Run leaner.<br>Scale faster.</h3>
+      <div class="route__body">
+        <span class="label">Assessment — recommended</span>
+        Swiss/editorial design is grotesque-based, not serif-based. Tighter, more neutral, more
+        engineered than Montserrat — and the mono labels read as instrumentation, which suits a firm
+        that builds operational systems. Ships as self-hosted Inter or Söhne.
+      </div>
+    </div>
+  </div>
+
+  <div class="route rC">
+    <div class="route__tag"><b>Route C</b> <em>Editorial serif display + Montserrat body + mono labels</em></div>
+    <div class="route__demo">
+      <h3>Run leaner.<br>Scale faster.</h3>
+      <div class="route__body">
+        <span class="label">Assessment</span>
+        Most obviously "premium", but a serif pulls toward law firm / private bank / management
+        consultancy. Distinctive, and a real option if you want to look less like a software vendor —
+        just be sure that's the association you want.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART 2 : HERO ============ -->
+<div class="comp-note">Part 2 — Hero, route B applied · no fake dashboard, no invented metrics</div>
+<header class="hero on-dark">
+  <div class="hero__media"><img src="../public/img/hero-bg.jpg" alt=""></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner wrap">
+    <div class="hero__top">
+      <div class="hero__brand"><i>i</i>nveenta</div>
+      <nav class="hero__nav"><span>Solutions</span><span>Industries</span><span>Expertise</span><span>Contact</span></nav>
+    </div>
+
+    <div class="idx hero__kicker"><span class="spark">—</span> 01 / Operations</div>
+    <h1>Run leaner. Scale faster.</h1>
+
+    <div class="hero__foot">
+      <p class="hero__lead">
+        Inveenta designs and builds custom enterprise software that turns complex, manual operations
+        into governed, scalable systems — engineered around how your business actually works.
+      </p>
+      <div><a class="hero__cta" href="#">Start a project →</a></div>
+    </div>
+
+    <div class="stats" style="margin-top:clamp(52px,8vh,96px)">
+      <div><strong>—</strong><span>Placeholder ·<br>awaiting your figure</span></div>
+      <div><strong>—</strong><span>Placeholder ·<br>awaiting your figure</span></div>
+      <div><strong>—</strong><span>Placeholder ·<br>awaiting your figure</span></div>
+      <div><strong>—</strong><span>Placeholder ·<br>awaiting your figure</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PART 3 : SOLUTIONS INDEX ============ -->
+<div class="comp-note">Part 3 — Solutions as an editorial index · hover a row to reveal its image</div>
+<section class="sec wrap">
+  <div class="sec__head">
+    <div class="idx"><span class="spark">—</span> What we build</div>
+    <div>
+      <h2>Solutions, ready to make your own.</h2>
+      <p>Productised use-cases we've delivered before — each one custom-fitted to your data and
+         process, and mapped to the industries we work in.</p>
+    </div>
+  </div>
+
+  <div class="index">
+    <div class="row">
+      <div class="row__n">01</div>
+      <div class="row__t">Transport Tracking</div>
+      <div class="row__sector">Logistics</div>
+      <div class="row__d">End-to-end visibility across multi-party supply chains, with a governed state model.</div>
+      <div class="row__a">→</div>
+      <div class="row__img"><img src="../public/img/sol-transport.jpg" alt=""></div>
+    </div>
+    <div class="row">
+      <div class="row__n">02</div>
+      <div class="row__t">Quality &amp; Inspection</div>
+      <div class="row__sector">Manufacturing</div>
+      <div class="row__d">Shop-floor inspection tools that connect process data to the people who run it.</div>
+      <div class="row__a">→</div>
+      <div class="row__img"><img src="../public/img/sol-quality.jpg" alt=""></div>
+    </div>
+    <div class="row">
+      <div class="row__n">03</div>
+      <div class="row__t">Ticket Systems</div>
+      <div class="row__sector">Cross-industry</div>
+      <div class="row__d">Issue and request tracking that fits your process — not the other way around.</div>
+      <div class="row__a">→</div>
+      <div class="row__img"><img src="../public/img/sol-ticketing.jpg" alt=""></div>
+    </div>
+    <div class="row">
+      <div class="row__n">04</div>
+      <div class="row__t">Project Management</div>
+      <div class="row__sector">Cross-industry</div>
+      <div class="row__d">Project tracking across types, with milestones and early warnings.</div>
+      <div class="row__a">→</div>
+      <div class="row__img"><img src="../public/img/sol-project.jpg" alt=""></div>
+    </div>
+    <div class="row">
+      <div class="row__n">05</div>
+      <div class="row__t">Monitoring &amp; Controlling</div>
+      <div class="row__sector">Finance</div>
+      <div class="row__d">Early-warning logic that flags problems before they escalate.</div>
+      <div class="row__a">→</div>
+      <div class="row__img"><img src="../public/img/sol-monitoring.jpg" alt=""></div>
+    </div>
+    <div class="row">
+      <div class="row__n">06</div>
+      <div class="row__t">Post-Merger Integration</div>
+      <div class="row__sector">Corporate</div>
+      <div class="row__d">Plan, track and steer the integration of two organisations into one.</div>
+      <div class="row__a">→</div>
+      <div class="row__img"><img src="../public/img/sol-pmi.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART 4 : INDUSTRIES ============ -->
+<div class="comp-note">Part 4 — Industries · tall duotone crops, one grade across all imagery</div>
+<section class="sec wrap" style="padding-top:clamp(64px,9vh,110px)">
+  <div class="sec__head">
+    <div class="idx"><span class="spark">—</span> Industries</div>
+    <div>
+      <h2>Built for environments where the details matter.</h2>
+      <p>Delivery within regulated, enterprise contexts — where data quality, traceability and
+         stakeholder governance aren't optional.</p>
+    </div>
+  </div>
+
+  <div class="inds">
+    <a class="ind" href="#"><img src="../public/img/automotive.jpg" alt="">
+      <div class="ind__c"><span class="ind__n">01</span><div class="ind__t">Automotive</div></div></a>
+    <a class="ind" href="#"><img src="../public/img/logistics.jpg" alt="">
+      <div class="ind__c"><span class="ind__n">02</span><div class="ind__t">Logistics &amp; Transport</div></div></a>
+    <a class="ind" href="#"><img src="../public/img/finance.jpg" alt="">
+      <div class="ind__c"><span class="ind__n">03</span><div class="ind__t">Finance &amp; Controlling</div></div></a>
+    <a class="ind" href="#"><img src="../public/img/manufacturing.jpg" alt="">
+      <div class="ind__c"><span class="ind__n">04</span><div class="ind__t">Manufacturing</div></div></a>
+  </div>
+</section>
+
+<!-- ============ PART 5 : GRADING ============ -->
+<div class="comp-note">Part 5 — Why the stock stops looking like stock</div>
+<section class="sec wrap" style="padding-top:clamp(56px,7vh,90px)">
+  <div class="grade">
+    <figure><img src="../public/img/sol-ticketing.jpg" alt=""><figcaption>Before — raw stock</figcaption></figure>
+    <figure class="after"><img src="../public/img/sol-ticketing.jpg" alt=""><figcaption>After — navy duotone + grain</figcaption></figure>
+  </div>
+  <p class="footnote">
+    Same file, no re-editing. Grading every photo to a single navy duotone removes the warm, colourful,
+    recognisably-Unsplash quality and collapses sixteen unrelated images into one deliberate visual
+    system. Lime then becomes the only colour on the page — which is why it reads as a decision rather
+    than a stock library.
+  </p>
+</section>
+
+</body>
+</html>

@@ -10,12 +10,9 @@ export default function Approach() {
           <span className="eyebrow">{approach.eyebrow}</span>
           <h2>{approach.h2}</h2>
           <p>{approach.p}</p>
-          <img
-            className="approach__img"
-            src={asset("img/team.jpg")}
-            alt={approach.eyebrow}
-            loading="lazy"
-          />
+          <span className="approach__img photo">
+            <img src={asset("img/team.jpg")} alt={approach.eyebrow} loading="lazy" />
+          </span>
         </div>
 
         <ol className="approach__steps">

@@ -38,17 +38,7 @@ export type SiteContent = {
     primary: string;
     ghost: string;
   };
-  heroVisual: {
-    live: string;
-    overview: string;
-    status: string;
-    kpis: { value: string; label: string }[];
-  };
   stats: { value: string; label: string }[];
-
-  pillars: { title: string; outcome: string; body: string }[];
-
-  showcase: { eyebrow: string; h2: string; p: string };
 
   solutionsSection: { eyebrow: string; h2: string; p: string; note: string; noteLink: string };
   solutions: Offering[];

@@ -4,55 +4,62 @@ import { useC } from "../i18n/LocaleContext";
 import Icon from "./Icon";
 import { asset } from "../asset";
 
-// Shared expandable card grid, used by both Capabilities and Solutions.
+// Abstract capability plates live in public/img/cap/*.svg and are keyed by id.
+const isAbstract = (image: string) => image.startsWith("cap-");
+
+// Shared editorial index list, used by Capabilities, Solutions and IndustryPage.
+// Rows sit on hairline rules and use the full width when collapsed. Opening a row
+// reveals its detail — and, when the offering has one, its visual alongside the copy.
 export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPrefix: string }) {
   const [open, setOpen] = useState<string | null>(null);
   const { cardGrid } = useC();
 
   return (
-    <div className="solutions__grid">
-      {items.map((s) => {
+    <div className="index">
+      {items.map((s, i) => {
         const isOpen = open === s.id;
         return (
-          <article
-            key={s.id}
-            className={`solution-card ${s.image ? "has-photo" : ""} ${isOpen ? "is-open" : ""}`}
-          >
-            {s.image && (
-              <span className="solution-card__photo" aria-hidden="true">
-                <img src={asset(`img/${s.image}.jpg`)} alt="" loading="lazy" />
-              </span>
-            )}
+          <article key={s.id} className={`irow ${isOpen ? "is-open" : ""}`}>
             <button
-              className="solution-card__head"
+              className="irow__head"
               onClick={() => setOpen(isOpen ? null : s.id)}
               aria-expanded={isOpen}
               aria-controls={`${idPrefix}-${s.id}`}
             >
-              <span className="solution-card__icon">
-                <Icon name={s.icon} />
-              </span>
-              <span className="solution-card__heading">
-                <h3>{s.title}</h3>
-                <p>{s.short}</p>
-              </span>
-              <span className="solution-card__toggle" aria-hidden="true">
+              <span className="irow__n">{String(i + 1).padStart(2, "0")}</span>
+              <span className="irow__t">{s.title}</span>
+              <span className="irow__d">{s.short}</span>
+              <span className="irow__a" aria-hidden="true">
                 <Icon name={isOpen ? "minus" : "plus"} />
               </span>
             </button>
 
             {isOpen && (
-              <div className="solution-card__detail" id={`${idPrefix}-${s.id}`}>
-                <p className="solution-card__body">{s.detail}</p>
-                <span className="solution-card__label">{cardGrid.whatWeBuilt}</span>
-                <ul className="solution-card__list">
-                  {s.experience.map((e) => (
-                    <li key={e}>
-                      <Icon name="check" className="solution-card__check" />
-                      {e}
-                    </li>
+              <div className={`irow__detail ${s.image ? "has-photo" : ""}`} id={`${idPrefix}-${s.id}`}>
+                <div className="irow__copy">
+                  <p className="irow__body">{s.detail}</p>
+                  <span className="irow__label">{cardGrid.whatWeBuilt}</span>
+                  <ul className="irow__list">
+                    {s.experience.map((e) => (
+                      <li key={e}>
+                        <Icon name="check" className="irow__check" />
+                        {e}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {s.image &&
+                  // Abstract brand plates (capabilities) render as-is; photos get the duotone grade.
+                  (isAbstract(s.image) ? (
+                    <span className="irow__img irow__img--plate" aria-hidden="true">
+                      <img src={asset(`img/cap/${s.image}.svg`)} alt="" loading="lazy" />
+                    </span>
+                  ) : (
+                    <span className="irow__img photo" aria-hidden="true">
+                      <img src={asset(`img/${s.image}.jpg`)} alt="" loading="lazy" />
+                    </span>
                   ))}
-                </ul>
               </div>
             )}
           </article>

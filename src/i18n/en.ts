@@ -12,57 +12,25 @@ const en: SiteContent = {
   cta: { getInTouch: "Get in touch", contact: "Contact" },
 
   hero: {
-    kicker: "engineering intelligent business",
-    titleLines: ["Run leaner.", "Scale faster.", "Perform better."],
-    lead: "Inveenta designs and builds custom enterprise software that turns complex, manual operations into governed, scalable systems — engineered around how your business actually works.",
+    kicker: "Custom software · AI integrated",
+    titleLines: ["If it existed, you'd", "have bought it already."],
+    lead: "So we build it — custom software with AI integrated where it counts, for the problems no product solves. Engineered for production, and yours to own.",
     primary: "Start a project",
     ghost: "Explore solutions",
   },
-  heroVisual: {
-    live: "live",
-    overview: "operations overview",
-    status: "All systems on track",
-    kpis: [
-      { value: "−40%", label: "Manual work" },
-      { value: "5×", label: "ROI" },
-      { value: "98%", label: "On-time" },
-    ],
-  },
   stats: [
-    { value: "7", label: "Core expertise" },
-    { value: "150+", label: "Built solutions" },
-    { value: "3×", label: "Faster delivery" },
     { value: "100%", label: "Custom-built" },
+    { value: "7", label: "Areas of expertise" },
+    { value: "3", label: "Regulated sectors" },
+    { value: "1", label: "Team, end to end" },
   ],
 
-  pillars: [
-    {
-      title: "Optimization",
-      outcome: "Less manual effort, more output",
-      body: "We strip the manual steps, waiting and double-entry out of how work flows — so the same team gets more done with less effort.",
-    },
-    {
-      title: "Scalability",
-      outcome: "Built once, runs at any size",
-      body: "Architected so the system that serves ten users serves ten thousand — no rebuild, no migration, no surprises as you grow.",
-    },
-    {
-      title: "Performance",
-      outcome: "Seconds-fast, solid under load",
-      body: "Reports that load in seconds and apps that hold up under real data and real load — speed your team and customers actually feel.",
-    },
-  ],
 
-  showcase: {
-    eyebrow: "Engineering intelligent business",
-    h2: "We connect your data, systems and people into one intelligent operation.",
-    p: "Optimization, scalability and performance — engineered to hold up under real data, real scale, and real scrutiny.",
-  },
 
   solutionsSection: {
     eyebrow: "What we build",
-    h2: "Solutions, ready to make your own.",
-    p: "Productized use-cases we've delivered before — each one custom-fitted to your data and process, and mapped to the industries we work in.",
+    h2: "Custom systems, built around your problem.",
+    p: "A sample of what we've built — each one custom-made for a client's data, process and constraints. Your solution starts from your problem, not from a shelf.",
     note: "Don't see your exact use case? Every engagement is custom —",
     noteLink: "tell us what you're trying to solve",
   },
@@ -190,13 +158,29 @@ const en: SiteContent = {
 
   capabilitiesSection: {
     eyebrow: "What we do",
-    h2: "Expertise, applied end to end.",
-    p: "The disciplines we bring to every engagement — from data and BI to automation, AI and governance. The how behind everything we build.",
+    h2: "AI and engineering, end to end.",
+    p: "The disciplines behind every custom solution — from AI and predictive analytics to automation, integration and governance. The how behind everything we build.",
   },
   capabilities: [
+
     {
+      id: "cap-ai",
+      icon: "sparkle",
+      image: "cap-ai",
+      title: "AI & Agents",
+      short: "Copilot Studio agents and intelligent automation that cut manual effort.",
+      detail:
+        "Conversational and task agents scoped to your enterprise data and processes, plus automation of the repetitive, error-prone workflows that quietly drain teams — surfacing information where work already happens, with measurable friction reduction.",
+      experience: [
+        "Copilot Studio agents scoped to enterprise data",
+        "Automation of repetitive, error-prone workflows",
+        "Integrations across SharePoint, Dataverse, Azure & cloud",
+        "Measurable reduction in manual effort",
+      ],
+    },    {
       id: "cap-bi",
       icon: "chart",
+      image: "cap-bi",
       title: "Data & Business Intelligence",
       short: "Decision-ready insight on data models that stay correct as they grow.",
       detail:
@@ -211,6 +195,7 @@ const en: SiteContent = {
     {
       id: "cap-forecast",
       icon: "forecast",
+      image: "cap-forecast",
       title: "Forecasting & Predictive Analytics",
       short: "Turn your history into a credible view of what's coming next.",
       detail:
@@ -225,6 +210,7 @@ const en: SiteContent = {
     {
       id: "cap-apps",
       icon: "grid",
+      image: "cap-apps",
       title: "Application Development",
       short: "Governed business apps and portals on Power Apps, Power Pages & Dataverse.",
       detail:
@@ -239,6 +225,7 @@ const en: SiteContent = {
     {
       id: "cap-automation",
       icon: "flow",
+      image: "cap-automation",
       title: "Process Automation",
       short: "Approvals, orchestration and integrations that run without anyone chasing them.",
       detail:
@@ -251,22 +238,9 @@ const en: SiteContent = {
       ],
     },
     {
-      id: "cap-ai",
-      icon: "sparkle",
-      title: "AI & Agents",
-      short: "Copilot Studio agents and intelligent automation that cut manual effort.",
-      detail:
-        "Conversational and task agents scoped to your enterprise data and processes, plus automation of the repetitive, error-prone workflows that quietly drain teams — surfacing information where work already happens, with measurable friction reduction.",
-      experience: [
-        "Copilot Studio agents scoped to enterprise data",
-        "Automation of repetitive, error-prone workflows",
-        "Integrations across SharePoint, Dataverse, Azure & cloud",
-        "Measurable reduction in manual effort",
-      ],
-    },
-    {
       id: "cap-data-eng",
       icon: "database",
+      image: "cap-data-eng",
       title: "Integration & Data Engineering",
       short: "Clean, connected data flowing between the systems you already use.",
       detail:
@@ -281,6 +255,7 @@ const en: SiteContent = {
     {
       id: "cap-governance",
       icon: "lock",
+      image: "cap-governance",
       title: "Governance & Security",
       short: "Role-based access, audit trails and ALM that stand up to scrutiny.",
       detail:

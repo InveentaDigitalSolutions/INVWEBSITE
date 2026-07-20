@@ -14,57 +14,25 @@ const de: SiteContent = {
   cta: { getInTouch: "Kontakt aufnehmen", contact: "Kontakt" },
 
   hero: {
-    kicker: "engineering intelligent business",
-    titleLines: ["Schlanker arbeiten.", "Schneller skalieren.", "Mehr leisten."],
-    lead: "Inveenta konzipiert und entwickelt individuelle Unternehmenssoftware, die komplexe, manuelle Abläufe in steuerbare, skalierbare Systeme verwandelt — entlang der Art, wie Ihr Unternehmen wirklich arbeitet.",
+    kicker: "Individuelle Software · KI integriert",
+    titleLines: ["Gäbe es sie, hätten Sie", "sie längst gekauft."],
+    lead: "Also bauen wir sie — individuelle Software mit KI, integriert dort, wo sie zählt, für die Probleme, die kein Produkt löst. Für den Produktivbetrieb entwickelt und in Ihrem Besitz.",
     primary: "Projekt starten",
     ghost: "Lösungen entdecken",
   },
-  heroVisual: {
-    live: "live",
-    overview: "Betriebsübersicht",
-    status: "Alle Systeme im grünen Bereich",
-    kpis: [
-      { value: "−40%", label: "Manuelle Arbeit" },
-      { value: "5×", label: "ROI" },
-      { value: "98%", label: "Termintreue" },
-    ],
-  },
   stats: [
-    { value: "7", label: "Kernkompetenzen" },
-    { value: "150+", label: "Umgesetzte Lösungen" },
-    { value: "3×", label: "Schnellere Lieferung" },
     { value: "100%", label: "Maßgeschneidert" },
+    { value: "7", label: "Kompetenzfelder" },
+    { value: "3", label: "Regulierte Branchen" },
+    { value: "1", label: "Team, durchgängig" },
   ],
 
-  pillars: [
-    {
-      title: "Optimierung",
-      outcome: "Weniger manueller Aufwand, mehr Ergebnis",
-      body: "Wir nehmen die manuellen Schritte, Wartezeiten und Doppelerfassungen aus Ihren Abläufen heraus — damit dasselbe Team mit weniger Aufwand mehr schafft.",
-    },
-    {
-      title: "Skalierbarkeit",
-      outcome: "Einmal gebaut, in jeder Größe stabil",
-      body: "So konzipiert, dass das System für zehn Nutzer auch zehntausend bedient — ohne Neubau, ohne Migration, ohne Überraschungen beim Wachsen.",
-    },
-    {
-      title: "Performance",
-      outcome: "Sekundenschnell, stabil unter Last",
-      body: "Berichte, die in Sekunden laden, und Apps, die echter Datenmenge und echter Last standhalten — Geschwindigkeit, die Team und Kunden spüren.",
-    },
-  ],
 
-  showcase: {
-    eyebrow: "engineering intelligent business",
-    h2: "Wir verbinden Ihre Daten, Systeme und Menschen zu einem intelligenten Betrieb.",
-    p: "Optimierung, Skalierbarkeit und Performance — entwickelt, um echter Datenmenge, echter Skalierung und echter Prüfung standzuhalten.",
-  },
 
   solutionsSection: {
     eyebrow: "Was wir bauen",
-    h2: "Lösungen, die zu Ihren werden.",
-    p: "Erprobte, produktnahe Anwendungsfälle — jeder individuell auf Ihre Daten und Prozesse zugeschnitten und auf die Branchen abgebildet, in denen wir arbeiten.",
+    h2: "Maßgeschneiderte Systeme, gebaut um Ihr Problem.",
+    p: "Ein Auszug dessen, was wir gebaut haben — jedes individuell auf Daten, Prozesse und Rahmenbedingungen eines Kunden zugeschnitten. Ihre Lösung beginnt bei Ihrem Problem, nicht im Regal.",
     note: "Ihr Anwendungsfall nicht dabei? Jedes Projekt ist individuell —",
     noteLink: "sagen Sie uns, was Sie lösen möchten",
   },
@@ -192,13 +160,29 @@ const de: SiteContent = {
 
   capabilitiesSection: {
     eyebrow: "Was wir tun",
-    h2: "Expertise, durchgängig angewandt.",
-    p: "Die Disziplinen, die wir in jedes Projekt einbringen — von Daten und BI über Automatisierung und KI bis zu Governance. Das Wie hinter allem, was wir bauen.",
+    h2: "KI und Engineering, durchgängig.",
+    p: "Die Disziplinen hinter jeder maßgeschneiderten Lösung — von KI und Predictive Analytics über Automatisierung und Integration bis Governance. Das Wie hinter allem, was wir bauen.",
   },
   capabilities: [
+
     {
+      id: "cap-ai",
+      icon: "sparkle",
+      image: "cap-ai",
+      title: "KI & Agenten",
+      short: "Copilot-Studio-Agenten und intelligente Automatisierung, die manuellen Aufwand senken.",
+      detail:
+        "Konversations- und Aufgabenagenten, zugeschnitten auf Ihre Unternehmensdaten und -prozesse, dazu Automatisierung der wiederkehrenden, fehleranfälligen Abläufe, die Teams stillschweigend auslaugen — Informationen dort, wo gearbeitet wird, mit messbarer Reibungsreduktion.",
+      experience: [
+        "Copilot-Studio-Agenten, zugeschnitten auf Unternehmensdaten",
+        "Automatisierung wiederkehrender, fehleranfälliger Abläufe",
+        "Integrationen über SharePoint, Dataverse, Azure & Cloud",
+        "Messbare Reduktion manuellen Aufwands",
+      ],
+    },    {
       id: "cap-bi",
       icon: "chart",
+      image: "cap-bi",
       title: "Daten & Business Intelligence",
       short: "Entscheidungsreife Erkenntnisse auf Datenmodellen, die auch beim Wachsen korrekt bleiben.",
       detail:
@@ -213,6 +197,7 @@ const de: SiteContent = {
     {
       id: "cap-forecast",
       icon: "forecast",
+      image: "cap-forecast",
       title: "Forecasting & Predictive Analytics",
       short: "Aus Ihrer Historie eine belastbare Sicht auf das, was kommt.",
       detail:
@@ -227,6 +212,7 @@ const de: SiteContent = {
     {
       id: "cap-apps",
       icon: "grid",
+      image: "cap-apps",
       title: "Anwendungsentwicklung",
       short: "Steuerbare Business-Apps und Portale auf Power Apps, Power Pages & Dataverse.",
       detail:
@@ -241,6 +227,7 @@ const de: SiteContent = {
     {
       id: "cap-automation",
       icon: "flow",
+      image: "cap-automation",
       title: "Prozessautomatisierung",
       short: "Freigaben, Orchestrierung und Integrationen, die laufen, ohne dass jemand hinterhertelefoniert.",
       detail:
@@ -253,22 +240,9 @@ const de: SiteContent = {
       ],
     },
     {
-      id: "cap-ai",
-      icon: "sparkle",
-      title: "KI & Agenten",
-      short: "Copilot-Studio-Agenten und intelligente Automatisierung, die manuellen Aufwand senken.",
-      detail:
-        "Konversations- und Aufgabenagenten, zugeschnitten auf Ihre Unternehmensdaten und -prozesse, dazu Automatisierung der wiederkehrenden, fehleranfälligen Abläufe, die Teams stillschweigend auslaugen — Informationen dort, wo gearbeitet wird, mit messbarer Reibungsreduktion.",
-      experience: [
-        "Copilot-Studio-Agenten, zugeschnitten auf Unternehmensdaten",
-        "Automatisierung wiederkehrender, fehleranfälliger Abläufe",
-        "Integrationen über SharePoint, Dataverse, Azure & Cloud",
-        "Messbare Reduktion manuellen Aufwands",
-      ],
-    },
-    {
       id: "cap-data-eng",
       icon: "database",
+      image: "cap-data-eng",
       title: "Integration & Data Engineering",
       short: "Saubere, vernetzte Daten, die zwischen Ihren bestehenden Systemen fließen.",
       detail:
@@ -283,6 +257,7 @@ const de: SiteContent = {
     {
       id: "cap-governance",
       icon: "lock",
+      image: "cap-governance",
       title: "Governance & Sicherheit",
       short: "Rollenbasierter Zugriff, Audit-Trails und ALM, die einer Prüfung standhalten.",
       detail:

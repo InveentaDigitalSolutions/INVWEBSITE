@@ -41,7 +41,9 @@ export default function IndustryPage() {
       <Seo title={`${industry.name} — Inveenta`} description={industry.intro} jsonLd={jsonLd} />
       {/* Hero */}
       <section className="ip-hero on-dark">
-        <img className="ip-hero__img" src={asset(`img/${industry.image}.jpg`)} alt="" />
+        <span className="ip-hero__media photo" aria-hidden="true">
+          <img src={asset(`img/${industry.image}.jpg`)} alt="" />
+        </span>
         <div className="ip-hero__overlay" />
         <div className="container ip-hero__inner">
           <nav className="ip-breadcrumb" aria-label="Breadcrumb">

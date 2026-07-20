@@ -16,16 +16,14 @@ export default function Industries() {
         </div>
 
         <div className="industries__grid">
-          {industries.map((ind) => (
+          {industries.map((ind, i) => (
             <Link to={lp(`/industries/${ind.slug}`)} className="industry-card reveal" key={ind.name}>
-              <img
-                className="industry-card__img"
-                src={asset(`img/${ind.image}.jpg`)}
-                alt={ind.name}
-                loading="lazy"
-              />
+              <span className="industry-card__media photo" aria-hidden="true">
+                <img src={asset(`img/${ind.image}.jpg`)} alt="" loading="lazy" />
+              </span>
               <div className="industry-card__overlay" />
               <div className="industry-card__body">
+                <span className="industry-card__n">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{ind.name}</h3>
                 <p>{ind.body}</p>
                 <span className="industry-card__cta">
