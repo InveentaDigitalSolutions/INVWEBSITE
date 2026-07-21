@@ -12,17 +12,17 @@ const en: SiteContent = {
   cta: { getInTouch: "Get in touch", contact: "Contact" },
 
   hero: {
-    kicker: "Custom software · AI integrated",
-    titleLines: ["If it existed, you'd", "have bought it already."],
-    lead: "So we build it — custom software with AI integrated where it counts, for the problems no product solves. Engineered for production, and yours to own.",
+    kicker: "Engineered Intelligence",
+    titleLines: ["The next generation of enterprise software."],
+    lead: "AI engineered into the core of your operations, not bolted on — bespoke systems for the complex, large-scale processes no product was built to handle.",
     primary: "Start a project",
     ghost: "Explore solutions",
   },
   stats: [
-    { value: "100%", label: "Custom-built" },
     { value: "7", label: "Areas of expertise" },
     { value: "3", label: "Regulated sectors" },
-    { value: "1", label: "Team, end to end" },
+    { value: "100%", label: "Custom-built" },
+    { value: "0", label: "Vendor lock-in" },
   ],
 
 

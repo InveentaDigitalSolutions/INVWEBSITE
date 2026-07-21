@@ -14,17 +14,17 @@ const de: SiteContent = {
   cta: { getInTouch: "Kontakt aufnehmen", contact: "Kontakt" },
 
   hero: {
-    kicker: "Individuelle Software · KI integriert",
-    titleLines: ["Gäbe es sie, hätten Sie", "sie längst gekauft."],
-    lead: "Also bauen wir sie — individuelle Software mit KI, integriert dort, wo sie zählt, für die Probleme, die kein Produkt löst. Für den Produktivbetrieb entwickelt und in Ihrem Besitz.",
+    kicker: "Engineered Intelligence",
+    titleLines: ["Die nächste Generation von Unternehmenssoftware."],
+    lead: "KI, die in den Kern Ihrer Abläufe eingebaut ist, nicht aufgesetzt — maßgeschneiderte Systeme für die komplexen, großskaligen Prozesse, die kein Produkt bewältigen kann.",
     primary: "Projekt starten",
     ghost: "Lösungen entdecken",
   },
   stats: [
-    { value: "100%", label: "Maßgeschneidert" },
     { value: "7", label: "Kompetenzfelder" },
     { value: "3", label: "Regulierte Branchen" },
-    { value: "1", label: "Team, durchgängig" },
+    { value: "100%", label: "Maßgeschneidert" },
+    { value: "0", label: "Anbieterbindung" },
   ],
 
 

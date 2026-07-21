@@ -14,17 +14,17 @@ const es: SiteContent = {
   cta: { getInTouch: "Contactar", contact: "Contacto" },
 
   hero: {
-    kicker: "Software a medida · IA integrada",
-    titleLines: ["Si existiera, ya", "lo habría comprado."],
-    lead: "Así que lo creamos — software a medida con IA integrada donde importa, para los problemas que ningún producto resuelve. Diseñado para producción y de su propiedad.",
+    kicker: "Engineered Intelligence",
+    titleLines: ["La próxima generación de software empresarial."],
+    lead: "IA integrada en el núcleo de sus operaciones, no añadida por encima — sistemas a medida para los procesos complejos y de gran escala que ningún producto puede gestionar.",
     primary: "Iniciar un proyecto",
     ghost: "Explorar soluciones",
   },
   stats: [
-    { value: "100%", label: "A medida" },
     { value: "7", label: "Áreas de expertise" },
     { value: "3", label: "Sectores regulados" },
-    { value: "1", label: "Equipo, de principio a fin" },
+    { value: "100%", label: "A medida" },
+    { value: "0", label: "Dependencia" },
   ],
 
 

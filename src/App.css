@@ -305,18 +305,16 @@
 }
 
 .hero__title {
-  font-size: clamp(2.9rem, 1.1rem + 7.2vw, 7rem);
-  line-height: 0.9;
-  letter-spacing: -0.042em;
+  font-size: clamp(2.6rem, 1rem + 5.2vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.038em;
   color: var(--white);
   max-width: 15ch;
+  text-wrap: balance;
 }
 
 .hero__foot {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 56px;
-  align-items: end;
+  display: block;
   margin-top: clamp(40px, 6vh, 76px);
 }
 
@@ -333,6 +331,7 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .btn__icon {
@@ -399,10 +398,6 @@
   .hero {
     min-height: 0;
     padding-top: 124px;
-  }
-  .hero__foot {
-    grid-template-columns: 1fr;
-    gap: 32px;
   }
   .hero__kpis {
     grid-template-columns: repeat(2, 1fr);
