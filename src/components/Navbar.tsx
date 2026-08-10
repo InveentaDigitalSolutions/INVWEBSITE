@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useC, useLp } from "../i18n/LocaleContext";
+import { isLocale } from "../i18n/config";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { asset } from "../asset";
@@ -7,8 +9,16 @@ import { asset } from "../asset";
 export default function Navbar() {
   const { nav, cta } = useC();
   const lp = useLp();
+  const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Only the home page opens on the brand film, and the film parks its own
+  // wordmark top-left — so at the top of that page the bar rides over the
+  // film without a second mark, and solidifies as soon as you scroll.
+  const seg = pathname.replace(/^\/+|\/+$/g, "");
+  const onFilm = seg === "" || isLocale(seg);
+  const ghost = onFilm && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -21,7 +31,9 @@ export default function Navbar() {
   const anchor = (href: string) => asset(lp("/") + href.substring(href.indexOf("#")));
 
   return (
-    <header className={`nav nav--solid ${scrolled ? "nav--scrolled" : ""}`}>
+    <header
+      className={`nav ${ghost ? "nav--ghost" : "nav--solid"} ${scrolled ? "nav--scrolled" : ""}`}
+    >
       <div className="container nav__inner">
         <a href={asset(lp("/"))} className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
           <Logo size="sm" variant="dark" className="logo--word" />

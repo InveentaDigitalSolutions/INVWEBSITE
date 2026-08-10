@@ -19,6 +19,11 @@ const es: SiteContent = {
     lead: "IA integrada en el núcleo de sus operaciones, no añadida por encima — sistemas a medida para los procesos complejos y de gran escala que ningún producto puede gestionar.",
     primary: "Iniciar un proyecto",
     ghost: "Explorar soluciones",
+    filmAlt:
+      "Película de marca de Inveenta: Engineered Intelligence — cómo unas operaciones fragmentadas se convierten en un sistema a medida.",
+    pauseMotion: "Pausar",
+    playMotion: "Reproducir",
+    scrollCue: "Desplazar",
   },
   stats: [
     { value: "7", label: "Áreas de expertise" },

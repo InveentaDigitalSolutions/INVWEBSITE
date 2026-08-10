@@ -37,6 +37,10 @@ export type SiteContent = {
     lead: string;
     primary: string;
     ghost: string;
+    filmAlt: string;
+    pauseMotion: string;
+    playMotion: string;
+    scrollCue: string;
   };
   stats: { value: string; label: string }[];
 

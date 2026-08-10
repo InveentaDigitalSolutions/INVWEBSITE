@@ -24,6 +24,19 @@
   outline: 2px solid var(--green);
 }
 
+/* Read by search engines and screen readers, never painted */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .logo {
   display: block;
   width: auto;
@@ -174,6 +187,41 @@
   box-shadow: 0 6px 20px -16px rgba(22, 36, 59, 0.5);
 }
 
+/* Over the brand film: no plate — the film runs under the bar — and no
+   wordmark, because the film parks its own in exactly that corner. */
+.nav--ghost {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+.nav--ghost .nav__brand {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav--ghost .nav__links a:not(.nav__cta) {
+  color: rgba(231, 234, 239, 0.72);
+}
+
+.nav--ghost .nav__links a:not(.nav__cta):hover {
+  color: var(--white);
+}
+
+.nav--ghost .lang__trigger {
+  background: transparent;
+  border-color: rgba(231, 234, 239, 0.26);
+  color: rgba(231, 234, 239, 0.82);
+}
+
+.nav--ghost .lang__trigger:hover {
+  color: var(--white);
+  border-color: rgba(231, 234, 239, 0.5);
+}
+
+.nav--ghost .nav__toggle span {
+  background: var(--white);
+}
+
 .nav__inner {
   display: flex;
   align-items: center;
@@ -240,98 +288,114 @@
 }
 
 /* ---------- Hero (editorial: full-bleed duotone, type-led) ---------- */
+/* ---------- Hero: the brand film IS the hero ----------
+   The film carries its own typography, so nothing is laid over it. It is
+   letterboxed rather than cropped (object-fit: contain) — the film's ground
+   is the same navy as the section, so the bars read as the page, not as
+   bars, and the headline never loses its edges on an odd viewport. */
 .hero {
   position: relative;
   background: var(--navy);
   color: var(--white);
   min-height: clamp(600px, 92vh, 980px);
   display: flex;
-  align-items: flex-end;
-  padding-top: 150px;
-  padding-bottom: clamp(56px, 8vh, 96px);
+  align-items: stretch;
   overflow: hidden;
+  /* run the film up under the sticky bar (74px) — no seam, no letterbox
+     edge across the top of the frame */
+  margin-top: -74px;
 }
 
-/* full-bleed duotone backdrop — .photo supplies the navy grade + grain */
-.hero__media {
+.hero__film {
   position: absolute;
   inset: 0;
-  display: block;
 }
 
-.hero__media img {
-  object-position: 62% 40%;
-  opacity: 0.34;
-}
-
-.hero__media::after {
-  opacity: 0.22;
-}
-
-/* directional scrim: dense behind the type, open on the right */
-.hero__scrim {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    75deg,
-    rgba(22, 36, 59, 0.95) 0%,
-    rgba(22, 36, 59, 0.74) 46%,
-    rgba(22, 36, 59, 0.38) 100%
-  );
-}
-
-.hero__inner {
-  position: relative;
+.hero__frame {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: var(--navy);
 }
 
-.hero__kicker {
+/* Motion control — the loop runs well past five seconds, so it has to be
+   stoppable (WCAG 2.2.2). Quiet until hover or keyboard focus. */
+.hero__motion {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vh, 36px);
+  z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 30px;
+  gap: 9px;
+  padding: 9px 14px;
+  border: 1px solid rgba(231, 234, 239, 0.24);
+  background: rgba(22, 36, 59, 0.55);
+  backdrop-filter: blur(6px);
+  color: rgba(231, 234, 239, 0.72);
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(231, 234, 239, 0.68);
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.hero__kicker-rule {
-  width: 22px;
+.hero__motion:hover,
+.hero__motion:focus-visible {
+  opacity: 1;
+  color: var(--white);
+  border-color: rgba(231, 234, 239, 0.5);
+}
+
+.hero__motion-glyph {
+  display: inline-flex;
+  color: var(--green);
+}
+
+/* Scroll cue — mono label over a hairline, bottom-left */
+.hero__scroll {
+  position: absolute;
+  left: clamp(16px, 4vw, 56px);
+  bottom: clamp(16px, 3vh, 36px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(231, 234, 239, 0.58);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hero__scroll:hover,
+.hero__scroll:focus-visible {
+  color: var(--white);
+}
+
+.hero__scroll-rule {
+  width: 46px;
   height: 1px;
   background: var(--green);
+  transform-origin: left center;
+  animation: heroCue 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.hero__title {
-  font-size: clamp(2.6rem, 1rem + 5.2vw, 5.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.038em;
-  color: var(--white);
-  max-width: 15ch;
-  text-wrap: balance;
-}
-
-.hero__foot {
-  display: block;
-  margin-top: clamp(40px, 6vh, 76px);
-}
-
-.hero__lead {
-  max-width: 46ch;
-  font-size: 1.02rem;
-  line-height: 1.66;
-  color: var(--mist);
-  border-top: 1px solid rgba(231, 234, 239, 0.18);
-  padding-top: 24px;
-}
-
-.hero__actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 30px;
+@keyframes heroCue {
+  0%,
+  100% {
+    transform: scaleX(0.35);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 .btn__icon {
@@ -344,77 +408,38 @@
   transform: translateX(3px);
 }
 
-/* stat row — hairline-ruled, left-aligned, mono labels */
-.hero__kpis {
-  margin: clamp(48px, 7vh, 88px) 0 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(231, 234, 239, 0.18);
-}
-
-.kpi {
-  text-align: left;
-  padding: 24px 24px 0 0;
-}
-
-.hero .kpi__figure {
-  font-size: clamp(1.7rem, 1rem + 1.9vw, 2.4rem);
-}
-
-/* Entrance — one restrained fade, not a staggered performance */
-@keyframes heroIn {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.hero__kicker,
-.hero__title,
-.hero__foot,
-.hero__kpis {
-  animation: heroIn 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-.hero__kicker {
-  animation-delay: 0.05s;
-}
-.hero__title {
-  animation-delay: 0.13s;
-}
-.hero__foot {
-  animation-delay: 0.26s;
-}
-.hero__kpis {
-  animation-delay: 0.38s;
-}
-
+/* On a phone the 16:9 film can't fill a tall viewport without either
+   cropping its type or stranding it in a sea of navy — so the hero stops
+   being full-height and becomes the film's own band. */
 @media (max-width: 860px) {
+  /* the band is too short to give 74px of it away to the bar */
   .hero {
     min-height: 0;
-    padding-top: 124px;
+    margin-top: 0;
   }
-  .hero__kpis {
-    grid-template-columns: repeat(2, 1fr);
+  .nav--ghost {
+    background: var(--navy);
   }
-  .kpi {
-    padding-bottom: 20px;
+  .hero__film {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .hero__scroll,
+  .hero__motion {
+    bottom: 12px;
+  }
+  .hero__motion-label {
+    display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__kicker,
-  .hero__title,
-  .hero__foot,
-  .hero__kpis {
+  .hero__scroll-rule {
     animation: none !important;
-    opacity: 1;
     transform: none;
+    opacity: 1;
   }
   .tech-track {
     animation: none !important;
@@ -1505,10 +1530,6 @@
     padding-left: 0;
     padding-top: 32px;
   }
-  .hero__kpis {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 24px;
-  }
 }
 
 @media (max-width: 760px) {
@@ -1562,8 +1583,3 @@
   }
 }
 
-@media (max-width: 560px) {
-  .hero__kpis {
-    grid-template-columns: 1fr 1fr;
-  }
-}

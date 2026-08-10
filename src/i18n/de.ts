@@ -19,6 +19,11 @@ const de: SiteContent = {
     lead: "KI, die in den Kern Ihrer Abläufe eingebaut ist, nicht aufgesetzt — maßgeschneiderte Systeme für die komplexen, großskaligen Prozesse, die kein Produkt bewältigen kann.",
     primary: "Projekt starten",
     ghost: "Lösungen entdecken",
+    filmAlt:
+      "Inveenta Markenfilm: Engineered Intelligence — wie aus fragmentierten Abläufen ein maßgeschneidertes System wird.",
+    pauseMotion: "Pause",
+    playMotion: "Abspielen",
+    scrollCue: "Scrollen",
   },
   stats: [
     { value: "7", label: "Kompetenzfelder" },
