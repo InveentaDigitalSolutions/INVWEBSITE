@@ -104,7 +104,7 @@ export type SiteContent = {
 
   footer: { tagline: string; contact: string; privacy: string; imprint: string };
 
-  cardGrid: { whatWeBuilt: string; open: string; close: string };
+  cardGrid: { whatWeBuilt: string; open: string; close: string; delivered: string };
 
   industryPage: {
     label: string;

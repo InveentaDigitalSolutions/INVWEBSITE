@@ -10,7 +10,17 @@ const isAbstract = (image: string) => image.startsWith("cap-");
 // Shared editorial index list, used by Capabilities, Solutions and IndustryPage.
 // Rows sit on hairline rules and use the full width when collapsed. Opening a row
 // reveals its detail — and, when the offering has one, its visual alongside the copy.
-export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPrefix: string }) {
+export default function CardGrid({
+  items,
+  idPrefix,
+  showDelivered,
+}: {
+  items: Offering[];
+  idPrefix: string;
+  /** Surfaces the delivered-work count on the closed row — evidence that we
+      have actually built this, without making the reader click to find out. */
+  showDelivered?: boolean;
+}) {
   const [open, setOpen] = useState<string | null>(null);
   const { cardGrid } = useC();
 
@@ -27,7 +37,14 @@ export default function CardGrid({ items, idPrefix }: { items: Offering[]; idPre
               aria-controls={`${idPrefix}-${s.id}`}
             >
               <span className="irow__n">{String(i + 1).padStart(2, "0")}</span>
-              <span className="irow__t">{s.title}</span>
+              <span className="irow__t">
+                {s.title}
+                {showDelivered && s.experience.length > 0 && (
+                  <em className="irow__count">
+                    {s.experience.length} {cardGrid.delivered}
+                  </em>
+                )}
+              </span>
               <span className="irow__d">{s.short}</span>
               <span className="irow__a" aria-hidden="true">
                 <Icon name={isOpen ? "minus" : "plus"} />

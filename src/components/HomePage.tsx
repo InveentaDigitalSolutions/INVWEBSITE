@@ -18,10 +18,13 @@ export default function HomePage() {
     <main id="main">
       <Seo title={seo.homeTitle} description={seo.homeDescription} />
       <Hero />
-      <Solutions />
-      <Industries />
-      <Why />
+      {/* Expertise first: what we can do and have done, before the
+          use-cases. Industries then narrows it, and Solutions lands last
+          as the concrete thing to buy. */}
       <Capabilities />
+      <Industries />
+      <Solutions />
+      <Why />
       <Technologies />
       <About />
       <Approach />

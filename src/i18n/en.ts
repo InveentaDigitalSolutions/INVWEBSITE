@@ -3,9 +3,9 @@ import type { SiteContent } from "./types";
 const en: SiteContent = {
   tagline: "engineering intelligent business",
   nav: [
-    { label: "Solutions", href: "/#solutions" },
-    { label: "Industries", href: "/#industries" },
     { label: "Expertise", href: "/#expertise" },
+    { label: "Industries", href: "/#industries" },
+    { label: "Solutions", href: "/#solutions" },
     { label: "Technology", href: "/#technology" },
     { label: "About", href: "/#about" },
   ],
@@ -567,7 +567,12 @@ const en: SiteContent = {
     imprint: "Imprint",
   },
 
-  cardGrid: { whatWeBuilt: "What we've delivered", open: "Show more", close: "Show less" },
+  cardGrid: {
+    whatWeBuilt: "What we've delivered",
+    open: "Show more",
+    close: "Show less",
+    delivered: "delivered",
+  },
 
   industryPage: {
     label: "Industry",

@@ -1,17 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useC } from "../i18n/LocaleContext";
-import { asset } from "../asset";
-import FilmBackdrop, { type Backdrop } from "./FilmBackdrop";
-
-/** Ship default; ?bg= lets us compare candidates in place. */
-const BACKDROPS = ["topo", "field", "fuse", "grid", "photo"] as const;
-const DEFAULT_BACKDROP: Backdrop = "fuse";
-
-function chosenBackdrop(): Backdrop {
-  if (typeof window === "undefined") return DEFAULT_BACKDROP;
-  const q = new URLSearchParams(window.location.search).get("bg");
-  return (BACKDROPS as readonly string[]).includes(q ?? "") ? (q as Backdrop) : DEFAULT_BACKDROP;
-}
+import FilmBackdrop from "./FilmBackdrop";
 
 const MOTION_Q = "(prefers-reduced-motion: reduce)";
 /** Below this the film unpins and plays as ordinary stacked sections. */
@@ -20,14 +9,57 @@ const WIDE_Q = "(min-width: 861px)";
 /** Title · thesis · integration · shift · outcome. */
 const SCENES = 5;
 
+/** How long a scene's figures take to arrive, once the scene is on screen. */
+const PLAY_MS = 1150;
+
 function media(q: string) {
   if (typeof window === "undefined" || !window.matchMedia) return false;
   return window.matchMedia(q).matches;
 }
 
 const clamp = (n: number) => (n < 0 ? 0 : n > 1 ? 1 : n);
-/** Ease so a scene settles before the next one starts pulling. */
-const ease = (p: number) => (p < 0.5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2);
+/** Decelerating — figures arrive quickly, then settle. */
+const ease = (p: number) => 1 - (1 - p) ** 3;
+
+/**
+ * Plays a scene's animation on its own clock.
+ *
+ * Tying figures to scroll position meant the reader's scroll speed decided
+ * whether they ever saw a number: stop halfway through the scene and "40%"
+ * sits frozen at "17%", which is not a fact about anything. Scroll still
+ * decides WHICH scene is on screen; once it is, the scene animates itself
+ * to completion and holds there.
+ */
+function usePlay(active: boolean, duration = PLAY_MS) {
+  const [v, setV] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    let start = 0;
+
+    if (!active) {
+      /* rewind, so re-entering the scene replays it */
+      raf = requestAnimationFrame(() => setV(0));
+      return () => cancelAnimationFrame(raf);
+    }
+
+    if (media(MOTION_Q)) {
+      raf = requestAnimationFrame(() => setV(1));
+      return () => cancelAnimationFrame(raf);
+    }
+
+    const tick = (t: number) => {
+      if (!start) start = t;
+      const p = clamp((t - start) / duration);
+      setV(ease(p));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [active, duration]);
+
+  return v;
+}
 
 /**
  * The opening film.
@@ -46,8 +78,9 @@ export default function Hero() {
   const railRef = useRef<HTMLDivElement>(null);
   const [pinned, setPinned] = useState(() => media(WIDE_Q) && !media(MOTION_Q));
   const [scene, setScene] = useState(0);
-  const [p, setP] = useState(0); // progress within the active scene, 0..1
-  const [backdrop] = useState(chosenBackdrop);
+  /* Scroll position within the film, 0..1 — drives the backdrop drift only.
+     The scenes' own animations run on a clock, not on this. */
+  const [travelled, setTravelled] = useState(0);
 
   useEffect(() => {
     const apply = () => setPinned(media(WIDE_Q) && !media(MOTION_Q));
@@ -57,8 +90,7 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    /* Unpinned, scene/p are ignored entirely — every scene renders drawn —
-       so there is nothing to reset and no listener to attach. */
+    /* Unpinned, every scene renders drawn — nothing to track, no listener. */
     if (!pinned) return;
     let frame = 0;
     const onScroll = () => {
@@ -69,10 +101,8 @@ export default function Hero() {
         if (!rail) return;
         const travel = rail.offsetHeight - window.innerHeight;
         const done = clamp(-rail.getBoundingClientRect().top / travel);
-        const at = done * SCENES;
-        const idx = Math.min(SCENES - 1, Math.floor(at));
-        setScene(idx);
-        setP(clamp(at - idx));
+        setTravelled(done);
+        setScene(Math.min(SCENES - 1, Math.floor(done * SCENES)));
       });
     };
     onScroll();
@@ -85,8 +115,8 @@ export default function Hero() {
     };
   }, [pinned]);
 
-  /** In stacked mode every scene is fully drawn; pinned, only the live one. */
-  const at = (i: number) => (pinned ? (scene === i ? ease(p) : scene > i ? 1 : 0) : 1);
+  /** Stacked, every scene is live at once; pinned, only the one on screen. */
+  const live = (i: number) => (pinned ? scene === i : true);
 
   return (
     <section className={`film ${pinned ? "film--pinned" : "film--flat"}`} id="top">
@@ -99,30 +129,29 @@ export default function Hero() {
           {/* --film-p drifts the ground across the whole sequence, so the
               backdrop belongs to the film rather than sitting behind it */}
           <div
-            className={`film__bg film__bg--${backdrop}`}
+            className="film__bg"
             aria-hidden="true"
-            style={{ "--film-p": pinned ? (scene + p) / SCENES : 0 } as React.CSSProperties}
+            style={{ "--film-p": pinned ? travelled : 0 } as React.CSSProperties}
           >
-            {backdrop === "photo" && <img src={asset("img/hero-bg.jpg")} alt="" />}
-            <FilmBackdrop variant={backdrop} />
+            <FilmBackdrop />
           </div>
 
           <div className="film__scenes">
-            <TitleScene on={pinned ? scene === 0 : true} hero={hero} />
-            <Scene on={pinned ? scene === 1 : true} name="thesis">
+            <TitleScene on={live(0)} hero={hero} />
+            <Scene on={live(1)} name="thesis">
               <p className="film__eyebrow">{film.thesis.eyebrow}</p>
               <p className="film__thesis">
                 {film.thesis.line} <em>{film.thesis.emphasis}</em>
               </p>
             </Scene>
-            <Scene on={pinned ? scene === 2 : true} name="wire">
-              <Integration data={film.integration} p={at(2)} />
+            <Scene on={live(2)} name="wire">
+              <Integration data={film.integration} on={live(2)} />
             </Scene>
-            <Scene on={pinned ? scene === 3 : true} name="shift">
-              <Shift data={film.shift} p={at(3)} />
+            <Scene on={live(3)} name="shift">
+              <Shift data={film.shift} on={live(3)} />
             </Scene>
-            <Scene on={pinned ? scene === 4 : true} name="outcome">
-              <Outcome data={film.outcome} p={at(4)} />
+            <Scene on={live(4)} name="outcome">
+              <Outcome data={film.outcome} on={live(4)} />
             </Scene>
           </div>
 
@@ -182,11 +211,12 @@ function TitleScene({ on, hero }: { on: boolean; hero: ReturnType<typeof useC>["
 /* ---- Scene 3: fragmented systems resolve into one orchestrated stack ---- */
 function Integration({
   data,
-  p,
+  on,
 }: {
   data: ReturnType<typeof useC>["film"]["integration"];
-  p: number;
+  on: boolean;
 }) {
+  const p = usePlay(on, 1400);
   return (
     <div className="wire">
       <p className="film__eyebrow">{data.eyebrow}</p>
@@ -243,7 +273,8 @@ function Integration({
 }
 
 /* ---- Scene 4: 100 applications, 40 of them turning ---- */
-function Shift({ data, p }: { data: ReturnType<typeof useC>["film"]["shift"]; p: number }) {
+function Shift({ data, on }: { data: ReturnType<typeof useC>["film"]["shift"]; on: boolean }) {
+  const p = usePlay(on);
   const lit = Math.round(data.figure * p);
   return (
     <div className="shift">
@@ -266,7 +297,8 @@ function Shift({ data, p }: { data: ReturnType<typeof useC>["film"]["shift"]; p:
 }
 
 /* ---- Scene 5: the ladder out of manual work ---- */
-function Outcome({ data, p }: { data: ReturnType<typeof useC>["film"]["outcome"]; p: number }) {
+function Outcome({ data, on }: { data: ReturnType<typeof useC>["film"]["outcome"]; on: boolean }) {
+  const p = usePlay(on, 1500);
   const top = data.steps[data.steps.length - 1].value;
   return (
     <div className="outcome">

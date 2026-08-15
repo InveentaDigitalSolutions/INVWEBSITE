@@ -283,39 +283,20 @@
   top: 0;
 }
 
-/* the ground beneath every scene: one duotone plate, quietly gridded */
+/* the ground beneath every scene */
 .film__bg {
   position: absolute;
   inset: 0;
-  background: var(--navy);
+  background: radial-gradient(120% 100% at 78% 18%, #16243b 0%, #0c1421 46%, var(--void) 100%);
 }
 
-.film__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.55;
-  filter: grayscale(1) contrast(1.25) brightness(0.78);
-  mix-blend-mode: luminosity;
-}
-
-/* Legible-text scrim: heavy where the type sits (left, lower), thin on the
-   right so the photograph is actually visible as a photograph. */
 .film__bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-      100deg,
-      rgba(8, 13, 22, 0.95) 0%,
-      rgba(8, 13, 22, 0.82) 38%,
-      rgba(8, 13, 22, 0.42) 72%,
-      rgba(8, 13, 22, 0.55) 100%
-    ),
-    linear-gradient(180deg, rgba(8, 13, 22, 0.72) 0%, transparent 34%, rgba(8, 13, 22, 0.78) 100%);
 }
 
-/* ---- Backdrop candidates ---- */
+/* ---- Backdrop ---- */
 .bd {
   position: absolute;
   inset: 0;
@@ -345,77 +326,8 @@
   transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.film__bg--topo,
-.film__bg--fuse {
-  background: radial-gradient(120% 100% at 78% 18%, #16243b 0%, #0c1421 46%, var(--void) 100%);
-}
-
-/* The bloom — layered light, not one blurred blob. Drifts against the
-   contours so the two planes separate. */
-.bd--bloom {
-  background: radial-gradient(38% 44% at 72% 26%, rgba(64, 104, 162, 0.5), transparent 70%),
-    radial-gradient(30% 34% at 84% 54%, rgba(38, 74, 126, 0.42), transparent 72%),
-    radial-gradient(44% 40% at 24% 78%, rgba(24, 48, 84, 0.55), transparent 74%),
-    radial-gradient(26% 30% at 62% 16%, rgba(183, 218, 76, 0.1), transparent 70%);
-  filter: blur(14px);
-  transform: translate3d(calc(var(--film-p, 0) * 4%), calc(var(--film-p, 0) * -3%), 0)
-    scale(calc(1 + var(--film-p, 0) * 0.1));
-  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-/* Instrument grid — fine rules, heavier every fifth, ticks along the top */
-.film__bg--grid {
-  background: radial-gradient(120% 100% at 72% 12%, #142034 0%, #0b1220 52%, var(--void) 100%);
-}
-
-.bd--grid .bd__fine,
-.bd--grid .bd__coarse {
-  position: absolute;
-  inset: 0;
-}
-
-.bd--grid .bd__fine {
-  background-image: linear-gradient(var(--line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-  background-size: 30px 30px;
-}
-
-.bd--grid .bd__coarse {
-  background-image: linear-gradient(rgba(233, 236, 241, 0.13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(233, 236, 241, 0.13) 1px, transparent 1px);
-  background-size: 150px 150px;
-}
-
-.bd--grid .bd__ticks {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: rgba(233, 236, 241, 0.22);
-}
-
-/* Light field — depth with no subject at all */
-.film__bg--field {
-  background: radial-gradient(140% 110% at 70% 20%, #101b2c 0%, #0a1120 52%, var(--void) 100%);
-}
-
-/* the photo plate keeps the old grid overlay */
-.film__bg--photo .film__grid,
-.film__grid {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(var(--line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-  background-size: 88px 88px;
-  mask-image: radial-gradient(80% 70% at 50% 45%, #000, transparent 78%);
-}
-
-/* Only the photograph needs the heavy legibility scrim; the drawn plates
-   are already quiet enough to set type over. */
-.film__bg--topo::after,
-.film__bg--grid::after,
-.film__bg--fuse::after,
-.film__bg--field::after {
+/* Just enough scrim to hold type on the left without flattening the plate */
+.film__bg::after {
   background: linear-gradient(
       100deg,
       rgba(8, 13, 22, 0.88) 0%,
@@ -902,8 +814,7 @@
   .film__scene {
     transition: none;
   }
-  .bd--topo,
-  .bd--bloom {
+  .bd--topo {
     transform: none !important;
     transition: none;
   }
@@ -964,6 +875,24 @@
   letter-spacing: -0.028em;
   line-height: 1.12;
   color: var(--white);
+}
+
+/* delivered-work count — evidence on the closed row. Kept as quiet metadata:
+   every area currently reads "4 delivered", and seven identical accent lines
+   would read as a template rather than as proof. */
+.irow__count {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.irow__head:hover .irow__count {
+  color: var(--green);
 }
 
 .irow__d {

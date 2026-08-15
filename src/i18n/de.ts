@@ -5,9 +5,9 @@ import type { SiteContent } from "./types";
 const de: SiteContent = {
   tagline: "engineering intelligent business",
   nav: [
-    { label: "Lösungen", href: "/#solutions" },
-    { label: "Branchen", href: "/#industries" },
     { label: "Expertise", href: "/#expertise" },
+    { label: "Branchen", href: "/#industries" },
+    { label: "Lösungen", href: "/#solutions" },
     { label: "Technologie", href: "/#technology" },
     { label: "Über uns", href: "/#about" },
   ],
@@ -569,7 +569,12 @@ const de: SiteContent = {
     imprint: "Impressum",
   },
 
-  cardGrid: { whatWeBuilt: "Was wir umgesetzt haben", open: "Mehr zeigen", close: "Weniger zeigen" },
+  cardGrid: {
+    whatWeBuilt: "Was wir umgesetzt haben",
+    open: "Mehr zeigen",
+    close: "Weniger zeigen",
+    delivered: "umgesetzt",
+  },
 
   industryPage: {
     label: "Branche",

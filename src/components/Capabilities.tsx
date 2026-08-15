@@ -11,7 +11,7 @@ export default function Capabilities() {
           <h2>{capabilitiesSection.h2}</h2>
           <p>{capabilitiesSection.p}</p>
         </div>
-        <CardGrid items={capabilities} idPrefix="cap" />
+        <CardGrid items={capabilities} idPrefix="cap" showDelivered />
       </div>
     </section>
   );
