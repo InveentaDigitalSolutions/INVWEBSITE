@@ -37,18 +37,13 @@ export type SiteContent = {
     lead: string;
     primary: string;
     ghost: string;
-    filmAlt: string;
-    pauseMotion: string;
-    playMotion: string;
     scrollCue: string;
   };
   stats: { value: string; label: string }[];
 
-  /* The opening film, rebuilt as a scroll sequence. Each key is one pinned
-     scene; the numbers are language-neutral but their labels are not. */
+  /* The opening sequence. Each key is one pinned scene; the numbers are
+     language-neutral but their labels are not. */
   film: {
-    watch: string; // "Watch the film"
-    close: string;
     thesis: {
       eyebrow: string;
       line: string; // sentence up to the emphasis

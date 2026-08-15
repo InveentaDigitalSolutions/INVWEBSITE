@@ -36,7 +36,6 @@ export default function Hero() {
   const [pinned, setPinned] = useState(() => media(WIDE_Q) && !media(MOTION_Q));
   const [scene, setScene] = useState(0);
   const [p, setP] = useState(0); // progress within the active scene, 0..1
-  const [showFilm, setShowFilm] = useState(false);
 
   useEffect(() => {
     const apply = () => setPinned(media(WIDE_Q) && !media(MOTION_Q));
@@ -78,84 +77,50 @@ export default function Hero() {
   const at = (i: number) => (pinned ? (scene === i ? ease(p) : scene > i ? 1 : 0) : 1);
 
   return (
-    <>
-      <section
-        className={`film ${pinned ? "film--pinned" : "film--flat"}`}
-        id="top"
-        aria-label={hero.filmAlt}
+    <section className={`film ${pinned ? "film--pinned" : "film--flat"}`} id="top">
+      <div
+        className="film__rail"
+        ref={railRef}
+        style={pinned ? { height: `${SCENES * 100}vh` } : undefined}
       >
-        <div
-          className="film__rail"
-          ref={railRef}
-          style={pinned ? { height: `${SCENES * 100}vh` } : undefined}
-        >
-          <div className="film__stage">
-            <div className="film__bg" aria-hidden="true">
-              <img src={asset("img/hero-bg.jpg")} alt="" />
-              <span className="film__grid" />
-            </div>
-
-            <div className="film__scenes">
-              <TitleScene
-                on={pinned ? scene === 0 : true}
-                hero={hero}
-                watch={film.watch}
-                onWatch={() => setShowFilm(true)}
-              />
-              <Scene on={pinned ? scene === 1 : true} name="thesis">
-                <p className="film__eyebrow">{film.thesis.eyebrow}</p>
-                <p className="film__thesis">
-                  {film.thesis.line} <em>{film.thesis.emphasis}</em>
-                </p>
-              </Scene>
-              <Scene on={pinned ? scene === 2 : true} name="wire">
-                <Integration data={film.integration} p={at(2)} />
-              </Scene>
-              <Scene on={pinned ? scene === 3 : true} name="shift">
-                <Shift data={film.shift} p={at(3)} />
-              </Scene>
-              <Scene on={pinned ? scene === 4 : true} name="outcome">
-                <Outcome data={film.outcome} p={at(4)} />
-              </Scene>
-            </div>
-
-            {pinned && (
-              <div className="film__hud" aria-hidden="true">
-                <span className="film__cue">{hero.scrollCue}</span>
-                <span className="film__ticks">
-                  {Array.from({ length: SCENES }, (_, i) => (
-                    <span key={i} className={i === scene ? "is-on" : undefined} />
-                  ))}
-                </span>
-              </div>
-            )}
+        <div className="film__stage">
+          <div className="film__bg" aria-hidden="true">
+            <img src={asset("img/hero-bg.jpg")} alt="" />
+            <span className="film__grid" />
           </div>
-        </div>
-      </section>
 
-      {showFilm && (
-        <div
-          className="filmbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label={hero.filmAlt}
-          onClick={() => setShowFilm(false)}
-        >
-          <button type="button" className="filmbox__close">
-            {film.close}
-          </button>
-          <video
-            className="filmbox__video"
-            src={asset("video/inveenta-teaser.mp4")}
-            poster={asset("video/teaser-poster.jpg")}
-            controls
-            autoPlay
-            playsInline
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="film__scenes">
+            <TitleScene on={pinned ? scene === 0 : true} hero={hero} />
+            <Scene on={pinned ? scene === 1 : true} name="thesis">
+              <p className="film__eyebrow">{film.thesis.eyebrow}</p>
+              <p className="film__thesis">
+                {film.thesis.line} <em>{film.thesis.emphasis}</em>
+              </p>
+            </Scene>
+            <Scene on={pinned ? scene === 2 : true} name="wire">
+              <Integration data={film.integration} p={at(2)} />
+            </Scene>
+            <Scene on={pinned ? scene === 3 : true} name="shift">
+              <Shift data={film.shift} p={at(3)} />
+            </Scene>
+            <Scene on={pinned ? scene === 4 : true} name="outcome">
+              <Outcome data={film.outcome} p={at(4)} />
+            </Scene>
+          </div>
+
+          {pinned && (
+            <div className="film__hud" aria-hidden="true">
+              <span className="film__cue">{hero.scrollCue}</span>
+              <span className="film__ticks">
+                {Array.from({ length: SCENES }, (_, i) => (
+                  <span key={i} className={i === scene ? "is-on" : undefined} />
+                ))}
+              </span>
+            </div>
+          )}
         </div>
-      )}
-    </>
+      </div>
+    </section>
   );
 }
 
@@ -176,17 +141,7 @@ function Scene({
 }
 
 /* ---- Scene 1: the title card ---- */
-function TitleScene({
-  on,
-  hero,
-  watch,
-  onWatch,
-}: {
-  on: boolean;
-  hero: ReturnType<typeof useC>["hero"];
-  watch: string;
-  onWatch: () => void;
-}) {
+function TitleScene({ on, hero }: { on: boolean; hero: ReturnType<typeof useC>["hero"] }) {
   return (
     <div className={`film__scene film__scene--title${on ? " is-on" : ""}`}>
       <div className="film__inner">
@@ -197,14 +152,9 @@ function TitleScene({
           <a className="btn btn-primary" href="#contact">
             {hero.primary}
           </a>
-          <button type="button" className="film__watch" onClick={onWatch}>
-            <span className="film__watch-glyph" aria-hidden="true">
-              <svg viewBox="0 0 12 12" width="10" height="10">
-                <path d="M2.5 1.5 10 6l-7.5 4.5z" fill="currentColor" />
-              </svg>
-            </span>
-            {watch}
-          </button>
+          <a className="btn btn-ghost" href="#solutions">
+            {hero.ghost}
+          </a>
         </div>
       </div>
     </div>

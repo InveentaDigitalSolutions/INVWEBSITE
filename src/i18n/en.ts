@@ -17,15 +17,9 @@ const en: SiteContent = {
     lead: "AI engineered into the core of your operations, not bolted on — bespoke systems for the complex, large-scale processes no product was built to handle.",
     primary: "Start a project",
     ghost: "Explore solutions",
-    filmAlt:
-      "Inveenta brand film: engineered intelligence — how fragmented operations become one custom-built system.",
-    pauseMotion: "Pause",
-    playMotion: "Play",
     scrollCue: "Scroll",
   },
   film: {
-    watch: "Watch the film",
-    close: "Close",
     thesis: {
       eyebrow: "The problem we engineer against",
       line: "Most operations do not need more software. They need the software they have to work",

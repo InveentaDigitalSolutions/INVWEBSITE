@@ -399,35 +399,6 @@
   flex-wrap: wrap;
 }
 
-.film__watch {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: none;
-  border: 0;
-  padding: 0;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  transition: color 0.18s ease;
-}
-
-.film__watch:hover {
-  color: var(--white);
-}
-
-.film__watch-glyph {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  color: var(--green);
-}
-
 /* Scene 2 — the thesis, set as one large sentence */
 .film__thesis {
   font-family: var(--display);
@@ -775,42 +746,6 @@
 
 .film--flat .film__scene--title {
   padding-top: 128px;
-}
-
-/* ---- The mp4, on request ---- */
-.filmbox {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  display: grid;
-  place-items: center;
-  padding: clamp(16px, 5vw, 64px);
-  background: rgba(4, 7, 12, 0.92);
-  backdrop-filter: blur(8px);
-}
-
-.filmbox__video {
-  width: min(1200px, 100%);
-  max-height: 82vh;
-  background: #000;
-}
-
-.filmbox__close {
-  position: absolute;
-  top: 26px;
-  right: 30px;
-  background: none;
-  border: 1px solid var(--line-strong);
-  padding: 10px 18px;
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.filmbox__close:hover {
-  border-color: var(--white);
 }
 
 .btn__icon {
