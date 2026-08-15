@@ -25,6 +25,57 @@ const es: SiteContent = {
     playMotion: "Reproducir",
     scrollCue: "Desplazar",
   },
+  film: {
+    watch: "Ver la película",
+    close: "Cerrar",
+    thesis: {
+      eyebrow: "El problema contra el que diseñamos",
+      line: "La mayoría de las operaciones no necesitan más software. Necesitan que el software que ya tienen funcione",
+      emphasis: "como uno solo.",
+    },
+    integration: {
+      eyebrow: "De fragmentado a diseñado",
+      fromLabel: "Lo que se usa hoy",
+      fragmented: [
+        "ERP",
+        "Hojas de cálculo",
+        "Carpetas compartidas",
+        "Bases de datos",
+        "Tickets",
+        "Correo",
+        "Formularios en papel",
+      ],
+      hub: "IA / Agentes",
+      layers: [
+        { label: "Optimizado", items: ["Monitorizar", "Prever", "Decidir"] },
+        { label: "Automatizado", items: ["Enrutar", "Aprobar", "Notificar"] },
+        { label: "Digitalizado", items: ["Capturar", "Modelar", "Gobernar"] },
+      ],
+      caption: "Un flujo. Un registro. Agentes por encima.",
+    },
+    shift: {
+      eyebrow: "El cambio, en cifras",
+      year: "2026",
+      unit: "100 aplicaciones empresariales",
+      figure: 40,
+      note: "incorporarán agentes de IA específicos por tarea.",
+    },
+    outcome: {
+      eyebrow: "Lo que la automatización elimina",
+      steps: [
+        { label: "Manual", value: 0 },
+        { label: "Digitalizado", value: 30 },
+        { label: "Automatizado", value: 55 },
+        { label: "Orquestado", value: 74 },
+      ],
+      axis: "Tiempo ahorrado frente a la base manual",
+      note: "menos tiempo en el mismo proceso, de principio a fin.",
+      proof: [
+        { value: "2,2 h", label: "ahorradas por persona y día" },
+        { value: "5,1 meses", label: "para amortizar el desarrollo" },
+      ],
+    },
+  },
   stats: [
     { value: "7", label: "Áreas de expertise" },
     { value: "3", label: "Sectores regulados" },

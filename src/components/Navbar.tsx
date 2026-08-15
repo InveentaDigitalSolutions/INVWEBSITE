@@ -13,9 +13,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Only the home page opens on the brand film, and the film parks its own
-  // wordmark top-left — so at the top of that page the bar rides over the
-  // film without a second mark, and solidifies as soon as you scroll.
+  // The page is dark throughout, so the bar is transparent by default and
+  // only lays down its plate once you've scrolled off the opening film.
   const seg = pathname.replace(/^\/+|\/+$/g, "");
   const onFilm = seg === "" || isLocale(seg);
   const ghost = onFilm && !scrolled && !open;
@@ -36,8 +35,8 @@ export default function Navbar() {
     >
       <div className="container nav__inner">
         <a href={asset(lp("/"))} className="nav__brand" onClick={() => setOpen(false)} aria-label="inveenta home">
-          <Logo size="sm" variant="dark" className="logo--word" />
-          <Logo size="sm" variant="dark" compact className="logo--compact" />
+          <Logo size="sm" variant="light" className="logo--word" />
+          <Logo size="sm" variant="light" compact className="logo--compact" />
         </a>
 
         <nav className={`nav__links ${open ? "is-open" : ""}`}>
@@ -47,7 +46,7 @@ export default function Navbar() {
             </a>
           ))}
           <LanguageSwitcher onPick={() => setOpen(false)} />
-          <a href={anchor("/#contact")} className="btn btn-primary nav__cta" onClick={() => setOpen(false)}>
+          <a href={anchor("/#contact")} className="btn btn-outline nav__cta" onClick={() => setOpen(false)}>
             {cta.getInTouch}
           </a>
         </nav>

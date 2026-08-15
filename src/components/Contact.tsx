@@ -2,11 +2,12 @@ import { useState, type FormEvent } from "react";
 import { company } from "../data";
 import { useC } from "../i18n/LocaleContext";
 import Icon from "./Icon";
+import CountUp from "./CountUp";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
-  const { contact } = useC();
+  const { contact, stats } = useC();
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -78,6 +79,18 @@ export default function Contact() {
           <span className="eyebrow">{contact.eyebrow}</span>
           <h2>{contact.h2}</h2>
           <p>{contact.p}</p>
+
+          {/* the last credibility beat before the form */}
+          <ul className="contact__stats">
+            {stats.map((s) => (
+              <li key={s.label}>
+                <strong>
+                  <CountUp value={s.value} />
+                </strong>
+                <span>{s.label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="contact__form-wrap">

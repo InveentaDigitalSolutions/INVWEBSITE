@@ -25,6 +25,57 @@ const de: SiteContent = {
     playMotion: "Abspielen",
     scrollCue: "Scrollen",
   },
+  film: {
+    watch: "Film ansehen",
+    close: "Schließen",
+    thesis: {
+      eyebrow: "Das Problem, gegen das wir entwickeln",
+      line: "Die meisten Abläufe brauchen nicht mehr Software. Sie brauchen, dass die vorhandene Software",
+      emphasis: "als eine arbeitet.",
+    },
+    integration: {
+      eyebrow: "Von fragmentiert zu engineered",
+      fromLabel: "Was heute im Einsatz ist",
+      fragmented: [
+        "ERP",
+        "Tabellen",
+        "Dateiablagen",
+        "Datenbanken",
+        "Tickets",
+        "E-Mail",
+        "Papierformulare",
+      ],
+      hub: "KI / Agenten",
+      layers: [
+        { label: "Optimiert", items: ["Überwachen", "Prognostizieren", "Entscheiden"] },
+        { label: "Automatisiert", items: ["Routen", "Freigeben", "Benachrichtigen"] },
+        { label: "Digitalisiert", items: ["Erfassen", "Modellieren", "Steuern"] },
+      ],
+      caption: "Ein Prozess. Ein Datensatz. Agenten darüber.",
+    },
+    shift: {
+      eyebrow: "Der Wandel, in Zahlen",
+      year: "2026",
+      unit: "100 Unternehmensanwendungen",
+      figure: 40,
+      note: "werden aufgabenspezifische KI-Agenten enthalten.",
+    },
+    outcome: {
+      eyebrow: "Was Automatisierung herausnimmt",
+      steps: [
+        { label: "Manuell", value: 0 },
+        { label: "Digitalisiert", value: 30 },
+        { label: "Automatisiert", value: 55 },
+        { label: "Orchestriert", value: 74 },
+      ],
+      axis: "Zeitersparnis gegenüber manueller Basis",
+      note: "weniger Zeit für denselben Prozess, Ende zu Ende.",
+      proof: [
+        { value: "2,2 Std.", label: "gespart pro Person und Tag" },
+        { value: "5,1 Monate", label: "bis sich der Build amortisiert" },
+      ],
+    },
+  },
   stats: [
     { value: "7", label: "Kompetenzfelder" },
     { value: "3", label: "Regulierte Branchen" },

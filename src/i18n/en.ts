@@ -23,6 +23,57 @@ const en: SiteContent = {
     playMotion: "Play",
     scrollCue: "Scroll",
   },
+  film: {
+    watch: "Watch the film",
+    close: "Close",
+    thesis: {
+      eyebrow: "The problem we engineer against",
+      line: "Most operations do not need more software. They need the software they have to work",
+      emphasis: "as one.",
+    },
+    integration: {
+      eyebrow: "From fragmented to engineered",
+      fromLabel: "What you run today",
+      fragmented: [
+        "ERP",
+        "Spreadsheets",
+        "File shares",
+        "Databases",
+        "Tickets",
+        "Email",
+        "Paper forms",
+      ],
+      hub: "AI / Agents",
+      layers: [
+        { label: "Optimized", items: ["Monitor", "Forecast", "Decide"] },
+        { label: "Automated", items: ["Route", "Approve", "Notify"] },
+        { label: "Digitalized", items: ["Capture", "Model", "Govern"] },
+      ],
+      caption: "One flow. One record. Agents on top of it.",
+    },
+    shift: {
+      eyebrow: "The shift, in numbers",
+      year: "2026",
+      unit: "100 enterprise applications",
+      figure: 40,
+      note: "will embed task-specific AI agents.",
+    },
+    outcome: {
+      eyebrow: "What automation takes out",
+      steps: [
+        { label: "Manual", value: 0 },
+        { label: "Digitalized", value: 30 },
+        { label: "Automated", value: 55 },
+        { label: "Orchestrated", value: 74 },
+      ],
+      axis: "Time saved vs manual baseline",
+      note: "less time on the same process, end to end.",
+      proof: [
+        { value: "2.2 h", label: "saved per person, per day" },
+        { value: "5.1 months", label: "to pay back the build" },
+      ],
+    },
+  },
   stats: [
     { value: "7", label: "Areas of expertise" },
     { value: "3", label: "Regulated sectors" },

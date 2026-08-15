@@ -15,6 +15,10 @@ export default function Industries() {
           <p>{industriesSection.p}</p>
         </div>
 
+      </div>
+
+      {/* full-bleed: the crops run to the screen edge, not the text column */}
+      <div className="bleed">
         <div className="industries__grid">
           {industries.map((ind, i) => (
             <Link to={lp(`/industries/${ind.slug}`)} className="industry-card reveal" key={ind.name}>

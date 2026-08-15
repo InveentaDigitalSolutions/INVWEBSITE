@@ -44,6 +44,40 @@ export type SiteContent = {
   };
   stats: { value: string; label: string }[];
 
+  /* The opening film, rebuilt as a scroll sequence. Each key is one pinned
+     scene; the numbers are language-neutral but their labels are not. */
+  film: {
+    watch: string; // "Watch the film"
+    close: string;
+    thesis: {
+      eyebrow: string;
+      line: string; // sentence up to the emphasis
+      emphasis: string; // the two words that land in lime
+    };
+    integration: {
+      eyebrow: string;
+      fromLabel: string;
+      fragmented: string[];
+      hub: string;
+      layers: { label: string; items: string[] }[];
+      caption: string;
+    };
+    shift: {
+      eyebrow: string;
+      year: string;
+      unit: string;
+      figure: number; // percent, counted up on scroll
+      note: string;
+    };
+    outcome: {
+      eyebrow: string;
+      steps: { label: string; value: number }[];
+      axis: string;
+      note: string;
+      proof: { value: string; label: string }[];
+    };
+  };
+
   solutionsSection: { eyebrow: string; h2: string; p: string; note: string; noteLink: string };
   solutions: Offering[];
 
