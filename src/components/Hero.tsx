@@ -1,6 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { useC } from "../i18n/LocaleContext";
 import { asset } from "../asset";
+import FilmBackdrop, { type Backdrop } from "./FilmBackdrop";
+
+/** Ship default; ?bg= lets us compare candidates in place. */
+const BACKDROPS = ["topo", "grid", "field", "photo"] as const;
+const DEFAULT_BACKDROP: Backdrop = "topo";
+
+function chosenBackdrop(): Backdrop {
+  if (typeof window === "undefined") return DEFAULT_BACKDROP;
+  const q = new URLSearchParams(window.location.search).get("bg");
+  return (BACKDROPS as readonly string[]).includes(q ?? "") ? (q as Backdrop) : DEFAULT_BACKDROP;
+}
 
 const MOTION_Q = "(prefers-reduced-motion: reduce)";
 /** Below this the film unpins and plays as ordinary stacked sections. */
@@ -36,6 +47,7 @@ export default function Hero() {
   const [pinned, setPinned] = useState(() => media(WIDE_Q) && !media(MOTION_Q));
   const [scene, setScene] = useState(0);
   const [p, setP] = useState(0); // progress within the active scene, 0..1
+  const [backdrop] = useState(chosenBackdrop);
 
   useEffect(() => {
     const apply = () => setPinned(media(WIDE_Q) && !media(MOTION_Q));
@@ -84,9 +96,9 @@ export default function Hero() {
         style={pinned ? { height: `${SCENES * 100}vh` } : undefined}
       >
         <div className="film__stage">
-          <div className="film__bg" aria-hidden="true">
-            <img src={asset("img/hero-bg.jpg")} alt="" />
-            <span className="film__grid" />
+          <div className={`film__bg film__bg--${backdrop}`} aria-hidden="true">
+            {backdrop === "photo" && <img src={asset("img/hero-bg.jpg")} alt="" />}
+            <FilmBackdrop variant={backdrop} />
           </div>
 
           <div className="film__scenes">

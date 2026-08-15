@@ -60,7 +60,9 @@
   /* text on the ground */
   --ink: #e9ecf1;
   --ink-dim: rgba(233, 236, 241, 0.62);
-  --ink-faint: rgba(233, 236, 241, 0.38);
+  /* 0.5 is the floor: below it the small uppercase mono labels drop under
+     the 4.5:1 AA minimum against --void (0.38 measured 3.17:1). */
+  --ink-faint: rgba(233, 236, 241, 0.5);
   --ink-soft: #3b475a; /* retained for light surfaces (legal pages, forms) */
 
   /* hairlines carry all the structure now that boxes are gone */
