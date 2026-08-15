@@ -206,6 +206,66 @@ const es: SiteContent = {
         "Informes consolidados para comités de dirección",
       ],
     },
+    {
+      id: "supplier",
+      icon: "flow",
+      image: "cap-supplier",
+      title: "Gestión de Proveedores",
+      short: "Estado, recordatorios y escalado de proveedores que funcionan solos.",
+      detail:
+        "Los procesos con proveedores integrados en el mismo sistema que el trabajo: rendimiento y estado visibles en todos los proveedores, recordatorios que se disparan antes de que se caiga un plazo y escalado estructurado cuando ocurre — con las personas correctas en copia, en el idioma correcto, y sin que nadie mantenga una hoja de cálculo de quién debe qué.",
+      experience: [
+        "Reclamaciones automáticas a proveedores, agrupadas por proveedor y con la oficina coordinadora en copia",
+        "Recordatorios de plazos basados en días hábiles, no en días naturales",
+        "Visibilidad de estado entre proveedores en un único modelo gobernado",
+        "Rutas de escalado con seguimiento de confirmación y respuesta",
+      ],
+    },
+    {
+      id: "approval",
+      icon: "check",
+      image: "cap-approval",
+      title: "Gestión de Aprobaciones y Releases",
+      short: "El estado de aprobación de cada parte implicada, en una sola línea temporal.",
+      detail:
+        "Cockpits de aprobación que sustituyen la reunión de estado: un modelo de qué está liberado, qué está pendiente de quién y qué está en riesgo — fechas y dependencias sobre una única línea temporal, alimentadas por los sistemas que ya contienen esos registros.",
+      experience: [
+        "Cockpit de aprobación que consolida el estado de release entre flujos paralelos",
+        "Lógica de línea temporal derivada de datos de hitos y dependencias",
+        "Integración con fuentes existentes de planificación, tickets y datos maestros",
+        "Vistas por rol: cada parte ve las decisiones de las que responde",
+      ],
+    },
+    {
+      id: "telemetry",
+      icon: "database",
+      image: "cap-telemetry",
+      title: "Plataforma de Datos y Telemetría en Tiempo Real",
+      short: "Datos operativos en vivo, del dispositivo al panel.",
+      detail:
+        "Pipelines de streaming que llevan la telemetría de máquinas y sistemas operativos a un almacén consultable, con un panel en vivo encima — para que operaciones vea lo que está pasando ahora y no lo que pasó el mes pasado, y el histórico siga ahí cuando alguien pregunte por qué.",
+      experience: [
+        "Telemetría de dispositivos transmitida a un almacén analítico en tiempo real",
+        "Endpoints de ingesta propios que alimentan un pipeline orientado a eventos",
+        "Paneles en tiempo real desplegados y versionados desde la línea de comandos",
+        "Buffer local: una conexión caída no pierde datos",
+      ],
+    },
+    {
+      id: "planning",
+      icon: "forecast",
+      image: "cap-planning",
+      title: "Planificación de Demanda y Capacidad",
+      short: "Planificar un periodo en minutos partiendo del que funcionó.",
+      detail:
+        "Herramientas de planificación que convierten un ejercicio recurrente en unos pocos clics: elegir el periodo, partir de un periodo de referencia como plantilla, ajustar lo que ha cambiado y crear el plan completo en una sola acción — en lugar de rehacer la misma cuadrícula a mano cada semana.",
+      experience: [
+        "Planificación semanal construida a partir de una plantilla de periodo de referencia",
+        "Creación por lotes del plan de todo un periodo en una sola acción",
+        "Capacidad y demanda comparadas por centro y por periodo",
+        "Visibilidad de plan frente a real una vez que el periodo avanza",
+      ],
+    },
   ],
 
   capabilitiesSection: {

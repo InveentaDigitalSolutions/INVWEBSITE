@@ -206,6 +206,66 @@ const de: SiteContent = {
         "Konsolidiertes Reporting für Steuerungsgremien",
       ],
     },
+    {
+      id: "supplier",
+      icon: "flow",
+      image: "cap-supplier",
+      title: "Lieferantenmanagement",
+      short: "Lieferantenstatus, Erinnerungen und Eskalation, die von selbst laufen.",
+      detail:
+        "Lieferantenprozesse dort, wo auch die Arbeit stattfindet: Leistung und Status über alle Lieferanten hinweg sichtbar, Erinnerungen, die auslösen, bevor ein Termin kippt, und strukturierte Eskalation, wenn er es doch tut — mit den richtigen Personen in Kopie, in der richtigen Sprache, ohne dass jemand eine Liste pflegt, wer was noch schuldet.",
+      experience: [
+        "Automatisierte Lieferantenmahnungen, je Lieferant gebündelt, mit koordinierender Stelle in Kopie",
+        "Terminerinnerungen auf Basis von Arbeitstagen, nicht Kalendertagen",
+        "Lieferantenübergreifende Statussicht in einem steuerbaren Modell",
+        "Eskalationswege mit Bestätigungs- und Rückmeldeverfolgung",
+      ],
+    },
+    {
+      id: "approval",
+      icon: "check",
+      image: "cap-approval",
+      title: "Freigabe- & Release-Management",
+      short: "Freigabestatus über alle Beteiligten hinweg, auf einer Zeitachse.",
+      detail:
+        "Freigabecockpits, die das Statusmeeting ersetzen: ein Modell dessen, was freigegeben ist, was bei wem liegt und was gefährdet ist — Termine und Abhängigkeiten auf einer Zeitachse, gespeist aus den Systemen, die die Daten ohnehin führen.",
+      experience: [
+        "Freigabecockpit, das den Release-Status über parallele Arbeitsstränge zusammenführt",
+        "Zeitachsen-Logik abgeleitet aus Meilenstein- und Abhängigkeitsdaten",
+        "Anbindung an bestehende Planungs-, Ticket- und Stammdatenquellen",
+        "Rollenbasierte Sichten — jede Rolle sieht die Entscheidungen, die sie verantwortet",
+      ],
+    },
+    {
+      id: "telemetry",
+      icon: "database",
+      image: "cap-telemetry",
+      title: "Datenplattform & Echtzeit-Telemetrie",
+      short: "Operative Daten in Echtzeit, vom Gerät bis ins Dashboard.",
+      detail:
+        "Streaming-Pipelines, die Telemetrie aus Maschinen und operativen Systemen in einen abfragbaren Speicher bringen, mit einem Live-Dashboard darüber — damit der Betrieb sieht, was gerade passiert, statt was letzten Monat passiert ist, und die Historie trotzdem da ist, wenn jemand nach dem Warum fragt.",
+      experience: [
+        "Gerätetelemetrie, gestreamt in einen Echtzeit-Analysespeicher",
+        "Eigene Ingestion-Endpunkte für eine ereignisgetriebene Pipeline",
+        "Echtzeit-Dashboards, per Kommandozeile ausgerollt und versioniert",
+        "Lokale Pufferung — eine abgerissene Verbindung kostet keine Daten",
+      ],
+    },
+    {
+      id: "planning",
+      icon: "forecast",
+      image: "cap-planning",
+      title: "Bedarfs- & Kapazitätsplanung",
+      short: "Eine Periode in Minuten planen — ausgehend von der, die funktioniert hat.",
+      detail:
+        "Planungswerkzeuge, die aus einer wiederkehrenden Planungsübung wenige Klicks machen: Periode wählen, eine Referenzperiode als Vorlage nehmen, Abweichungen anpassen und den kompletten Plan in einem Schritt erzeugen — statt dasselbe Raster jede Woche von Hand neu zu bauen.",
+      experience: [
+        "Wochenplanung auf Basis einer Referenzperiode als Vorlage",
+        "Anlage eines kompletten Periodenplans in einem einzigen Schritt",
+        "Kapazität und Bedarf im Vergleich, je Standort und Periode",
+        "Plan-Ist-Sicht, sobald die Periode läuft",
+      ],
+    },
   ],
 
   capabilitiesSection: {

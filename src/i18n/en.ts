@@ -204,6 +204,66 @@ const en: SiteContent = {
         "Consolidated reporting for steering committees",
       ],
     },
+    {
+      id: "supplier",
+      icon: "flow",
+      image: "cap-supplier",
+      title: "Supplier Management",
+      short: "Supplier status, reminders and escalation that run themselves.",
+      detail:
+        "Supplier-facing operations built into the same system as the work: performance and status visible across every supplier, reminders that fire before a deadline slips, and structured escalation when it does — with the right people copied, in the right language, and no one maintaining a spreadsheet of who owes what.",
+      experience: [
+        "Automated supplier dunning, grouped per supplier with the coordinating office copied",
+        "Deadline reminders driven by business-day logic, not calendar days",
+        "Supplier-spanning status visibility in a single governed model",
+        "Escalation paths with confirmation and response tracking",
+      ],
+    },
+    {
+      id: "approval",
+      icon: "check",
+      image: "cap-approval",
+      title: "Approval & Release Management",
+      short: "Approval status across every stakeholder, on one timeline.",
+      detail:
+        "Approval cockpits that replace the status meeting: one model of what has been released, what is pending whom, and what is at risk — dates and dependencies drawn on a single timeline, with the underlying records pulled from the systems that already hold them.",
+      experience: [
+        "Approval cockpit consolidating release status across parallel workstreams",
+        "Timeline logic derived from milestone and dependency data",
+        "Integration with existing planning, issue-tracking and master-data sources",
+        "Role-based views, so each stakeholder sees the decisions they own",
+      ],
+    },
+    {
+      id: "telemetry",
+      icon: "database",
+      image: "cap-telemetry",
+      title: "Data Platform & Real-Time Telemetry",
+      short: "Live operational data, from device to dashboard.",
+      detail:
+        "Streaming pipelines that carry telemetry from machines and operational systems into a queryable store, with a live dashboard on top — so operations sees what is happening now rather than what happened last month, and the history is still there when someone asks why.",
+      experience: [
+        "Device telemetry streamed into a real-time analytics store",
+        "Custom ingestion endpoints feeding an event-driven pipeline",
+        "Real-time dashboards deployed and versioned from the command line",
+        "Local buffering, so a dropped connection doesn't lose data",
+      ],
+    },
+    {
+      id: "planning",
+      icon: "forecast",
+      image: "cap-planning",
+      title: "Demand & Capacity Planning",
+      short: "Plan a period in minutes by starting from the one that worked.",
+      detail:
+        "Planning tools that turn a recurring scheduling exercise into a few clicks: pick the period, start from a reference period as the template, adjust what changed, and create the whole plan in one action — instead of rebuilding the same grid by hand every week.",
+      experience: [
+        "Weekly planning built from a reference-period template",
+        "Batch creation of an entire period's plan in a single action",
+        "Capacity and demand compared per site and per period",
+        "Plan-versus-actual visibility once the period runs",
+      ],
+    },
   ],
 
   capabilitiesSection: {
