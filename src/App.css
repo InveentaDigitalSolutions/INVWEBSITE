@@ -323,14 +323,44 @@
   height: 100%;
 }
 
-/* Topographic contours — drawn, not photographed. The brand guideline's
-   own topo language, at full bleed. */
-.bd--topo {
-  color: #91a9cd;
+/* Grain. Gradients this dark band into visible steps on real panels; the
+   noise dithers them away. It is also what stops a flat plate reading as
+   a screenshot of a gradient. */
+.bd__grain {
+  position: absolute;
+  inset: -20%;
+  background-image: var(--grain);
+  opacity: 0.11;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
-.film__bg--topo {
+/* Topographic contours — drawn, not photographed. The brand guideline's
+   own topo language, at full bleed, drifting with the sequence. */
+.bd--topo {
+  color: #9db3d6;
+  transform: translate3d(calc(var(--film-p, 0) * -5%), calc(var(--film-p, 0) * -7%), 0)
+    scale(calc(1 + var(--film-p, 0) * 0.14));
+  transform-origin: 70% 50%;
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.film__bg--topo,
+.film__bg--fuse {
   background: radial-gradient(120% 100% at 78% 18%, #16243b 0%, #0c1421 46%, var(--void) 100%);
+}
+
+/* The bloom — layered light, not one blurred blob. Drifts against the
+   contours so the two planes separate. */
+.bd--bloom {
+  background: radial-gradient(38% 44% at 72% 26%, rgba(64, 104, 162, 0.5), transparent 70%),
+    radial-gradient(30% 34% at 84% 54%, rgba(38, 74, 126, 0.42), transparent 72%),
+    radial-gradient(44% 40% at 24% 78%, rgba(24, 48, 84, 0.55), transparent 74%),
+    radial-gradient(26% 30% at 62% 16%, rgba(183, 218, 76, 0.1), transparent 70%);
+  filter: blur(14px);
+  transform: translate3d(calc(var(--film-p, 0) * 4%), calc(var(--film-p, 0) * -3%), 0)
+    scale(calc(1 + var(--film-p, 0) * 0.1));
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 /* Instrument grid — fine rules, heavier every fifth, ticks along the top */
@@ -364,16 +394,9 @@
   color: rgba(233, 236, 241, 0.22);
 }
 
-/* Light field — depth with no subject; two slow drifting blooms */
+/* Light field — depth with no subject at all */
 .film__bg--field {
-  background: var(--void);
-}
-
-.bd--field {
-  background: radial-gradient(46% 52% at 74% 24%, rgba(52, 84, 132, 0.55), transparent 68%),
-    radial-gradient(40% 46% at 22% 76%, rgba(28, 54, 92, 0.5), transparent 70%),
-    radial-gradient(70% 60% at 50% 50%, rgba(183, 218, 76, 0.06), transparent 72%);
-  filter: blur(18px);
+  background: radial-gradient(140% 110% at 70% 20%, #101b2c 0%, #0a1120 52%, var(--void) 100%);
 }
 
 /* the photo plate keeps the old grid overlay */
@@ -391,6 +414,7 @@
    are already quiet enough to set type over. */
 .film__bg--topo::after,
 .film__bg--grid::after,
+.film__bg--fuse::after,
 .film__bg--field::after {
   background: linear-gradient(
       100deg,
@@ -876,6 +900,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .film__scene {
+    transition: none;
+  }
+  .bd--topo,
+  .bd--bloom {
+    transform: none !important;
     transition: none;
   }
   .tech-track {

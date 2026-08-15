@@ -4,8 +4,8 @@ import { asset } from "../asset";
 import FilmBackdrop, { type Backdrop } from "./FilmBackdrop";
 
 /** Ship default; ?bg= lets us compare candidates in place. */
-const BACKDROPS = ["topo", "grid", "field", "photo"] as const;
-const DEFAULT_BACKDROP: Backdrop = "topo";
+const BACKDROPS = ["topo", "field", "fuse", "grid", "photo"] as const;
+const DEFAULT_BACKDROP: Backdrop = "fuse";
 
 function chosenBackdrop(): Backdrop {
   if (typeof window === "undefined") return DEFAULT_BACKDROP;
@@ -96,7 +96,13 @@ export default function Hero() {
         style={pinned ? { height: `${SCENES * 100}vh` } : undefined}
       >
         <div className="film__stage">
-          <div className={`film__bg film__bg--${backdrop}`} aria-hidden="true">
+          {/* --film-p drifts the ground across the whole sequence, so the
+              backdrop belongs to the film rather than sitting behind it */}
+          <div
+            className={`film__bg film__bg--${backdrop}`}
+            aria-hidden="true"
+            style={{ "--film-p": pinned ? (scene + p) / SCENES : 0 } as React.CSSProperties}
+          >
             {backdrop === "photo" && <img src={asset("img/hero-bg.jpg")} alt="" />}
             <FilmBackdrop variant={backdrop} />
           </div>
