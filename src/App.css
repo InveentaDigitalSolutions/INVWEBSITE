@@ -770,6 +770,33 @@
   transform: translateX(3px);
 }
 
+/* Short viewports — the common laptop case (1366x768 leaves ~640px of
+   viewport). The title scene is the tallest, and at full size its top slid
+   under the sticky bar while its foot ran into the HUD. Scale the scene to
+   the height available, not just the width. */
+@media (min-width: 861px) and (max-height: 780px) {
+  .film__scene {
+    padding-block: 92px 82px;
+  }
+  .film__title {
+    font-size: clamp(2.3rem, 7.4vh, 4.4rem);
+  }
+  .film__lead {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  .film__actions {
+    margin-top: 26px;
+  }
+  .film__thesis {
+    font-size: clamp(1.6rem, 5.4vh, 3rem);
+  }
+  .outcome__proof {
+    margin-top: 26px;
+    padding-top: 20px;
+  }
+}
+
 @media (max-width: 1080px) {
   .wire__body {
     grid-template-columns: minmax(0, 0.8fr) 80px minmax(0, 1.5fr);

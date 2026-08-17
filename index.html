@@ -39,10 +39,16 @@
     />
     <meta name="twitter:image" content="https://inveenta.com/og-image.jpg" />
 
-    <!-- Preload the hero background — it's the largest paint (LCP). -->
-    <link rel="preload" as="image" href="%BASE_URL%img/hero-bg.jpg" fetchpriority="high" />
-
-    <!-- Self-hosted Montserrat (variable) — no third-party font CDN (GDPR). -->
+    <!-- The opening is drawn (SVG contours), so there is no hero image to
+         preload. The largest paint is the headline — preload its face, and
+         Montserrat for the body copy directly beneath it. -->
+    <link
+      rel="preload"
+      href="%BASE_URL%fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link
       rel="preload"
       href="%BASE_URL%fonts/montserrat-latin.woff2"
