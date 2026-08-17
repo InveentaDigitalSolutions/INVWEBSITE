@@ -76,6 +76,32 @@ export type SiteContent = {
   solutionsSection: { eyebrow: string; h2: string; p: string; note: string; noteLink: string };
   solutions: Offering[];
 
+  /* The maturity ladder the work is organised on — the same one the opening
+     film draws. Each stage names the Offering ids delivered at that level, so
+     the argument leads and the delivered work stands under it as evidence. */
+  stages: {
+    id: string;
+    title: string;
+    short: string;
+    detail: string;
+    /** references Offering.id values in `solutions` */
+    solutions: string[];
+  }[];
+
+  /* Where we operate: the stack, with agents acting across every layer and
+     governance running the full height of it. */
+  layers: {
+    eyebrow: string;
+    h2: string;
+    p: string;
+    agentsLabel: string;
+    governanceLabel: string;
+    governanceItems: string[];
+    focusLabel: string;
+    rows: { id: string; name: string; items: string; agent: string; focus?: boolean }[];
+    note: string;
+  };
+
   capabilitiesSection: { eyebrow: string; h2: string; p: string };
   capabilities: Offering[];
 

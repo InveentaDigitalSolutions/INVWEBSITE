@@ -14,7 +14,7 @@ const en: SiteContent = {
   hero: {
     kicker: "Data Autonomy",
     titleLines: ["The next generation of enterprise software."],
-    lead: "Systems that don't just report your operations — they run them. AI built into the core, not bolted on, for the large-scale processes no product was built to handle.",
+    lead: "Enterprise operations are constrained by the state of their data, not by their ambition. We establish the governed data layer that removes the constraint, and the AI agents that turn it into decisions — cycle after cycle, without replacing a single system.",
     primary: "Start a project",
     ghost: "Explore solutions",
     scrollCue: "Scroll",
@@ -79,8 +79,8 @@ const en: SiteContent = {
 
   solutionsSection: {
     eyebrow: "What we build",
-    h2: "Custom systems, built around your problem.",
-    p: "A sample of what we've built — each one custom-made for a client's data, process and constraints. Your solution starts from your problem, not from a shelf.",
+    h2: "Three stages. Most operations are still on the first.",
+    p: "Digitalization is where nearly everyone starts, and where most stop. The value compounds when systems stop reporting and start deciding — so we build for the stage you are at, and the one after it.",
     note: "Don't see your exact use case? Every engagement is custom —",
     noteLink: "tell us what you're trying to solve",
   },
@@ -265,6 +265,71 @@ const en: SiteContent = {
       ],
     },
   ],
+
+  stages: [
+    {
+      id: "digitalize",
+      title: "Digitalize",
+      short: "Get the work out of documents, inboxes and personal spreadsheets, into one governed record.",
+      detail:
+        "Where most operations still are. The process runs on mail threads, attachments and a spreadsheet somebody owns privately — nothing queryable, nothing auditable, and no two people holding the same version. We model the process properly and put it in one place, so the record becomes reliable enough to build anything else on.",
+      solutions: ["quality", "ticketing", "project"],
+    },
+    {
+      id: "orchestrate",
+      title: "Orchestrate",
+      short: "One model across the systems you already run. Nothing gets ripped out.",
+      detail:
+        "Your systems stay as they are. We add the layer that makes them speak one language — one data model, one time base, one version of the truth — so a process crossing five systems can finally be seen, measured and governed end to end. This is where the estate stops fragmenting and starts compounding.",
+      solutions: ["transport", "software", "approval", "pmi", "cost"],
+    },
+    {
+      id: "autonomize",
+      title: "Autonomize",
+      short: "Agents that decide, act, and feed the result back into the next cycle.",
+      detail:
+        "Once data is clean, connected and governed, software can do more than report it. Agents watch the process, decide inside the rules they are given, act, and return the outcome so the following cycle starts better informed than the last. That closed loop is what turns a system of record into an operation that improves itself.",
+      solutions: ["supplier", "monitoring", "telemetry", "planning"],
+    },
+  ],
+
+  layers: {
+    eyebrow: "Where we work",
+    h2: "Four layers. Governed once, and agents act across all of them.",
+    p: "We work the whole stack, but the leverage sits in the data layer. Get that right and everything above it becomes possible; get it wrong and no application on top can compensate for it.",
+    agentsLabel: "AI Agents",
+    governanceLabel: "Governance",
+    governanceItems: ["Access", "Audit", "Retention", "Residency"],
+    focusLabel: "Where the leverage is",
+    rows: [
+      {
+        id: "apps",
+        name: "Apps & Experience",
+        items: "Operational apps · Self-service · Field and mobile tools",
+        agent: "Assistants inside the tools people already use",
+      },
+      {
+        id: "process",
+        name: "Process & Orchestration",
+        items: "Approvals · Routing · System-to-system flows",
+        agent: "Agents that route, approve and escalate",
+      },
+      {
+        id: "data",
+        name: "Data",
+        items: "One model · Real-time and batch · Lineage and history",
+        agent: "Agents that watch data quality and lineage",
+        focus: true,
+      },
+      {
+        id: "infra",
+        name: "Infrastructure",
+        items: "Cloud and environments · Landing zones · Cost control",
+        agent: "Agents that hold environments, cost and access in line",
+      },
+    ],
+    note: "Technology-agnostic by design. We build on the platforms you already own — nothing is replaced to make room for us.",
+  },
 
   capabilitiesSection: {
     eyebrow: "What we do",

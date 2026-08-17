@@ -16,7 +16,7 @@ const es: SiteContent = {
   hero: {
     kicker: "Data Autonomy",
     titleLines: ["La próxima generación de software empresarial."],
-    lead: "Sistemas que no solo informan sobre sus operaciones — las ejecutan. IA integrada en el núcleo, no añadida por encima, para los procesos de gran escala que ningún producto puede gestionar.",
+    lead: "Las operaciones empresariales están limitadas por el estado de sus datos, no por su ambición. Establecemos la capa de datos gobernada que elimina esa limitación, y los agentes de IA que la convierten en decisiones — ciclo tras ciclo, sin sustituir un solo sistema.",
     primary: "Iniciar un proyecto",
     ghost: "Explorar soluciones",
     scrollCue: "Desplazar",
@@ -81,8 +81,8 @@ const es: SiteContent = {
 
   solutionsSection: {
     eyebrow: "Lo que construimos",
-    h2: "Sistemas a medida, creados en torno a su problema.",
-    p: "Una muestra de lo que hemos creado — cada uno hecho a medida para los datos, procesos y restricciones de un cliente. Su solución parte de su problema, no de un catálogo.",
+    h2: "Tres etapas. La mayoría de las operaciones siguen en la primera.",
+    p: "Digitalizar es donde casi todos empiezan, y donde la mayoría se detiene. El valor se acumula cuando los sistemas dejan de informar y empiezan a decidir — construimos para la etapa en la que está, y para la siguiente.",
     note: "¿No ve su caso de uso exacto? Cada proyecto es a medida —",
     noteLink: "díganos qué quiere resolver",
   },
@@ -267,6 +267,71 @@ const es: SiteContent = {
       ],
     },
   ],
+
+  stages: [
+    {
+      id: "digitalize",
+      title: "Digitalizar",
+      short: "Sacar el trabajo de documentos, correos y hojas de cálculo personales, y llevarlo a un registro gobernado.",
+      detail:
+        "Donde siguen estando la mayoría de las operaciones. El proceso vive en cadenas de correo, adjuntos y una hoja de cálculo que alguien mantiene por su cuenta — nada consultable, nada auditable, y ninguna persona con la misma versión que otra. Modelamos el proceso como corresponde y lo reunimos en un solo lugar, para que el registro sea lo bastante fiable como para construir sobre él.",
+      solutions: ["quality", "ticketing", "project"],
+    },
+    {
+      id: "orchestrate",
+      title: "Orquestar",
+      short: "Un modelo sobre los sistemas que ya utiliza. No se arranca nada.",
+      detail:
+        "Sus sistemas se quedan como están. Añadimos la capa que los hace hablar un mismo idioma — un modelo de datos, una base temporal, una sola versión de la verdad — para que un proceso que atraviesa cinco sistemas se pueda ver, medir y gobernar de principio a fin. Aquí el panorama deja de fragmentarse y empieza a sumar.",
+      solutions: ["transport", "software", "approval", "pmi", "cost"],
+    },
+    {
+      id: "autonomize",
+      title: "Autonomizar",
+      short: "Agentes que deciden, actúan y devuelven el resultado al siguiente ciclo.",
+      detail:
+        "Cuando los datos están limpios, conectados y gobernados, el software puede hacer algo más que informar. Los agentes vigilan el proceso, deciden dentro de las reglas que reciben, actúan y devuelven el resultado, de modo que el ciclo siguiente arranca mejor informado que el anterior. Ese ciclo cerrado es lo que convierte un sistema de registro en una operación que se mejora a sí misma.",
+      solutions: ["supplier", "monitoring", "telemetry", "planning"],
+    },
+  ],
+
+  layers: {
+    eyebrow: "Dónde trabajamos",
+    h2: "Cuatro capas. Gobernadas una vez, con agentes que actúan en todas.",
+    p: "Trabajamos todo el stack, pero la palanca está en la capa de datos. Si esa está bien, todo lo que va encima se vuelve posible; si está mal, ninguna aplicación por encima puede compensarlo.",
+    agentsLabel: "Agentes de IA",
+    governanceLabel: "Gobernanza",
+    governanceItems: ["Acceso", "Auditoría", "Retención", "Residencia"],
+    focusLabel: "Aquí está la palanca",
+    rows: [
+      {
+        id: "apps",
+        name: "Apps & Experiencia",
+        items: "Apps operativas · Autoservicio · Herramientas de campo y móviles",
+        agent: "Asistentes dentro de las herramientas que ya se usan",
+      },
+      {
+        id: "process",
+        name: "Proceso & Orquestación",
+        items: "Aprobaciones · Enrutamiento · Flujos entre sistemas",
+        agent: "Agentes que enrutan, aprueban y escalan",
+      },
+      {
+        id: "data",
+        name: "Datos",
+        items: "Un modelo · Tiempo real y batch · Linaje e histórico",
+        agent: "Agentes que vigilan la calidad y el linaje de los datos",
+        focus: true,
+      },
+      {
+        id: "infra",
+        name: "Infraestructura",
+        items: "Cloud y entornos · Landing zones · Control de costes",
+        agent: "Agentes que mantienen entornos, coste y acceso en orden",
+      },
+    ],
+    note: "Agnóstico en tecnología por diseño. Construimos sobre las plataformas que ya tiene — no se sustituye nada para hacernos sitio.",
+  },
 
   capabilitiesSection: {
     eyebrow: "Lo que hacemos",

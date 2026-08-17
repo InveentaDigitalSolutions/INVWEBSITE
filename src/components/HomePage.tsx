@@ -2,6 +2,7 @@ import Hero from "./Hero";
 import Capabilities from "./Capabilities";
 import Solutions from "./Solutions";
 import Industries from "./Industries";
+import Layers from "./Layers";
 import Why from "./Why";
 import About from "./About";
 import Technologies from "./Technologies";
@@ -24,6 +25,8 @@ export default function HomePage() {
       <Capabilities />
       <Industries />
       <Solutions />
+      {/* the ladder says how far along you are; this says what we build */}
+      <Layers />
       <Why />
       <Technologies />
       <About />

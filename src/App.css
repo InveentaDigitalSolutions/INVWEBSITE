@@ -283,10 +283,13 @@
   top: 0;
 }
 
-/* the ground beneath every scene */
+/* the ground beneath every scene. Clips its own children: the grain is
+   inset by -20% to hide its tiling seam, and in the stacked (unpinned)
+   layout the stage no longer clips, so it would push the page sideways. */
 .film__bg {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   background: radial-gradient(120% 100% at 78% 18%, #16243b 0%, #0c1421 46%, var(--void) 100%);
 }
 
@@ -859,6 +862,79 @@
   background: var(--void);
 }
 
+/* ---------- The maturity ladder ----------
+   Three chapters, each opening on its own argument and closing on the work
+   delivered at that level. Stages are always open — they are the structure,
+   not a disclosure control; only the rows inside them expand. */
+.stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: stage;
+}
+
+.stage + .stage {
+  margin-top: clamp(64px, 8vh, 108px);
+}
+
+.stage__head {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1.05fr) minmax(0, 1.15fr);
+  gap: 28px;
+  align-items: start;
+  padding-bottom: 34px;
+}
+
+/* Set as a chapter number, not a list index — the rows inside each stage
+   carry their own 01/02/03, and two identical markers in one gutter read
+   as a mistake. */
+.stage__n {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 1.2rem + 1.4vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--green);
+  opacity: 0.55;
+  padding-top: 0.1em;
+}
+
+.stage__title {
+  font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.stage__short {
+  margin-top: 14px;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 34ch;
+}
+
+.stage__detail {
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: var(--ink-dim);
+  max-width: 54ch;
+  padding-top: 0.4em;
+}
+
+@media (max-width: 900px) {
+  .stage__head {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: 26px;
+  }
+  .stage__detail {
+    grid-column: 2;
+    margin-top: 18px;
+    padding-top: 0;
+  }
+}
+
 .index {
   border-top: 1px solid var(--line);
 }
@@ -1097,6 +1173,191 @@
   .irow__detail.has-photo {
     padding-left: 56px;
     padding-bottom: 30px;
+  }
+}
+
+/* ---------- The stack ----------
+   Layers down the left, the agent that works each one alongside it, and a
+   governance spine running the full height. The focus layer is the only
+   filled slab — everything else is hairline, so the eye lands where the
+   leverage is without a legend explaining it. */
+.layers {
+  background: var(--void);
+  border-top: 1px solid var(--line);
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 74px;
+  gap: 0 clamp(16px, 2.4vw, 34px);
+}
+
+.stack__labels {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 40px);
+  margin-bottom: 14px;
+}
+
+.stack__colhead {
+  grid-column: 2;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.stack__rows {
+  grid-column: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.slab {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 40px);
+  align-items: center;
+}
+
+.slab__layer {
+  position: relative;
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.slab.is-focus .slab__layer {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.slab__name {
+  font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.42rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.slab.is-focus .slab__name {
+  color: var(--void);
+}
+
+.slab__items {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+
+.slab.is-focus .slab__items {
+  color: rgba(8, 13, 22, 0.72);
+}
+
+.slab__focus {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(8, 13, 22, 0.66);
+}
+
+.slab__agent {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-dim);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+/* governance spine — one model, applied the whole way down */
+.stack__gov {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  padding: 26px 0;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+}
+
+/* one vertical run, reading bottom-to-top like a spine label */
+.stack__gov-run {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.stack__gov-label {
+  color: var(--green);
+  letter-spacing: 0.26em;
+}
+
+.stack__gov-item {
+  color: var(--ink-faint);
+}
+
+.stack__gov-item::before {
+  content: "·";
+  margin-right: 16px;
+  color: var(--line-strong);
+}
+
+.stack__note {
+  margin-top: 34px;
+  max-width: 62ch;
+  font-size: 0.98rem;
+  color: var(--ink-dim);
+}
+
+@media (max-width: 860px) {
+  .stack {
+    grid-template-columns: 1fr;
+  }
+  .stack__labels {
+    display: none;
+  }
+  .slab {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 10px;
+  }
+  .slab__agent {
+    border-top: 0;
+    font-size: 0.88rem;
+  }
+  .stack__gov {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 16px 20px;
+    margin-top: 8px;
+  }
+  .stack__gov-run {
+    writing-mode: horizontal-tb;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
   }
 }
 

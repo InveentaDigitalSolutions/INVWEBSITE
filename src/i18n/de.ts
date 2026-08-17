@@ -16,7 +16,7 @@ const de: SiteContent = {
   hero: {
     kicker: "Data Autonomy",
     titleLines: ["Die nächste Generation von Unternehmenssoftware."],
-    lead: "Systeme, die Ihre Abläufe nicht nur berichten — sie führen sie aus. KI im Kern eingebaut, nicht aufgesetzt, für die großskaligen Prozesse, die kein Produkt bewältigen kann.",
+    lead: "Unternehmensabläufe sind durch den Zustand ihrer Daten begrenzt, nicht durch ihren Anspruch. Wir schaffen die einheitlich gesteuerte Datenschicht, die diese Grenze aufhebt, und die KI-Agenten, die daraus Entscheidungen machen — Durchlauf für Durchlauf, ohne ein einziges System zu ersetzen.",
     primary: "Projekt starten",
     ghost: "Lösungen entdecken",
     scrollCue: "Scrollen",
@@ -81,8 +81,8 @@ const de: SiteContent = {
 
   solutionsSection: {
     eyebrow: "Was wir bauen",
-    h2: "Maßgeschneiderte Systeme, gebaut um Ihr Problem.",
-    p: "Ein Auszug dessen, was wir gebaut haben — jedes individuell auf Daten, Prozesse und Rahmenbedingungen eines Kunden zugeschnitten. Ihre Lösung beginnt bei Ihrem Problem, nicht im Regal.",
+    h2: "Drei Stufen. Die meisten Abläufe stehen noch auf der ersten.",
+    p: "Digitalisierung ist der Anfang für fast alle — und für die meisten das Ende. Der Wert summiert sich erst, wenn Systeme aufhören zu berichten und anfangen zu entscheiden. Wir bauen für die Stufe, auf der Sie stehen, und für die nächste.",
     note: "Ihr Anwendungsfall nicht dabei? Jedes Projekt ist individuell —",
     noteLink: "sagen Sie uns, was Sie lösen möchten",
   },
@@ -267,6 +267,71 @@ const de: SiteContent = {
       ],
     },
   ],
+
+  stages: [
+    {
+      id: "digitalize",
+      title: "Digitalisieren",
+      short: "Die Arbeit raus aus Dokumenten, Postfächern und privaten Tabellen — hinein in einen steuerbaren Datenbestand.",
+      detail:
+        "Hier stehen die meisten Abläufe noch. Der Prozess läuft über Mail-Verläufe, Anhänge und eine Tabelle, die jemandem persönlich gehört — nichts ist abfragbar, nichts prüfbar, und keine zwei Personen haben denselben Stand. Wir modellieren den Prozess sauber und führen ihn an einem Ort zusammen, damit der Datenbestand tragfähig genug für alles Weitere wird.",
+      solutions: ["quality", "ticketing", "project"],
+    },
+    {
+      id: "orchestrate",
+      title: "Orchestrieren",
+      short: "Ein Modell über die Systeme, die Sie ohnehin betreiben. Nichts wird herausgerissen.",
+      detail:
+        "Ihre Systeme bleiben, wie sie sind. Wir ergänzen die Schicht, die sie eine Sprache sprechen lässt — ein Datenmodell, eine Zeitbasis, eine Wahrheit — damit ein Prozess über fünf Systeme hinweg endlich durchgängig sichtbar, messbar und steuerbar wird. Ab hier hört die Landschaft auf zu zersplittern und beginnt sich zu summieren.",
+      solutions: ["transport", "software", "approval", "pmi", "cost"],
+    },
+    {
+      id: "autonomize",
+      title: "Autonomisieren",
+      short: "Agenten, die entscheiden, handeln und das Ergebnis in den nächsten Durchlauf zurückgeben.",
+      detail:
+        "Sind die Daten sauber, verbunden und steuerbar, kann Software mehr als berichten. Agenten beobachten den Prozess, entscheiden innerhalb der Regeln, die sie bekommen, handeln und geben das Ergebnis zurück — sodass der nächste Durchlauf besser startet als der letzte. Dieser geschlossene Regelkreis macht aus einem System, das dokumentiert, einen Betrieb, der sich selbst verbessert.",
+      solutions: ["supplier", "monitoring", "telemetry", "planning"],
+    },
+  ],
+
+  layers: {
+    eyebrow: "Wo wir arbeiten",
+    h2: "Vier Ebenen. Einmal gesteuert — und Agenten wirken über alle hinweg.",
+    p: "Wir arbeiten über den gesamten Stack, doch der Hebel liegt in der Datenebene. Stimmt sie, wird alles darüber möglich; stimmt sie nicht, kann keine Anwendung darüber das ausgleichen.",
+    agentsLabel: "KI-Agenten",
+    governanceLabel: "Governance",
+    governanceItems: ["Zugriff", "Nachweis", "Aufbewahrung", "Datenstandort"],
+    focusLabel: "Hier liegt der Hebel",
+    rows: [
+      {
+        id: "apps",
+        name: "Apps & Experience",
+        items: "Operative Apps · Self-Service · Feld- und Mobilwerkzeuge",
+        agent: "Assistenten in den Werkzeugen, die ohnehin genutzt werden",
+      },
+      {
+        id: "process",
+        name: "Prozess & Orchestrierung",
+        items: "Freigaben · Routing · System-zu-System-Flows",
+        agent: "Agenten, die routen, freigeben und eskalieren",
+      },
+      {
+        id: "data",
+        name: "Daten",
+        items: "Ein Modell · Echtzeit und Batch · Herkunft und Historie",
+        agent: "Agenten, die Datenqualität und Herkunft überwachen",
+        focus: true,
+      },
+      {
+        id: "infra",
+        name: "Infrastruktur",
+        items: "Cloud und Umgebungen · Landing Zones · Kostensteuerung",
+        agent: "Agenten, die Umgebungen, Kosten und Zugriff in der Spur halten",
+      },
+    ],
+    note: "Technologieoffen von Grund auf. Wir bauen auf den Plattformen, die Sie bereits besitzen — nichts wird ersetzt, um uns Platz zu machen.",
+  },
 
   capabilitiesSection: {
     eyebrow: "Was wir tun",
