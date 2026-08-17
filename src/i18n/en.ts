@@ -53,11 +53,11 @@ const en: SiteContent = {
       note: "will embed task-specific AI agents.",
     },
   },
-  stats: [
-    { value: "7", label: "Areas of expertise" },
-    { value: "3", label: "Regulated sectors" },
-    { value: "100%", label: "Custom-built" },
-    { value: "0", label: "Vendor lock-in" },
+  commitments: [
+    { label: "Ownership", body: "You own the code, the data, and the environments it runs in." },
+    { label: "Platform", body: "Built on what you already run. Nothing is replaced to make room for us." },
+    { label: "Team", body: "One team, from the first question to the final handover." },
+    { label: "Response", body: "A considered reply within one business day — not a sales sequence." },
   ],
 
 

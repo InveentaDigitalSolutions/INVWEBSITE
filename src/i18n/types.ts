@@ -39,7 +39,10 @@ export type SiteContent = {
     ghost: string;
     scrollCue: string;
   };
-  stats: { value: string; label: string }[];
+  /* Shown immediately above the contact form. Commitments rather than
+     counts: at the point of enquiry a buyer is weighing risk, and "7 areas
+     of expertise" answers a question nobody asked. */
+  commitments: { label: string; body: string }[];
 
   /* "The shift" — the figures, given their own horizontal section rather
      than a moment inside the opening film. */

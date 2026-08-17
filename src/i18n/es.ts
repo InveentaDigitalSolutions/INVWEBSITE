@@ -55,11 +55,11 @@ const es: SiteContent = {
       note: "incorporarán agentes de IA específicos por tarea.",
     },
   },
-  stats: [
-    { value: "7", label: "Áreas de expertise" },
-    { value: "3", label: "Sectores regulados" },
-    { value: "100%", label: "A medida" },
-    { value: "0", label: "Dependencia" },
+  commitments: [
+    { label: "Propiedad", body: "El código, los datos y los entornos son suyos." },
+    { label: "Plataforma", body: "Construido sobre lo que ya utiliza. No se sustituye nada para hacernos sitio." },
+    { label: "Equipo", body: "Un solo equipo, de la primera pregunta al traspaso final." },
+    { label: "Respuesta", body: "Una respuesta meditada en un día hábil — no una secuencia comercial." },
   ],
 
 

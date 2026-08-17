@@ -55,11 +55,11 @@ const de: SiteContent = {
       note: "werden aufgabenspezifische KI-Agenten enthalten.",
     },
   },
-  stats: [
-    { value: "7", label: "Kompetenzfelder" },
-    { value: "3", label: "Regulierte Branchen" },
-    { value: "100%", label: "Maßgeschneidert" },
-    { value: "0", label: "Anbieterbindung" },
+  commitments: [
+    { label: "Eigentum", body: "Code, Daten und Umgebungen gehören Ihnen." },
+    { label: "Plattform", body: "Gebaut auf dem, was Sie bereits betreiben. Nichts wird ersetzt, um uns Platz zu machen." },
+    { label: "Team", body: "Ein Team, von der ersten Frage bis zur Übergabe." },
+    { label: "Antwort", body: "Eine durchdachte Antwort binnen eines Werktags — keine Vertriebsstrecke." },
   ],
 
 

@@ -2234,37 +2234,43 @@
   max-width: 46ch;
 }
 
-/* hairline stat row — figures over mono labels, no chips */
-.contact__stats {
+/* Commitments, not counts. Two lines each: a mono label and the promise
+   under it — the same rhythm the layer rows use. */
+.contact__commitments {
   list-style: none;
   margin: 46px 0 0;
   padding: 26px 0 0;
   border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px clamp(24px, 3vw, 48px);
 }
 
-.contact__stats strong {
-  display: block;
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.5rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--white);
-  font-variant-numeric: tabular-nums;
+.contact__commitments li {
+  display: grid;
+  gap: 8px;
 }
 
-.contact__stats span {
-  display: block;
-  margin-top: 10px;
+.contact__commitment-label {
   font-family: var(--mono);
   font-size: 0.6rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-faint);
-  line-height: 1.45;
+  color: var(--green);
+}
+
+.contact__commitments p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 34ch;
+}
+
+@media (max-width: 640px) {
+  .contact__commitments {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .contact__email {
