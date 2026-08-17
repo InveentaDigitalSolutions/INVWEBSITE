@@ -66,7 +66,7 @@ const en: SiteContent = {
         { value: "2.2 h", label: "saved per person, per day" },
         { value: "5.1 months", label: "to pay back the build" },
       ],
-      paybackEyebrow: "What it gives back",
+      paybackEyebrow: "The speed of impact",
       paybackNote: "Modelled on the processes we have rebuilt — the return depends on where you start.",
     },
   },

@@ -68,7 +68,7 @@ const de: SiteContent = {
         { value: "2,2 Std.", label: "gespart pro Person und Tag" },
         { value: "5,1 Monate", label: "bis sich der Build amortisiert" },
       ],
-      paybackEyebrow: "Was es zurückgibt",
+      paybackEyebrow: "Das Tempo der Wirkung",
       paybackNote: "Modelliert auf Basis der Prozesse, die wir umgebaut haben — der Rückfluss hängt davon ab, wo Sie starten.",
     },
   },

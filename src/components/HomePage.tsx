@@ -22,14 +22,13 @@ export default function HomePage() {
       <Hero />
       {/* the figures, out of the film and into their own run */}
       <TheShift />
-      {/* Expertise first: what we can do and have done, before the
-          use-cases. Industries then narrows it, and Solutions lands last
-          as the concrete thing to buy. */}
+      {/* The hero names Data Autonomy; this defines it. It belongs before
+          the capability and the work — what we believe, then what we can
+          do, then what we have built. */}
+      <Layers />
       <Capabilities />
       <Industries />
       <Solutions />
-      {/* the ladder says how far along you are; this says what we build */}
-      <Layers />
       <Why />
       <Technologies />
       <About />

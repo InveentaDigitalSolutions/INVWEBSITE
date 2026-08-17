@@ -68,7 +68,7 @@ const es: SiteContent = {
         { value: "2,2 h", label: "ahorradas por persona y día" },
         { value: "5,1 meses", label: "para amortizar el desarrollo" },
       ],
-      paybackEyebrow: "Lo que devuelve",
+      paybackEyebrow: "La velocidad del impacto",
       paybackNote: "Modelado sobre los procesos que hemos reconstruido — el retorno depende de dónde parta.",
     },
   },
