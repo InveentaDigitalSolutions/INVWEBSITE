@@ -68,6 +68,8 @@ const de: SiteContent = {
         { value: "2,2 Std.", label: "gespart pro Person und Tag" },
         { value: "5,1 Monate", label: "bis sich der Build amortisiert" },
       ],
+      paybackEyebrow: "Was es zurückgibt",
+      paybackNote: "Modelliert auf Basis der Prozesse, die wir umgebaut haben — der Rückfluss hängt davon ab, wo Sie starten.",
     },
   },
   stats: [
@@ -78,6 +80,11 @@ const de: SiteContent = {
   ],
 
 
+
+  shiftSection: {
+    eyebrow: "Der Wandel",
+    h2: "Was sich ändert, wenn Daten handlungsfähig werden.",
+  },
 
   solutionsSection: {
     eyebrow: "Was wir bauen",
@@ -296,9 +303,9 @@ const de: SiteContent = {
   ],
 
   layers: {
-    eyebrow: "Wo wir arbeiten",
-    h2: "Vier Ebenen. Einmal gesteuert — und Agenten wirken über alle hinweg.",
-    p: "Wir arbeiten über den gesamten Stack, doch der Hebel liegt in der Datenebene. Stimmt sie, wird alles darüber möglich; stimmt sie nicht, kann keine Anwendung darüber das ausgleichen.",
+    eyebrow: "Unsere Philosophie",
+    h2: "Data Autonomy.",
+    p: "Die Daten einmal steuern — und Agenten über jede Ebene des Stacks darauf handeln lassen. Das ist das Prinzip, auf dem hier alles aufbaut, und der Grund, warum wir den gesamten Stack bearbeiten und nicht eine Scheibe davon. Der Hebel liegt in der Datenebene: Stimmt sie, wird alles darüber möglich; stimmt sie nicht, kann keine Anwendung darüber das ausgleichen.",
     agentsLabel: "KI-Agenten",
     governanceLabel: "Governance",
     governanceItems: ["Zugriff", "Nachweis", "Aufbewahrung", "Datenstandort"],

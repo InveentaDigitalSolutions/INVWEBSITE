@@ -41,6 +41,10 @@ export type SiteContent = {
   };
   stats: { value: string; label: string }[];
 
+  /* "The shift" — the figures, given their own horizontal section rather
+     than a moment inside the opening film. */
+  shiftSection: { eyebrow: string; h2: string };
+
   /* The opening sequence. Each key is one pinned scene; the numbers are
      language-neutral but their labels are not. */
   film: {
@@ -70,6 +74,8 @@ export type SiteContent = {
       axis: string;
       note: string;
       proof: { value: string; label: string }[];
+      paybackEyebrow: string;
+      paybackNote: string;
     };
   };
 

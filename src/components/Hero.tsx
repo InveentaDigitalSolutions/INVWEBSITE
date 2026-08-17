@@ -1,65 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useC } from "../i18n/LocaleContext";
 import FilmBackdrop from "./FilmBackdrop";
+import { useScenePlay, clamp, media } from "../useScenePlay";
 
 const MOTION_Q = "(prefers-reduced-motion: reduce)";
 /** Below this the film unpins and plays as ordinary stacked sections. */
 const WIDE_Q = "(min-width: 861px)";
 
-/** Title · thesis · integration · shift · outcome. */
-const SCENES = 5;
-
-/** How long a scene's figures take to arrive, once the scene is on screen. */
-const PLAY_MS = 1150;
-
-function media(q: string) {
-  if (typeof window === "undefined" || !window.matchMedia) return false;
-  return window.matchMedia(q).matches;
-}
-
-const clamp = (n: number) => (n < 0 ? 0 : n > 1 ? 1 : n);
-/** Decelerating — figures arrive quickly, then settle. */
-const ease = (p: number) => 1 - (1 - p) ** 3;
-
-/**
- * Plays a scene's animation on its own clock.
- *
- * Tying figures to scroll position meant the reader's scroll speed decided
- * whether they ever saw a number: stop halfway through the scene and "40%"
- * sits frozen at "17%", which is not a fact about anything. Scroll still
- * decides WHICH scene is on screen; once it is, the scene animates itself
- * to completion and holds there.
- */
-function usePlay(active: boolean, duration = PLAY_MS) {
-  const [v, setV] = useState(0);
-
-  useEffect(() => {
-    let raf = 0;
-    let start = 0;
-
-    if (!active) {
-      /* rewind, so re-entering the scene replays it */
-      raf = requestAnimationFrame(() => setV(0));
-      return () => cancelAnimationFrame(raf);
-    }
-
-    if (media(MOTION_Q)) {
-      raf = requestAnimationFrame(() => setV(1));
-      return () => cancelAnimationFrame(raf);
-    }
-
-    const tick = (t: number) => {
-      if (!start) start = t;
-      const p = clamp((t - start) / duration);
-      setV(ease(p));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [active, duration]);
-
-  return v;
-}
+/** Title · thesis · integration. The two number scenes moved out to "The
+    shift", where they get a panel each instead of a moment each. */
+const SCENES = 3;
 
 /**
  * The opening film.
@@ -147,12 +97,6 @@ export default function Hero() {
             <Scene on={live(2)} name="wire">
               <Integration data={film.integration} on={live(2)} />
             </Scene>
-            <Scene on={live(3)} name="shift">
-              <Shift data={film.shift} on={live(3)} />
-            </Scene>
-            <Scene on={live(4)} name="outcome">
-              <Outcome data={film.outcome} on={live(4)} />
-            </Scene>
           </div>
 
           {pinned && (
@@ -216,7 +160,7 @@ function Integration({
   data: ReturnType<typeof useC>["film"]["integration"];
   on: boolean;
 }) {
-  const p = usePlay(on, 1400);
+  const p = useScenePlay(on, 1400);
   return (
     <div className="wire">
       <p className="film__eyebrow">{data.eyebrow}</p>
@@ -268,69 +212,6 @@ function Integration({
         </div>
       </div>
       <p className="wire__caption">{data.caption}</p>
-    </div>
-  );
-}
-
-/* ---- Scene 4: 100 applications, 40 of them turning ---- */
-function Shift({ data, on }: { data: ReturnType<typeof useC>["film"]["shift"]; on: boolean }) {
-  const p = usePlay(on);
-  const lit = Math.round(data.figure * p);
-  return (
-    <div className="shift">
-      <p className="film__eyebrow">{data.eyebrow}</p>
-      <div className="shift__head">
-        <span className="shift__year">{data.year}</span>
-        <span className="shift__unit">{data.unit}</span>
-      </div>
-      <div className="shift__grid" aria-hidden="true">
-        {Array.from({ length: 100 }, (_, i) => (
-          <span key={i} className={i < lit ? "is-on" : undefined} />
-        ))}
-      </div>
-      <p className="shift__read">
-        <strong>{lit}%</strong>
-        <span>{data.note}</span>
-      </p>
-    </div>
-  );
-}
-
-/* ---- Scene 5: the ladder out of manual work ---- */
-function Outcome({ data, on }: { data: ReturnType<typeof useC>["film"]["outcome"]; on: boolean }) {
-  const p = usePlay(on, 1500);
-  const top = data.steps[data.steps.length - 1].value;
-  return (
-    <div className="outcome">
-      <p className="film__eyebrow">{data.eyebrow}</p>
-      <div className="outcome__body">
-        <div className="outcome__ladder">
-          {data.steps.map((s, i) => {
-            /* each rung completes in its own quarter of the scene */
-            const share = clamp((p - i / data.steps.length) * data.steps.length);
-            return (
-              <div className="rung" key={s.label} style={{ "--h": `${s.value}%` } as React.CSSProperties}>
-                <span className="rung__value">{Math.round(s.value * share)}%</span>
-                <span className="rung__label">{s.label}</span>
-                <span className="rung__bar" style={{ transform: `scaleX(${share})` }} />
-              </div>
-            );
-          })}
-          <span className="outcome__axis">{data.axis}</span>
-        </div>
-        <div className="outcome__read">
-          <strong>{Math.round(top * p)}%</strong>
-          <span>{data.note}</span>
-        </div>
-      </div>
-      <ul className="outcome__proof">
-        {data.proof.map((pr) => (
-          <li key={pr.label}>
-            <strong>{pr.value}</strong>
-            <span>{pr.label}</span>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

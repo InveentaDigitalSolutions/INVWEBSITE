@@ -68,6 +68,8 @@ const es: SiteContent = {
         { value: "2,2 h", label: "ahorradas por persona y día" },
         { value: "5,1 meses", label: "para amortizar el desarrollo" },
       ],
+      paybackEyebrow: "Lo que devuelve",
+      paybackNote: "Modelado sobre los procesos que hemos reconstruido — el retorno depende de dónde parta.",
     },
   },
   stats: [
@@ -78,6 +80,11 @@ const es: SiteContent = {
   ],
 
 
+
+  shiftSection: {
+    eyebrow: "El cambio",
+    h2: "Qué cambia cuando se puede actuar sobre los datos.",
+  },
 
   solutionsSection: {
     eyebrow: "Lo que construimos",
@@ -296,9 +303,9 @@ const es: SiteContent = {
   ],
 
   layers: {
-    eyebrow: "Dónde trabajamos",
-    h2: "Cuatro capas. Gobernadas una vez, con agentes que actúan en todas.",
-    p: "Trabajamos todo el stack, pero la palanca está en la capa de datos. Si esa está bien, todo lo que va encima se vuelve posible; si está mal, ninguna aplicación por encima puede compensarlo.",
+    eyebrow: "Nuestra filosofía",
+    h2: "Data Autonomy.",
+    p: "Gobernar los datos una vez y dejar que los agentes actúen sobre ellos en todas las capas del stack. Ese es el principio sobre el que se construye todo aquí, y la razón por la que trabajamos el stack completo y no una porción. La palanca está en la capa de datos: si está bien, todo lo que va encima se vuelve posible; si está mal, ninguna aplicación por encima puede compensarlo.",
     agentsLabel: "Agentes de IA",
     governanceLabel: "Gobernanza",
     governanceItems: ["Acceso", "Auditoría", "Retención", "Residencia"],

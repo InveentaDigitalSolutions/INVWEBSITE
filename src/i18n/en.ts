@@ -66,6 +66,8 @@ const en: SiteContent = {
         { value: "2.2 h", label: "saved per person, per day" },
         { value: "5.1 months", label: "to pay back the build" },
       ],
+      paybackEyebrow: "What it gives back",
+      paybackNote: "Modelled on the processes we have rebuilt — the return depends on where you start.",
     },
   },
   stats: [
@@ -76,6 +78,11 @@ const en: SiteContent = {
   ],
 
 
+
+  shiftSection: {
+    eyebrow: "The shift",
+    h2: "What changes when data can be acted on.",
+  },
 
   solutionsSection: {
     eyebrow: "What we build",
@@ -294,9 +301,9 @@ const en: SiteContent = {
   ],
 
   layers: {
-    eyebrow: "Where we work",
-    h2: "Four layers. Governed once, and agents act across all of them.",
-    p: "We work the whole stack, but the leverage sits in the data layer. Get that right and everything above it becomes possible; get it wrong and no application on top can compensate for it.",
+    eyebrow: "Our philosophy",
+    h2: "Data Autonomy.",
+    p: "Govern the data once, and let agents act on it across every layer of the stack. That is the principle everything here is built on — and the reason we work the whole stack rather than one slice of it. The leverage sits in the data layer: get it right and everything above becomes possible; get it wrong and no application on top can compensate.",
     agentsLabel: "AI Agents",
     governanceLabel: "Governance",
     governanceItems: ["Access", "Audit", "Retention", "Residency"],
