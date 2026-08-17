@@ -22,17 +22,6 @@ export default function Layers() {
         </div>
 
         <div className="stack">
-          {/* the pillar: one governance model, holding every layer */}
-          <aside className="pillar">
-            <h3 className="pillar__label">{layers.governanceLabel}</h3>
-            <ul className="pillar__items">
-              {layers.governanceItems.map((g) => (
-                <li key={g}>{g}</li>
-              ))}
-            </ul>
-            <p className="pillar__note">{layers.governanceNote}</p>
-          </aside>
-
           <div className="stack__body">
             <span className="stack__colhead" aria-hidden="true">
               {layers.agentsLabel}
@@ -55,6 +44,17 @@ export default function Layers() {
               ))}
             </ol>
           </div>
+
+          {/* the pillar: one governance model, holding every layer */}
+          <aside className="pillar">
+            <h3 className="pillar__label">{layers.governanceLabel}</h3>
+            <ul className="pillar__items">
+              {layers.governanceItems.map((g) => (
+                <li key={g}>{g}</li>
+              ))}
+            </ul>
+            <p className="pillar__note">{layers.governanceNote}</p>
+          </aside>
         </div>
 
         <p className="stack__note">{layers.note}</p>
