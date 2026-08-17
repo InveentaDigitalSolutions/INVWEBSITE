@@ -309,6 +309,7 @@ const es: SiteContent = {
     agentsLabel: "Agentes de IA",
     governanceLabel: "Gobernanza",
     governanceItems: ["Acceso", "Auditoría", "Retención", "Residencia"],
+    governanceNote: "Definida una vez y aplicada en todas las capas anteriores — no se renegocia en cada proyecto.",
     focusLabel: "Aquí está la palanca",
     rows: [
       {

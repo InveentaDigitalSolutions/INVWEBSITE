@@ -307,6 +307,7 @@ const en: SiteContent = {
     agentsLabel: "AI Agents",
     governanceLabel: "Governance",
     governanceItems: ["Access", "Audit", "Retention", "Residency"],
+    governanceNote: "Defined once, and enforced on every layer above — not re-argued per project.",
     focusLabel: "Where the leverage is",
     rows: [
       {

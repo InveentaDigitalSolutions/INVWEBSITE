@@ -40,18 +40,18 @@ export default function Layers() {
             ))}
           </ol>
 
-          {/* the spine: one governance model, applied the whole way down.
-              Set as a single vertical run — two parallel lines of rotated
-              type read as a label that lost its value. */}
+          {/* One governance model, applied to everything above. Spanning the
+              full width says "all four layers" far better than rotated type
+              down the side did — that was unreadable, and never said why it
+              was vertical. */}
           <div className="stack__gov">
-            <span className="stack__gov-run">
-              <span className="stack__gov-label">{layers.governanceLabel}</span>
+            <span className="stack__gov-label">{layers.governanceLabel}</span>
+            <span className="stack__gov-items">
               {layers.governanceItems.map((g) => (
-                <span key={g} className="stack__gov-item">
-                  {g}
-                </span>
+                <span key={g}>{g}</span>
               ))}
             </span>
+            <p className="stack__gov-note">{layers.governanceNote}</p>
           </div>
         </div>
 

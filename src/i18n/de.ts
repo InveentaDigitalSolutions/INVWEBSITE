@@ -309,6 +309,7 @@ const de: SiteContent = {
     agentsLabel: "KI-Agenten",
     governanceLabel: "Governance",
     governanceItems: ["Zugriff", "Nachweis", "Aufbewahrung", "Datenstandort"],
+    governanceNote: "Einmal festgelegt und auf jeder Ebene darüber durchgesetzt — nicht je Projekt neu verhandelt.",
     focusLabel: "Hier liegt der Hebel",
     rows: [
       {

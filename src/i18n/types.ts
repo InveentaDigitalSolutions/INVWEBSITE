@@ -103,6 +103,7 @@ export type SiteContent = {
     agentsLabel: string;
     governanceLabel: string;
     governanceItems: string[];
+    governanceNote: string;
     focusLabel: string;
     rows: { id: string; name: string; items: string; agent: string; focus?: boolean }[];
     note: string;

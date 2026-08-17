@@ -1353,13 +1353,10 @@
 }
 
 .stack {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 54px;
-  gap: 0 clamp(18px, 2.6vw, 44px);
+  display: block;
 }
 
 .stack__labels {
-  grid-column: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: clamp(20px, 3vw, 56px);
@@ -1376,7 +1373,6 @@
 }
 
 .stack__rows {
-  grid-column: 1;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1440,61 +1436,49 @@
   color: var(--ink-dim);
 }
 
-/* governance spine — a hairline the full height, not a container */
+/* Governance band — spans the full width of the stack, which is the point:
+   one model covering every layer above it. */
 .stack__gov {
-  position: relative;
-  grid-column: 2;
-  grid-row: 1 / span 2;
   display: grid;
-  place-items: center;
-}
-
-.stack__gov::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  bottom: 6px;
-  left: 50%;
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    var(--line-strong),
-    rgba(183, 218, 76, 0.5) 45%,
-    var(--line-strong)
-  );
-}
-
-/* one vertical run, reading bottom-to-top like a spine label. The ground
-   colour behind it breaks the hairline so the rule doesn't strike the type. */
-.stack__gov-run {
-  position: relative;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding-block: 14px;
-  background: var(--void);
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  white-space: nowrap;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 8px clamp(20px, 3vw, 56px);
+  align-items: baseline;
+  padding-top: 26px;
 }
 
 .stack__gov-label {
+  grid-column: 1;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
   color: var(--green);
-  letter-spacing: 0.26em;
 }
 
-.stack__gov-item {
-  color: var(--ink-faint);
+.stack__gov-items {
+  grid-column: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
 }
 
-.stack__gov-item::before {
+.stack__gov-items span + span::before {
   content: "·";
-  margin-right: 16px;
+  margin-right: 22px;
   color: var(--line-strong);
+}
+
+.stack__gov-note {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-dim);
+  max-width: 46ch;
 }
 
 .stack__note {
@@ -1505,9 +1489,6 @@
 }
 
 @media (max-width: 860px) {
-  .stack {
-    grid-template-columns: 1fr;
-  }
   .stack__labels {
     display: none;
   }
@@ -1527,26 +1508,17 @@
     border-left: 1px solid var(--line);
   }
   .stack__gov {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .stack__gov-label,
+  .stack__gov-items,
+  .stack__gov-note {
     grid-column: 1;
     grid-row: auto;
-    margin-top: 22px;
-    padding: 0;
   }
-  .stack__gov::before {
-    top: 50%;
-    bottom: auto;
-    left: 0;
-    right: 0;
-    width: auto;
-    height: 1px;
-    background: var(--line);
-  }
-  .stack__gov-run {
-    writing-mode: horizontal-tb;
-    transform: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 16px;
+  .stack__gov-note {
+    margin-top: 6px;
   }
 }
 
