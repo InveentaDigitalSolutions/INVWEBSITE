@@ -139,15 +139,18 @@ function Integration({
           ))}
         </ul>
 
+        {/* Revealed by a clip, not by stroke-dasharray: the box is stretched
+            non-uniformly (preserveAspectRatio="none"), which distorts a dash
+            pattern differently along each curve and renders the fan as
+            disconnected segments. A clip cannot distort. */}
         <svg
           className="wire__link"
           viewBox="0 0 120 200"
           preserveAspectRatio="none"
           aria-hidden="true"
+          style={{ clipPath: `inset(0 ${(1 - clamp(p)) * 100}% 0 0)` }}
         >
-          {[18, 46, 74, 100, 126, 154, 182].map((y, i) => (
-            /* pathLength normalises every curve to 1 so the whole fan draws
-               in step regardless of how far each one has to travel */
+          {[18, 46, 74, 100, 126, 154, 182].map((y) => (
             <path
               key={y}
               d={`M0 ${y} C 62 ${y}, 58 100, 120 100`}
@@ -155,9 +158,6 @@ function Integration({
               stroke="currentColor"
               strokeWidth="1"
               vectorEffect="non-scaling-stroke"
-              pathLength={1}
-              strokeDasharray={1}
-              strokeDashoffset={1 - clamp(p * 1.3 - i * 0.04)}
             />
           ))}
         </svg>
