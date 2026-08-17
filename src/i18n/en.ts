@@ -82,6 +82,8 @@ const en: SiteContent = {
   shiftSection: {
     eyebrow: "The shift",
     h2: "What changes when data can be acted on.",
+    prev: "Previous",
+    next: "Next",
   },
 
   solutionsSection: {

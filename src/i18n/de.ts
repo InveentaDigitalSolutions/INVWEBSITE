@@ -84,6 +84,8 @@ const de: SiteContent = {
   shiftSection: {
     eyebrow: "Der Wandel",
     h2: "Was sich ändert, wenn Daten handlungsfähig werden.",
+    prev: "Zurück",
+    next: "Weiter",
   },
 
   solutionsSection: {

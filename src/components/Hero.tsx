@@ -1,58 +1,40 @@
 import { useEffect, useRef, useState } from "react";
 import { useC } from "../i18n/LocaleContext";
 import FilmBackdrop from "./FilmBackdrop";
-import { useScenePlay, clamp, media } from "../useScenePlay";
-
-const MOTION_Q = "(prefers-reduced-motion: reduce)";
-/** Below this the film unpins and plays as ordinary stacked sections. */
-const WIDE_Q = "(min-width: 861px)";
-
-/** Title · thesis · integration. The two number scenes moved out to "The
-    shift", where they get a panel each instead of a moment each. */
-const SCENES = 3;
+import { useScenePlay, clamp } from "../useScenePlay";
+import { useInView } from "../useInView";
 
 /**
- * The opening film.
+ * The opening.
  *
- * The brand film's narrative — fragmented systems become one orchestrated
- * system, and here is what that is worth — is rebuilt as a pinned scroll
- * sequence: real type, real SVG, translated, selectable, and a fraction of
- * the 4 MB the mp4 costs. The mp4 itself stays one click away.
+ * This used to pin and take the scroll away for three viewport-heights.
+ * People scrolled, the page refused to move, and a fair number concluded it
+ * was broken — the affordance never gets found, because the confusion lands
+ * first. The scenes are ordinary full-height sections now: the page scrolls
+ * the way every page scrolls, and each scene animates when the reader
+ * actually reaches it.
  *
- * Pinning is a wide-viewport, motion-allowed affordance only. Everywhere
- * else the same scenes render stacked and static, in order, with no
- * scroll hijacking — the story survives, the mechanism doesn't.
+ * The drawn backdrop stays behind all three via a sticky layer, so the
+ * sequence keeps its continuity without owning anyone's scroll.
  */
 export default function Hero() {
   const { hero, film } = useC();
-  const railRef = useRef<HTMLDivElement>(null);
-  const [pinned, setPinned] = useState(() => media(WIDE_Q) && !media(MOTION_Q));
-  const [scene, setScene] = useState(0);
-  /* Scroll position within the film, 0..1 — drives the backdrop drift only.
-     The scenes' own animations run on a clock, not on this. */
-  const [travelled, setTravelled] = useState(0);
+  const rootRef = useRef<HTMLElement>(null);
+  const [drift, setDrift] = useState(0);
 
+  /* Parallax only — the page still scrolls normally; the ground just moves
+     a little slower than the type in front of it. */
   useEffect(() => {
-    const apply = () => setPinned(media(WIDE_Q) && !media(MOTION_Q));
-    const qs = [MOTION_Q, WIDE_Q].map((q) => window.matchMedia(q));
-    qs.forEach((q) => q.addEventListener("change", apply));
-    return () => qs.forEach((q) => q.removeEventListener("change", apply));
-  }, []);
-
-  useEffect(() => {
-    /* Unpinned, every scene renders drawn — nothing to track, no listener. */
-    if (!pinned) return;
     let frame = 0;
     const onScroll = () => {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
-        const rail = railRef.current;
-        if (!rail) return;
-        const travel = rail.offsetHeight - window.innerHeight;
-        const done = clamp(-rail.getBoundingClientRect().top / travel);
-        setTravelled(done);
-        setScene(Math.min(SCENES - 1, Math.floor(done * SCENES)));
+        const el = rootRef.current;
+        if (!el) return;
+        const travel = el.offsetHeight - window.innerHeight;
+        if (travel <= 0) return;
+        setDrift(clamp(-el.getBoundingClientRect().top / travel));
       });
     };
     onScroll();
@@ -63,78 +45,59 @@ export default function Hero() {
       window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, [pinned]);
-
-  /** Stacked, every scene is live at once; pinned, only the one on screen. */
-  const live = (i: number) => (pinned ? scene === i : true);
+  }, []);
 
   return (
-    <section className={`film ${pinned ? "film--pinned" : "film--flat"}`} id="top">
-      <div
-        className="film__rail"
-        ref={railRef}
-        style={pinned ? { height: `${SCENES * 100}vh` } : undefined}
-      >
-        <div className="film__stage">
-          {/* --film-p drifts the ground across the whole sequence, so the
-              backdrop belongs to the film rather than sitting behind it */}
-          <div
-            className="film__bg"
-            aria-hidden="true"
-            style={{ "--film-p": pinned ? travelled : 0 } as React.CSSProperties}
-          >
-            <FilmBackdrop />
-          </div>
+    <section className="film" id="top" ref={rootRef}>
+      {/* the wrapper spans exactly this section; a sticky element cannot be
+          carried outside its containing block, which keeps the backdrop from
+          painting over whatever follows */}
+      <div className="film__bgwrap" aria-hidden="true">
+        <div className="film__bg" style={{ "--film-p": drift } as React.CSSProperties}>
+          <FilmBackdrop />
+        </div>
+      </div>
 
-          <div className="film__scenes">
-            <TitleScene on={live(0)} hero={hero} />
-            <Scene on={live(1)} name="thesis">
-              <p className="film__eyebrow">{film.thesis.eyebrow}</p>
-              <p className="film__thesis">
+      <div className="film__scenes">
+        <TitleScene hero={hero} />
+
+        <Scene name="thesis">
+          {(on) => (
+            <>
+              <p className={`film__eyebrow${on ? " is-in" : ""}`}>{film.thesis.eyebrow}</p>
+              <p className={`film__thesis${on ? " is-in" : ""}`}>
                 {film.thesis.line} <em>{film.thesis.emphasis}</em>
               </p>
-            </Scene>
-            <Scene on={live(2)} name="wire">
-              <Integration data={film.integration} on={live(2)} />
-            </Scene>
-          </div>
-
-          {pinned && (
-            <div className="film__hud" aria-hidden="true">
-              <span className="film__cue">{hero.scrollCue}</span>
-              <span className="film__ticks">
-                {Array.from({ length: SCENES }, (_, i) => (
-                  <span key={i} className={i === scene ? "is-on" : undefined} />
-                ))}
-              </span>
-            </div>
+            </>
           )}
-        </div>
+        </Scene>
+
+        <Scene name="wire">{(on) => <Integration data={film.integration} on={on} />}</Scene>
       </div>
     </section>
   );
 }
 
+/** A scene animates once it is genuinely on screen. */
 function Scene({
-  on,
   name,
   children,
 }: {
-  on: boolean;
   name: string;
-  children: React.ReactNode;
+  children: (on: boolean) => React.ReactNode;
 }) {
+  const [ref, inView] = useInView<HTMLDivElement>(0.4);
   return (
-    <div className={`film__scene film__scene--${name}${on ? " is-on" : ""}`}>
-      <div className="film__inner">{children}</div>
+    <div className={`film__scene film__scene--${name}${inView ? " is-on" : ""}`} ref={ref}>
+      <div className="film__inner">{children(inView)}</div>
     </div>
   );
 }
 
-/* ---- Scene 1: the title card ---- */
-function TitleScene({ on, hero }: { on: boolean; hero: ReturnType<typeof useC>["hero"] }) {
+/* ---- Scene 1: the title card. Always drawn — it is above the fold. ---- */
+function TitleScene({ hero }: { hero: ReturnType<typeof useC>["hero"] }) {
   return (
-    <div className={`film__scene film__scene--title${on ? " is-on" : ""}`}>
+    <div className="film__scene film__scene--title is-on">
       <div className="film__inner">
         <p className="film__eyebrow">{hero.kicker}</p>
         <h1 className="film__title">{hero.titleLines.join(" ")}</h1>

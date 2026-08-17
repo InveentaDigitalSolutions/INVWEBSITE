@@ -43,7 +43,7 @@ export type SiteContent = {
 
   /* "The shift" — the figures, given their own horizontal section rather
      than a moment inside the opening film. */
-  shiftSection: { eyebrow: string; h2: string };
+  shiftSection: { eyebrow: string; h2: string; prev: string; next: string };
 
   /* The opening sequence. Each key is one pinned scene; the numbers are
      language-neutral but their labels are not. */

@@ -1,118 +1,96 @@
 import { useEffect, useRef, useState } from "react";
 import { useC } from "../i18n/LocaleContext";
-import { useScenePlay, clamp, media } from "../useScenePlay";
+import { useScenePlay, clamp } from "../useScenePlay";
 
-const MOTION_Q = "(prefers-reduced-motion: reduce)";
-const WIDE_Q = "(min-width: 861px)";
-
-/** Adoption · what autonomy removes · what it returns. */
+/** Adoption · what autonomy removes · how fast it returns. */
 const PANELS = 3;
 
 /**
- * The numbers, as a horizontal run.
+ * The numbers, as a carousel the reader drives.
  *
- * These used to flash past inside the opening film, where the reader's scroll
- * speed decided whether a figure was ever seen. Given their own section they
- * hold: the section pins, the track moves sideways as you scroll, and each
- * panel animates on its own clock once it arrives — so a figure always
- * completes and stays completed.
- *
- * Narrow viewports and prefers-reduced-motion get the same panels stacked
- * vertically, with no pinning and no sideways movement.
+ * This pinned the page and moved sideways on the reader's scroll, which is
+ * the same problem the opening had: scrolling stopped doing what scrolling
+ * does. It is a plain horizontal scroller now — swipe, drag, arrow keys or
+ * the buttons — so the gesture is one people already know and the page
+ * underneath never stops behaving.
  */
 export default function TheShift() {
   const { film, shiftSection } = useC();
-  const railRef = useRef<HTMLDivElement>(null);
-  const [pinned, setPinned] = useState(() => media(WIDE_Q) && !media(MOTION_Q));
+  const trackRef = useRef<HTMLDivElement>(null);
   const [panel, setPanel] = useState(0);
 
+  /* which panel is in front, read from the scroller rather than from the page */
   useEffect(() => {
-    const apply = () => setPinned(media(WIDE_Q) && !media(MOTION_Q));
-    const qs = [MOTION_Q, WIDE_Q].map((q) => window.matchMedia(q));
-    qs.forEach((q) => q.addEventListener("change", apply));
-    return () => qs.forEach((q) => q.removeEventListener("change", apply));
-  }, []);
-
-  useEffect(() => {
-    if (!pinned) return;
+    const el = trackRef.current;
+    if (!el) return;
     let frame = 0;
     const onScroll = () => {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
-        const rail = railRef.current;
-        if (!rail) return;
-        const travel = rail.offsetHeight - window.innerHeight;
-        const done = clamp(-rail.getBoundingClientRect().top / travel);
-        setPanel(Math.min(PANELS - 1, Math.floor(done * PANELS)));
+        const width = el.clientWidth || 1;
+        setPanel(clamp(el.scrollLeft / (width * (PANELS - 1))) * (PANELS - 1));
       });
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    el.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      el.removeEventListener("scroll", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, [pinned]);
+  }, []);
 
-  const live = (i: number) => (pinned ? panel === i : true);
-  /* Snap a panel at a time rather than tracking scroll continuously: a
-     continuous slide leaves two half-panels on screen for most of the run.
-     The CSS transition does the travelling. */
-  const shift = pinned ? panel * (100 / PANELS) : 0;
+  const index = Math.round(panel);
+  const go = (to: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    el.scrollTo({ left: clamp(to / (PANELS - 1)) * (PANELS - 1) * el.clientWidth, behavior: "smooth" });
+  };
 
   return (
-    <section
-      className={`shiftsec ${pinned ? "shiftsec--pinned" : "shiftsec--flat"}`}
-      id="shift"
-      aria-label={shiftSection.h2}
-    >
-      <div
-        className="shiftsec__rail"
-        ref={railRef}
-        style={pinned ? { height: `${PANELS * 100}vh` } : undefined}
-      >
-        <div className="shiftsec__stage">
-          <div className="container shiftsec__head">
-            <span className="eyebrow">{shiftSection.eyebrow}</span>
-            <h2>{shiftSection.h2}</h2>
-          </div>
+    <section className="shiftsec" id="shift">
+      <div className="container shiftsec__head">
+        <span className="eyebrow">{shiftSection.eyebrow}</span>
+        <h2>{shiftSection.h2}</h2>
+      </div>
 
-          <div
-            className="shiftsec__track"
-            style={
-              pinned
-                ? ({
-                    width: `${PANELS * 100}%`,
-                    "--panels": PANELS,
-                    transform: `translate3d(-${shift}%, 0, 0)`,
-                  } as React.CSSProperties)
-                : undefined
-            }
+      <div className="shiftsec__scroller" ref={trackRef} tabIndex={0} aria-label={shiftSection.h2}>
+        <Panel on={index === 0}>
+          <Adoption data={film.shift} on={index === 0} />
+        </Panel>
+        <Panel on={index === 1}>
+          <Ladder data={film.outcome} on={index === 1} />
+        </Panel>
+        <Panel on={index === 2}>
+          <Payback data={film.outcome} on={index === 2} />
+        </Panel>
+      </div>
+
+      <div className="container shiftsec__controls">
+        <span className="shiftsec__dots">
+          {Array.from({ length: PANELS }, (_, i) => (
+            <button
+              key={i}
+              type="button"
+              className={i === index ? "is-on" : undefined}
+              aria-label={`${i + 1} / ${PANELS}`}
+              aria-current={i === index}
+              onClick={() => go(i)}
+            />
+          ))}
+        </span>
+        <span className="shiftsec__arrows">
+          <button type="button" onClick={() => go(index - 1)} disabled={index === 0} aria-label={shiftSection.prev}>
+            &#8592;
+          </button>
+          <button
+            type="button"
+            onClick={() => go(index + 1)}
+            disabled={index === PANELS - 1}
+            aria-label={shiftSection.next}
           >
-            <Panel on={live(0)}>
-              <Adoption data={film.shift} on={live(0)} />
-            </Panel>
-            <Panel on={live(1)}>
-              <Ladder data={film.outcome} on={live(1)} />
-            </Panel>
-            <Panel on={live(2)}>
-              <Payback data={film.outcome} on={live(2)} />
-            </Panel>
-          </div>
-
-          {pinned && (
-            <div className="shiftsec__hud" aria-hidden="true">
-              <span className="shiftsec__ticks">
-                {Array.from({ length: PANELS }, (_, i) => (
-                  <span key={i} className={i === panel ? "is-on" : undefined} />
-                ))}
-              </span>
-            </div>
-          )}
-        </div>
+            &#8594;
+          </button>
+        </span>
       </div>
     </section>
   );
@@ -125,7 +103,6 @@ function Panel({ on, children }: { on: boolean; children: React.ReactNode }) {
     </div>
   );
 }
-
 /* ---- 1: how many applications are turning ---- */
 function Adoption({ data, on }: { data: ReturnType<typeof useC>["film"]["shift"]; on: boolean }) {
   const p = useScenePlay(on);
