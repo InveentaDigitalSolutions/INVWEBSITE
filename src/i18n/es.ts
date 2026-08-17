@@ -362,9 +362,9 @@ const es: SiteContent = {
   },
 
   capabilitiesSection: {
-    eyebrow: "Lo que hacemos",
-    h2: "IA e ingeniería, de principio a fin.",
-    p: "Las disciplinas detrás de cada solución a medida — desde IA y analítica predictiva hasta autonomía, integración y gobernanza. El cómo detrás de todo lo que construimos.",
+    eyebrow: "Nuestra expertise",
+    h2: "Las disciplinas detrás de las capas.",
+    p: "Siete, desde IA y analítica predictiva hasta autonomía, integración y gobernanza — el cómo detrás de todo lo que construimos.",
   },
   capabilities: [
 

@@ -362,9 +362,9 @@ const de: SiteContent = {
   },
 
   capabilitiesSection: {
-    eyebrow: "Was wir tun",
-    h2: "KI und Engineering, durchgängig.",
-    p: "Die Disziplinen hinter jeder maßgeschneiderten Lösung — von KI und Predictive Analytics über Autonomie und Integration bis Governance. Das Wie hinter allem, was wir bauen.",
+    eyebrow: "Unsere Expertise",
+    h2: "Die Disziplinen hinter den Ebenen.",
+    p: "Sieben davon — von KI und Predictive Analytics über Autonomie und Integration bis Governance. Das Wie hinter allem, was wir bauen.",
   },
   capabilities: [
 

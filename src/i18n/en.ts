@@ -360,9 +360,9 @@ const en: SiteContent = {
   },
 
   capabilitiesSection: {
-    eyebrow: "What we do",
-    h2: "AI and engineering, end to end.",
-    p: "The disciplines behind every custom solution — from AI and predictive analytics to autonomy, integration and governance. The how behind everything we build.",
+    eyebrow: "Our expertise",
+    h2: "The disciplines behind the layers.",
+    p: "Seven of them, from AI and predictive analytics to autonomy, integration and governance — the how behind everything we build.",
   },
   capabilities: [
 
