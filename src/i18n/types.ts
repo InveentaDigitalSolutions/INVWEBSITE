@@ -43,7 +43,24 @@ export type SiteContent = {
 
   /* "The shift" — the figures, given their own horizontal section rather
      than a moment inside the opening film. */
-  shiftSection: { eyebrow: string; h2: string; prev: string; next: string };
+  shiftSection: {
+    eyebrow: string;
+    h2: string;
+    prev: string;
+    next: string;
+    /* Market figures, counted up on arrival. Deliberately uncited on the
+       page — the claims are third-party and should be defensible if asked. */
+    panels: {
+      id: string; // wave | reality | stake — selects the visual
+      eyebrow: string;
+      prefix: string;
+      value: number;
+      decimals: number;
+      suffix: string;
+      statement: string;
+      note: string;
+    }[];
+  };
 
   /* The opening sequence. Each key is one pinned scene; the numbers are
      language-neutral but their labels are not. */
@@ -67,15 +84,6 @@ export type SiteContent = {
       unit: string;
       figure: number; // percent, counted up on scroll
       note: string;
-    };
-    outcome: {
-      eyebrow: string;
-      steps: { label: string; value: number }[];
-      axis: string;
-      note: string;
-      proof: { value: string; label: string }[];
-      paybackEyebrow: string;
-      paybackNote: string;
     };
   };
 

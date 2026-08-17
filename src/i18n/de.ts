@@ -54,23 +54,6 @@ const de: SiteContent = {
       figure: 40,
       note: "werden aufgabenspezifische KI-Agenten enthalten.",
     },
-    outcome: {
-      eyebrow: "Was Autonomie herausnimmt",
-      steps: [
-        { label: "Manuell", value: 0 },
-        { label: "Digitalisiert", value: 30 },
-        { label: "Automatisiert", value: 55 },
-        { label: "Orchestriert", value: 74 },
-      ],
-      axis: "Zeitersparnis gegenüber manueller Basis",
-      note: "weniger Zeit für denselben Prozess, Ende zu Ende.",
-      proof: [
-        { value: "2,2 Std.", label: "gespart pro Person und Tag" },
-        { value: "5,1 Monate", label: "bis sich der Build amortisiert" },
-      ],
-      paybackEyebrow: "Das Tempo der Wirkung",
-      paybackNote: "Modelliert auf Basis der Prozesse, die wir umgebaut haben — der Rückfluss hängt davon ab, wo Sie starten.",
-    },
   },
   stats: [
     { value: "7", label: "Kompetenzfelder" },
@@ -86,6 +69,41 @@ const de: SiteContent = {
     h2: "Was sich ändert, wenn Daten handlungsfähig werden.",
     prev: "Zurück",
     next: "Weiter",
+    panels: [
+      {
+        id: "wave",
+        eyebrow: "Die Welle",
+        prefix: "",
+        value: 40,
+        decimals: 0,
+        suffix: "%",
+        statement:
+          "der Unternehmensanwendungen werden bis Ende 2026 KI-Agenten enthalten — heute sind es unter 5%.",
+        note: "Sechs von zehn Organisationen erwarten Agenten binnen zwei Jahren im Produktivbetrieb.",
+      },
+      {
+        id: "reality",
+        eyebrow: "Die Realität",
+        prefix: "",
+        value: 95,
+        decimals: 0,
+        suffix: "%",
+        statement:
+          "der KI-Pilotprojekte bringen keinen Ertrag. Es scheitert an der Umsetzung, nicht am Modell.",
+        note: "Die Nachfrage nach Menschen, die es umsetzen können, übersteigt das Angebot um das Dreifache.",
+      },
+      {
+        id: "stake",
+        eyebrow: "Worum es geht",
+        prefix: "US$",
+        value: 4.4,
+        decimals: 1,
+        suffix: " Billionen",
+        statement:
+          "jährlicher Wert aus generativer KI — für alle, die sie tatsächlich in den Produktivbetrieb bringen.",
+        note: "Das Modell ist nur die sichtbare Spitze. Über das Ergebnis entscheiden die Daten, die Governance und die Menschen darunter.",
+      },
+    ],
   },
 
   solutionsSection: {

@@ -54,23 +54,6 @@ const es: SiteContent = {
       figure: 40,
       note: "incorporarán agentes de IA específicos por tarea.",
     },
-    outcome: {
-      eyebrow: "Lo que la autonomía elimina",
-      steps: [
-        { label: "Manual", value: 0 },
-        { label: "Digitalizado", value: 30 },
-        { label: "Automatizado", value: 55 },
-        { label: "Orquestado", value: 74 },
-      ],
-      axis: "Tiempo ahorrado frente a la base manual",
-      note: "menos tiempo en el mismo proceso, de principio a fin.",
-      proof: [
-        { value: "2,2 h", label: "ahorradas por persona y día" },
-        { value: "5,1 meses", label: "para amortizar el desarrollo" },
-      ],
-      paybackEyebrow: "La velocidad del impacto",
-      paybackNote: "Modelado sobre los procesos que hemos reconstruido — el retorno depende de dónde parta.",
-    },
   },
   stats: [
     { value: "7", label: "Áreas de expertise" },
@@ -86,6 +69,41 @@ const es: SiteContent = {
     h2: "Qué cambia cuando se puede actuar sobre los datos.",
     prev: "Anterior",
     next: "Siguiente",
+    panels: [
+      {
+        id: "wave",
+        eyebrow: "La ola",
+        prefix: "",
+        value: 40,
+        decimals: 0,
+        suffix: "%",
+        statement:
+          "de las aplicaciones empresariales incorporarán agentes de IA a finales de 2026 — hoy son menos del 5%.",
+        note: "Seis de cada diez organizaciones esperan tener agentes en producción en dos años.",
+      },
+      {
+        id: "reality",
+        eyebrow: "La realidad",
+        prefix: "",
+        value: 95,
+        decimals: 0,
+        suffix: "%",
+        statement:
+          "de los pilotos de IA no dan retorno. El fallo está en la implementación, no en el modelo.",
+        note: "La demanda de quienes saben implementarla triplica la oferta disponible.",
+      },
+      {
+        id: "stake",
+        eyebrow: "Lo que está en juego",
+        prefix: "US$",
+        value: 4.4,
+        decimals: 1,
+        suffix: " billones",
+        statement:
+          "al año en valor de la IA generativa — para quien sepa llevarla de verdad a producción.",
+        note: "El modelo es solo la punta visible. Lo que decide el resultado son los datos, la gobernanza y las personas que hay debajo.",
+      },
+    ],
   },
 
   solutionsSection: {

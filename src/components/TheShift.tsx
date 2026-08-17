@@ -1,25 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import { useC } from "../i18n/LocaleContext";
 import { useScenePlay, clamp } from "../useScenePlay";
+import type { SiteContent } from "../i18n/types";
 
-/** Adoption · what autonomy removes · how fast it returns. */
-const PANELS = 3;
+type PanelData = SiteContent["shiftSection"]["panels"][number];
 
 /**
- * The numbers, as a carousel the reader drives.
+ * Where the market is going, and why most of it fails.
  *
- * This pinned the page and moved sideways on the reader's scroll, which is
- * the same problem the opening had: scrolling stopped doing what scrolling
- * does. It is a plain horizontal scroller now — swipe, drag, arrow keys or
- * the buttons — so the gesture is one people already know and the page
- * underneath never stops behaving.
+ * Three beats: the wave is arriving on a date, almost everyone attempting it
+ * gets nothing back, and the prize is enormous. That sequence sets up the
+ * section after it — the failure is in implementation, which is precisely
+ * what we sell.
+ *
+ * A carousel the reader drives: swipe, drag, keyboard or the buttons. It used
+ * to pin the page and move sideways on scroll, which stopped scrolling from
+ * doing what scrolling does.
  */
 export default function TheShift() {
-  const { film, shiftSection } = useC();
+  const { shiftSection } = useC();
   const trackRef = useRef<HTMLDivElement>(null);
-  const [panel, setPanel] = useState(0);
+  const [index, setIndex] = useState(0);
+  const count = shiftSection.panels.length;
 
-  /* which panel is in front, read from the scroller rather than from the page */
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -28,8 +31,7 @@ export default function TheShift() {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
-        const width = el.clientWidth || 1;
-        setPanel(clamp(el.scrollLeft / (width * (PANELS - 1))) * (PANELS - 1));
+        setIndex(Math.round(el.scrollLeft / (el.clientWidth || 1)));
       });
     };
     el.addEventListener("scroll", onScroll, { passive: true });
@@ -39,11 +41,11 @@ export default function TheShift() {
     };
   }, []);
 
-  const index = Math.round(panel);
   const go = (to: number) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollTo({ left: clamp(to / (PANELS - 1)) * (PANELS - 1) * el.clientWidth, behavior: "smooth" });
+    const target = Math.min(count - 1, Math.max(0, to));
+    el.scrollTo({ left: target * el.clientWidth, behavior: "smooth" });
   };
 
   return (
@@ -54,38 +56,41 @@ export default function TheShift() {
       </div>
 
       <div className="shiftsec__scroller" ref={trackRef} tabIndex={0} aria-label={shiftSection.h2}>
-        <Panel on={index === 0}>
-          <Adoption data={film.shift} on={index === 0} />
-        </Panel>
-        <Panel on={index === 1}>
-          <Ladder data={film.outcome} on={index === 1} />
-        </Panel>
-        <Panel on={index === 2}>
-          <Payback data={film.outcome} on={index === 2} />
-        </Panel>
+        {shiftSection.panels.map((panel, i) => (
+          <div className={`shiftsec__panel${i === index ? " is-on" : ""}`} key={panel.id}>
+            <div className="shiftsec__inner">
+              <Stat panel={panel} on={i === index} />
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="container shiftsec__controls">
         <span className="shiftsec__dots">
-          {Array.from({ length: PANELS }, (_, i) => (
+          {shiftSection.panels.map((panel, i) => (
             <button
-              key={i}
+              key={panel.id}
               type="button"
               className={i === index ? "is-on" : undefined}
-              aria-label={`${i + 1} / ${PANELS}`}
+              aria-label={`${i + 1} / ${count}`}
               aria-current={i === index}
               onClick={() => go(i)}
             />
           ))}
         </span>
         <span className="shiftsec__arrows">
-          <button type="button" onClick={() => go(index - 1)} disabled={index === 0} aria-label={shiftSection.prev}>
+          <button
+            type="button"
+            onClick={() => go(index - 1)}
+            disabled={index === 0}
+            aria-label={shiftSection.prev}
+          >
             &#8592;
           </button>
           <button
             type="button"
             onClick={() => go(index + 1)}
-            disabled={index === PANELS - 1}
+            disabled={index === count - 1}
             aria-label={shiftSection.next}
           >
             &#8594;
@@ -96,87 +101,55 @@ export default function TheShift() {
   );
 }
 
-function Panel({ on, children }: { on: boolean; children: React.ReactNode }) {
+function Stat({ panel, on }: { panel: PanelData; on: boolean }) {
+  const p = useScenePlay(on, 1200);
+  const shown = (panel.value * p).toFixed(panel.decimals);
+
   return (
-    <div className={`shiftsec__panel${on ? " is-on" : ""}`}>
-      <div className="shiftsec__inner">{children}</div>
+    <div className={`stat stat--${panel.id}`}>
+      <p className="film__eyebrow">{panel.eyebrow}</p>
+
+      <Visual id={panel.id} p={p} />
+
+      <p className="stat__figure">
+        {panel.prefix}
+        {shown}
+        {panel.suffix}
+      </p>
+      <p className="stat__statement">{panel.statement}</p>
+      <p className="stat__note">{panel.note}</p>
     </div>
   );
 }
-/* ---- 1: how many applications are turning ---- */
-function Adoption({ data, on }: { data: ReturnType<typeof useC>["film"]["shift"]; on: boolean }) {
-  const p = useScenePlay(on);
-  const lit = Math.round(data.figure * p);
-  return (
-    <div className="shift">
-      <p className="film__eyebrow">{data.eyebrow}</p>
-      <div className="shift__head">
-        <span className="shift__year">{data.year}</span>
-        <span className="shift__unit">{data.unit}</span>
-      </div>
-      <div className="shift__grid" aria-hidden="true">
+
+/** A different reading of the same idea per panel — repeating the grid three
+    times would make three distinct facts look like one chart. */
+function Visual({ id, p }: { id: string; p: number }) {
+  if (id === "wave") {
+    const lit = Math.round(40 * p);
+    return (
+      <div className="stat__grid" aria-hidden="true">
         {Array.from({ length: 100 }, (_, i) => (
           <span key={i} className={i < lit ? "is-on" : undefined} />
         ))}
       </div>
-      <p className="shift__read">
-        <strong>{lit}%</strong>
-        <span>{data.note}</span>
-      </p>
-    </div>
-  );
-}
+    );
+  }
 
-/* ---- 2: the ladder out of manual work ---- */
-function Ladder({ data, on }: { data: ReturnType<typeof useC>["film"]["outcome"]; on: boolean }) {
-  const p = useScenePlay(on, 1500);
-  const top = data.steps[data.steps.length - 1].value;
-  return (
-    <div className="outcome">
-      <p className="film__eyebrow">{data.eyebrow}</p>
-      <div className="outcome__body">
-        <div className="outcome__ladder">
-          {data.steps.map((s, i) => {
-            /* each rung completes in its own quarter of the panel */
-            const share = clamp((p - i / data.steps.length) * data.steps.length);
-            return (
-              <div
-                className="rung"
-                key={s.label}
-                style={{ "--h": `${s.value}%` } as React.CSSProperties}
-              >
-                <span className="rung__value">{Math.round(s.value * share)}%</span>
-                <span className="rung__label">{s.label}</span>
-                <span className="rung__bar" style={{ transform: `scaleX(${share})` }} />
-              </div>
-            );
-          })}
-          <span className="outcome__axis">{data.axis}</span>
-        </div>
-        <div className="outcome__read">
-          <strong>{Math.round(top * p)}%</strong>
-          <span>{data.note}</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ---- 3: what it gives back ---- */
-function Payback({ data, on }: { data: ReturnType<typeof useC>["film"]["outcome"]; on: boolean }) {
-  const p = useScenePlay(on, 900);
-  return (
-    <div className="payback" style={{ "--p": p } as React.CSSProperties}>
-      <p className="film__eyebrow">{data.paybackEyebrow}</p>
-      <ul className="payback__list">
-        {data.proof.map((pr, i) => (
-          <li key={pr.label} style={{ "--i": i } as React.CSSProperties}>
-            <strong>{pr.value}</strong>
-            <span>{pr.label}</span>
-          </li>
+  if (id === "reality") {
+    /* one in twenty returns anything — the single lit cell is the point */
+    return (
+      <div className="stat__ratio" aria-hidden="true">
+        {Array.from({ length: 20 }, (_, i) => (
+          <span key={i} className={i === 0 && p > 0.5 ? "is-on" : undefined} />
         ))}
-      </ul>
-      <p className="payback__note">{data.paybackNote}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="stat__bar" aria-hidden="true">
+      <span style={{ transform: `scaleX(${clamp(p)})` }} />
     </div>
   );
 }

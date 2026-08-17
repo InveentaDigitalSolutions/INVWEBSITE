@@ -52,23 +52,6 @@ const en: SiteContent = {
       figure: 40,
       note: "will embed task-specific AI agents.",
     },
-    outcome: {
-      eyebrow: "What autonomy takes out",
-      steps: [
-        { label: "Manual", value: 0 },
-        { label: "Digitalized", value: 30 },
-        { label: "Automated", value: 55 },
-        { label: "Orchestrated", value: 74 },
-      ],
-      axis: "Time saved vs manual baseline",
-      note: "less time on the same process, end to end.",
-      proof: [
-        { value: "2.2 h", label: "saved per person, per day" },
-        { value: "5.1 months", label: "to pay back the build" },
-      ],
-      paybackEyebrow: "The speed of impact",
-      paybackNote: "Modelled on the processes we have rebuilt — the return depends on where you start.",
-    },
   },
   stats: [
     { value: "7", label: "Areas of expertise" },
@@ -84,6 +67,41 @@ const en: SiteContent = {
     h2: "What changes when data can be acted on.",
     prev: "Previous",
     next: "Next",
+    panels: [
+      {
+        id: "wave",
+        eyebrow: "The wave",
+        prefix: "",
+        value: 40,
+        decimals: 0,
+        suffix: "%",
+        statement:
+          "of enterprise applications will embed AI agents by the end of 2026 — up from under 5% today.",
+        note: "Six in ten organisations expect agents in production within two years.",
+      },
+      {
+        id: "reality",
+        eyebrow: "The reality",
+        prefix: "",
+        value: 95,
+        decimals: 0,
+        suffix: "%",
+        statement:
+          "of AI pilots return nothing. The failure is in the implementation, not in the model.",
+        note: "Demand for the people who can implement it outstrips supply three to one.",
+      },
+      {
+        id: "stake",
+        eyebrow: "What is at stake",
+        prefix: "US$",
+        value: 4.4,
+        decimals: 1,
+        suffix: " trillion",
+        statement:
+          "a year in value from generative AI — available to whoever can actually put it into production.",
+        note: "The model is the visible tip. What decides the outcome is the data, the governance and the people underneath it.",
+      },
+    ],
   },
 
   solutionsSection: {

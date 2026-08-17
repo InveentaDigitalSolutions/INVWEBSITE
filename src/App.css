@@ -1172,51 +1172,100 @@
   cursor: default;
 }
 
-/* what it gives back */
-.payback__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(40px, 8vw, 120px);
-}
-
-.payback__list li {
-  opacity: calc(var(--p, 1) * 1.6 - var(--i) * 0.4);
-  transition: opacity 0.4s ease;
-}
-
-.payback__list strong {
-  display: block;
+/* ---- the figures ---- */
+.stat__figure {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(2.6rem, 1.4rem + 4vw, 5.2rem);
-  line-height: 0.96;
-  letter-spacing: -0.04em;
+  font-size: clamp(3rem, 1.6rem + 5.4vw, 6.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
   color: var(--green-screen);
   font-variant-numeric: tabular-nums;
 }
 
-.payback__list span {
-  display: block;
-  margin-top: 16px;
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  max-width: 22ch;
-  line-height: 1.5;
+.stat__statement {
+  margin-top: 22px;
+  max-width: 30ch;
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.35rem);
+  line-height: 1.45;
+  color: var(--white);
 }
 
-.payback__note {
-  margin-top: clamp(30px, 4vh, 48px);
-  padding-top: 22px;
+.stat__note {
+  margin-top: 26px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
-  max-width: 54ch;
-  font-size: 0.92rem;
-  color: var(--ink-faint);
+  max-width: 52ch;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--ink-dim);
+}
+
+/* 100 cells: how much of the estate turns */
+.stat__grid {
+  display: grid;
+  grid-template-columns: repeat(25, minmax(0, 1fr));
+  gap: 5px;
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.stat__grid span {
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.stat__grid span.is-on {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+/* 20 cells, one lit: the one pilot in twenty that returns anything */
+.stat__ratio {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 620px;
+  margin-bottom: 34px;
+}
+
+.stat__ratio span {
+  height: 46px;
+  border: 1px solid var(--line);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.stat__ratio span.is-on {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+/* a single measure, drawn */
+.stat__bar {
+  max-width: 620px;
+  height: 3px;
+  margin-bottom: 34px;
+  background: var(--line);
+}
+
+.stat__bar span {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  transform-origin: left center;
+}
+
+@media (max-width: 700px) {
+  .stat__grid {
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+  }
+  .stat__ratio {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+  .stat__ratio span {
+    height: 32px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
