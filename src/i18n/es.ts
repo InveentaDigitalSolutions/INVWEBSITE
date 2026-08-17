@@ -28,7 +28,7 @@ const es: SiteContent = {
       emphasis: "como uno solo.",
     },
     integration: {
-      eyebrow: "De fragmentado a diseñado",
+      eyebrow: "De fragmentado a orquestado",
       fromLabel: "Lo que se usa hoy",
       fragmented: [
         "ERP",
@@ -55,7 +55,7 @@ const es: SiteContent = {
       note: "incorporarán agentes de IA específicos por tarea.",
     },
     outcome: {
-      eyebrow: "Lo que la automatización elimina",
+      eyebrow: "Lo que la autonomía elimina",
       steps: [
         { label: "Manual", value: 0 },
         { label: "Digitalizado", value: 30 },
@@ -271,7 +271,7 @@ const es: SiteContent = {
   capabilitiesSection: {
     eyebrow: "Lo que hacemos",
     h2: "IA e ingeniería, de principio a fin.",
-    p: "Las disciplinas detrás de cada solución a medida — desde IA y analítica predictiva hasta automatización, integración y gobernanza. El cómo detrás de todo lo que construimos.",
+    p: "Las disciplinas detrás de cada solución a medida — desde IA y analítica predictiva hasta autonomía, integración y gobernanza. El cómo detrás de todo lo que construimos.",
   },
   capabilities: [
 
@@ -280,12 +280,12 @@ const es: SiteContent = {
       icon: "sparkle",
       image: "cap-ai",
       title: "IA & Agentes",
-      short: "Agentes de Copilot Studio y automatización inteligente que reducen el esfuerzo manual.",
+      short: "Agentes de Copilot Studio y autonomía inteligente que reducen el esfuerzo manual.",
       detail:
         "Agentes conversacionales y de tareas acotados a sus datos y procesos empresariales, más la automatización de los flujos repetitivos y propensos a error que agotan a los equipos en silencio — mostrando la información donde ya se trabaja, con una reducción de fricción medible.",
       experience: [
-        "Agentes de Copilot Studio acotados a datos empresariales",
         "Automatización de flujos repetitivos y propensos a error",
+        "Agentes acotados a datos y procesos empresariales",
         "Integraciones en SharePoint, Dataverse, Azure & cloud",
         "Reducción medible del esfuerzo manual",
       ],
@@ -298,8 +298,8 @@ const es: SiteContent = {
       detail:
         "Convertimos fuentes dispersas y desnormalizadas en modelos dimensionales gobernados, y luego las mostramos a través de un Power BI claro y rápido — bandas de KPI, mapas de calor y drill-through en los que los decisores realmente confían. Diseñado modelo-primero, para que las cifras aguanten a medida que crecen los datos.",
       experience: [
-        "Paneles de Power BI de varias páginas con bandas de KPI y mapas de calor",
         "Modelos en esquema de estrella reconstruidos desde exportaciones desnormalizadas",
+        "Paneles de varias páginas con bandas de KPI y mapas de calor",
         "Medidas DAX e inteligencia de tiempo",
         "Maquetas clicables alineadas con las partes interesadas antes de construir",
       ],
@@ -328,7 +328,7 @@ const es: SiteContent = {
       detail:
         "Apps canvas y basadas en modelo, más portales Power Pages para las personas fuera de sus cuatro paredes — arquitectura elegida con criterio, modelo de datos y claves diseñados de antemano, entornos y ALM alineados con la gobernanza empresarial. Componentes reutilizables y UI consistente dentro del modelo de renderizado de la plataforma.",
       experience: [
-        "Una cartera de seis Power Apps dentro de una cuenta empresarial",
+        "Una cartera de seis apps de negocio dentro de una cuenta empresarial",
         "Modelos de Dataverse con claves compuestas y alternativas",
         "Portales Power Pages y sitios de cara al exterior",
         "Componentes reutilizables, controles HTML/SVG y branding en la app",
@@ -338,7 +338,7 @@ const es: SiteContent = {
       id: "cap-automation",
       icon: "flow",
       image: "cap-automation",
-      title: "Automatización de Procesos",
+      title: "Autonomía de Procesos",
       short: "Aprobaciones, orquestación e integraciones que funcionan sin que nadie las persiga.",
       detail:
         "Flujos de Power Automate que sustituyen los traspasos manuales — aprobaciones, notificaciones, trabajos programados e integración entre sistemas — construidos para ser observables y resilientes, con fallos de variables de entorno y conexión depurados para que no fallen en silencio.",
@@ -358,8 +358,8 @@ const es: SiteContent = {
       detail:
         "Dataflows de Power Query (M) que gestionan deduplicación, recorte, lógica de semana ISO y propagación de nulos, alimentando modelos dimensionales — más los conectores y el pegamento entre SharePoint, Dataverse, SQL, Azure, Google Cloud y SAP para que los datos se muevan sin copiar y pegar.",
       experience: [
-        "Dataflows de Power Query (M) con dedup y lógica de semana ISO",
         "Modelos dimensionales derivados de fuentes desnormalizadas",
+        "Dataflows con dedup y lógica de semana ISO",
         "Integraciones de conectores y API entre sistemas",
         "Consolidación de SharePoint en lugar de listas fragmentadas",
       ],
@@ -493,7 +493,7 @@ const es: SiteContent = {
     points: [
       "Arquitectura, desarrollo y análisis en un solo equipo",
       "Construido para entrega regulada de nivel empresarial",
-      "Ingeniería sénior y práctica, de discovery a traspaso",
+      "Entrega sénior y práctica, de discovery a traspaso",
       "El código y los datos son suyos",
     ],
     imgAlt: "Inveenta trabajando",
@@ -633,7 +633,6 @@ const es: SiteContent = {
     whatWeBuilt: "Lo que hemos entregado",
     open: "Ver más",
     close: "Ver menos",
-    delivered: "entregados",
   },
 
   industryPage: {

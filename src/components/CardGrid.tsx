@@ -17,8 +17,8 @@ export default function CardGrid({
 }: {
   items: Offering[];
   idPrefix: string;
-  /** Surfaces the delivered-work count on the closed row — evidence that we
-      have actually built this, without making the reader click to find out. */
+  /** Surfaces one delivered example on the closed row — evidence that we have
+      actually built this, without making the reader click to find out. */
   showDelivered?: boolean;
 }) {
   const [open, setOpen] = useState<string | null>(null);
@@ -39,10 +39,11 @@ export default function CardGrid({
               <span className="irow__n">{String(i + 1).padStart(2, "0")}</span>
               <span className="irow__t">
                 {s.title}
-                {showDelivered && s.experience.length > 0 && (
-                  <em className="irow__count">
-                    {s.experience.length} {cardGrid.delivered}
-                  </em>
+                {/* One concrete thing we've built, on the closed row. A count
+                    read "4 delivered" on every line — identical everywhere, so
+                    it looked like a template rather than evidence. */}
+                {showDelivered && s.experience[0] && (
+                  <em className="irow__proof">{s.experience[0]}</em>
                 )}
               </span>
               <span className="irow__d">{s.short}</span>

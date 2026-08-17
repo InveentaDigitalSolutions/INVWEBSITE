@@ -877,22 +877,34 @@
   color: var(--white);
 }
 
-/* delivered-work count — evidence on the closed row. Kept as quiet metadata:
-   every area currently reads "4 delivered", and seven identical accent lines
-   would read as a template rather than as proof. */
-.irow__count {
+/* One delivered example under the title — concrete, and different on every
+   row, which a count never was. Set as a quiet caption so it supports the
+   title instead of competing with the description beside it. */
+.irow__proof {
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
+  max-width: 46ch;
   font-family: var(--mono);
   font-style: normal;
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
   color: var(--ink-faint);
+  transition: color 0.2s ease;
 }
 
-.irow__head:hover .irow__count {
-  color: var(--green);
+.irow__proof::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  margin-right: 9px;
+  vertical-align: middle;
+  background: var(--green);
+}
+
+.irow__head:hover .irow__proof {
+  color: var(--ink-dim);
 }
 
 .irow__d {

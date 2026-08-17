@@ -14,19 +14,19 @@ const en: SiteContent = {
   hero: {
     kicker: "Engineered Intelligence",
     titleLines: ["The next generation of enterprise software."],
-    lead: "AI engineered into the core of your operations, not bolted on — bespoke systems for the complex, large-scale processes no product was built to handle.",
+    lead: "AI built into the core of your operations, not bolted on — bespoke systems for the complex, large-scale processes no product was built to handle.",
     primary: "Start a project",
     ghost: "Explore solutions",
     scrollCue: "Scroll",
   },
   film: {
     thesis: {
-      eyebrow: "The problem we engineer against",
+      eyebrow: "The problem we build against",
       line: "Most operations do not need more software. They need the software they have to work",
       emphasis: "as one.",
     },
     integration: {
-      eyebrow: "From fragmented to engineered",
+      eyebrow: "From fragmented to orchestrated",
       fromLabel: "What you run today",
       fragmented: [
         "ERP",
@@ -53,7 +53,7 @@ const en: SiteContent = {
       note: "will embed task-specific AI agents.",
     },
     outcome: {
-      eyebrow: "What automation takes out",
+      eyebrow: "What autonomy takes out",
       steps: [
         { label: "Manual", value: 0 },
         { label: "Digitalized", value: 30 },
@@ -269,7 +269,7 @@ const en: SiteContent = {
   capabilitiesSection: {
     eyebrow: "What we do",
     h2: "AI and engineering, end to end.",
-    p: "The disciplines behind every custom solution — from AI and predictive analytics to automation, integration and governance. The how behind everything we build.",
+    p: "The disciplines behind every custom solution — from AI and predictive analytics to autonomy, integration and governance. The how behind everything we build.",
   },
   capabilities: [
 
@@ -278,12 +278,12 @@ const en: SiteContent = {
       icon: "sparkle",
       image: "cap-ai",
       title: "AI & Agents",
-      short: "Copilot Studio agents and intelligent automation that cut manual effort.",
+      short: "Copilot Studio agents and intelligent autonomy that cut manual effort.",
       detail:
         "Conversational and task agents scoped to your enterprise data and processes, plus automation of the repetitive, error-prone workflows that quietly drain teams — surfacing information where work already happens, with measurable friction reduction.",
       experience: [
-        "Copilot Studio agents scoped to enterprise data",
         "Automation of repetitive, error-prone workflows",
+        "Agents scoped to enterprise data and processes",
         "Integrations across SharePoint, Dataverse, Azure & cloud",
         "Measurable reduction in manual effort",
       ],
@@ -296,8 +296,8 @@ const en: SiteContent = {
       detail:
         "We turn scattered, denormalized sources into governed dimensional models, then surface them through clear, fast Power BI — KPI bands, heatmaps and drill-through that decision-makers actually trust. Designed model-first, so the numbers hold up as the data grows.",
       experience: [
-        "Multi-page Power BI dashboards with KPI bands and heatmaps",
         "Star-schema models rebuilt from denormalized exports",
+        "Multi-page dashboards with KPI bands and heatmaps",
         "DAX measures and time-intelligence",
         "Clickable mock-ups aligned with stakeholders before build",
       ],
@@ -326,7 +326,7 @@ const en: SiteContent = {
       detail:
         "Canvas and model-driven apps, plus Power Pages portals for the people outside your four walls — architecture chosen deliberately, data model and keys designed up front, environments and ALM aligned to enterprise governance. Reusable components and consistent UI within the platform's rendering model.",
       experience: [
-        "A portfolio of six Power Apps within one enterprise account",
+        "A portfolio of six business apps within one enterprise account",
         "Dataverse models with composite and alternate keys",
         "Power Pages portals and external-facing sites",
         "Reusable components, HTML/SVG controls and in-app branding",
@@ -336,7 +336,7 @@ const en: SiteContent = {
       id: "cap-automation",
       icon: "flow",
       image: "cap-automation",
-      title: "Process Automation",
+      title: "Process Autonomy",
       short: "Approvals, orchestration and integrations that run without anyone chasing them.",
       detail:
         "Power Automate flows that replace manual handoffs — approvals, notifications, scheduled jobs and system-to-system integration — built to be observable and resilient, with environment-variable and connection failures debugged so they don't fail silently.",
@@ -356,8 +356,8 @@ const en: SiteContent = {
       detail:
         "Power Query (M) dataflows that handle deduplication, trimming, ISO-week logic and null propagation, feeding dimensional models — plus the connectors and glue between SharePoint, Dataverse, SQL, Azure, Google Cloud and SAP so data moves without copy-paste.",
       experience: [
-        "Power Query (M) dataflows with dedup and ISO-week logic",
         "Dimensional models derived from denormalized sources",
+        "Dataflows with dedup and ISO-week logic",
         "Connector and API integrations across systems",
         "SharePoint consolidation replacing fragmented lists",
       ],
@@ -491,7 +491,7 @@ const en: SiteContent = {
     points: [
       "Architecture, development and analysis in one team",
       "Built for regulated, enterprise-grade delivery",
-      "Senior, hands-on engineering from discovery to handover",
+      "Senior, hands-on delivery from discovery to handover",
       "You own the code and the data",
     ],
     imgAlt: "Inveenta at work",
@@ -631,7 +631,6 @@ const en: SiteContent = {
     whatWeBuilt: "What we've delivered",
     open: "Show more",
     close: "Show less",
-    delivered: "delivered",
   },
 
   industryPage: {
