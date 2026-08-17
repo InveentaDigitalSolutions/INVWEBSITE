@@ -12,9 +12,9 @@ const en: SiteContent = {
   cta: { getInTouch: "Get in touch", contact: "Contact" },
 
   hero: {
-    kicker: "Engineered Intelligence",
+    kicker: "Data Autonomy",
     titleLines: ["The next generation of enterprise software."],
-    lead: "AI built into the core of your operations, not bolted on — bespoke systems for the complex, large-scale processes no product was built to handle.",
+    lead: "Systems that don't just report your operations — they run them. AI built into the core, not bolted on, for the large-scale processes no product was built to handle.",
     primary: "Start a project",
     ghost: "Explore solutions",
     scrollCue: "Scroll",
@@ -22,7 +22,7 @@ const en: SiteContent = {
   film: {
     thesis: {
       eyebrow: "The problem we build against",
-      line: "Most operations do not need more software. They need the software they have to work",
+      line: "Most operations do not need more software. They need what they already run to act",
       emphasis: "as one.",
     },
     integration: {

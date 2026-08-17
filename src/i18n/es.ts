@@ -14,9 +14,9 @@ const es: SiteContent = {
   cta: { getInTouch: "Contactar", contact: "Contacto" },
 
   hero: {
-    kicker: "Engineered Intelligence",
+    kicker: "Data Autonomy",
     titleLines: ["La próxima generación de software empresarial."],
-    lead: "IA integrada en el núcleo de sus operaciones, no añadida por encima — sistemas a medida para los procesos complejos y de gran escala que ningún producto puede gestionar.",
+    lead: "Sistemas que no solo informan sobre sus operaciones — las ejecutan. IA integrada en el núcleo, no añadida por encima, para los procesos de gran escala que ningún producto puede gestionar.",
     primary: "Iniciar un proyecto",
     ghost: "Explorar soluciones",
     scrollCue: "Desplazar",
@@ -24,8 +24,8 @@ const es: SiteContent = {
   film: {
     thesis: {
       eyebrow: "El problema contra el que diseñamos",
-      line: "La mayoría de las operaciones no necesitan más software. Necesitan que el software que ya tienen funcione",
-      emphasis: "como uno solo.",
+      line: "La mayoría de las operaciones no necesitan más software. Necesitan que los sistemas que ya usan",
+      emphasis: "actúen como uno solo.",
     },
     integration: {
       eyebrow: "De fragmentado a orquestado",

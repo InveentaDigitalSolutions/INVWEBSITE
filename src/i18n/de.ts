@@ -14,9 +14,9 @@ const de: SiteContent = {
   cta: { getInTouch: "Kontakt aufnehmen", contact: "Kontakt" },
 
   hero: {
-    kicker: "Engineered Intelligence",
+    kicker: "Data Autonomy",
     titleLines: ["Die nächste Generation von Unternehmenssoftware."],
-    lead: "KI, die in den Kern Ihrer Abläufe eingebaut ist, nicht aufgesetzt — maßgeschneiderte Systeme für die komplexen, großskaligen Prozesse, die kein Produkt bewältigen kann.",
+    lead: "Systeme, die Ihre Abläufe nicht nur berichten — sie führen sie aus. KI im Kern eingebaut, nicht aufgesetzt, für die großskaligen Prozesse, die kein Produkt bewältigen kann.",
     primary: "Projekt starten",
     ghost: "Lösungen entdecken",
     scrollCue: "Scrollen",
@@ -24,8 +24,8 @@ const de: SiteContent = {
   film: {
     thesis: {
       eyebrow: "Das Problem, gegen das wir entwickeln",
-      line: "Die meisten Abläufe brauchen nicht mehr Software. Sie brauchen, dass die vorhandene Software",
-      emphasis: "als eine arbeitet.",
+      line: "Die meisten Abläufe brauchen nicht mehr Software. Sie brauchen, dass ihre bestehenden Systeme",
+      emphasis: "als eines handeln.",
     },
     integration: {
       eyebrow: "Von fragmentiert zu orchestriert",
