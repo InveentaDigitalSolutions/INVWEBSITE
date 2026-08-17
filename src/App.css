@@ -304,7 +304,7 @@
 
 /* ordinary sections: the page scrolls normally, the scene animates in */
 .film__scene {
-  min-height: 100vh;
+  min-height: min(100vh, 900px);
   display: grid;
   align-content: center;
   padding-inline: var(--gutter);
@@ -371,11 +371,12 @@
 .film__thesis {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(1.8rem, 0.8rem + 3.4vw, 3.9rem);
-  line-height: 1.14;
+  font-size: clamp(1.7rem, 0.9rem + 2.6vw, 3.1rem);
+  line-height: 1.16;
   letter-spacing: -0.028em;
-  max-width: 22ch;
+  max-width: 26ch;
   color: var(--white);
+  margin-bottom: clamp(48px, 7vh, 88px);
 }
 
 .film__thesis em {
@@ -384,6 +385,25 @@
 }
 
 /* ---- Scene 3: fragmented → orchestrated ---- */
+.wire__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.wire__label::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
 .wire__body {
   display: grid;
   /* the fan needs real width or it reads as a scribble between two columns */
@@ -687,7 +707,26 @@
 }
 
 @media (max-width: 1080px) {
-  .wire__body {
+  .wire__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.wire__label::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.wire__body {
     grid-template-columns: minmax(0, 0.8fr) 80px minmax(0, 1.5fr);
   }
   .wire__cells span {
@@ -703,7 +742,26 @@
   .film__scene {
     padding-block: 0;
   }
-  .wire__body {
+  .wire__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.wire__label::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.wire__body {
     grid-template-columns: 1fr;
     gap: 26px;
   }

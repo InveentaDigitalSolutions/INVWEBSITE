@@ -61,18 +61,20 @@ export default function Hero() {
       <div className="film__scenes">
         <TitleScene hero={hero} />
 
+        {/* The problem and its resolution are one idea: the sentence states
+            it, the diagram answers it. Splitting them across two screens
+            made the reader hold the first half in their head. */}
         <Scene name="thesis">
           {(on) => (
             <>
-              <p className={`film__eyebrow${on ? " is-in" : ""}`}>{film.thesis.eyebrow}</p>
-              <p className={`film__thesis${on ? " is-in" : ""}`}>
+              <p className="film__eyebrow">{film.thesis.eyebrow}</p>
+              <p className="film__thesis">
                 {film.thesis.line} <em>{film.thesis.emphasis}</em>
               </p>
+              <Integration data={film.integration} on={on} />
             </>
           )}
         </Scene>
-
-        <Scene name="wire">{(on) => <Integration data={film.integration} on={on} />}</Scene>
       </div>
     </section>
   );
@@ -126,7 +128,7 @@ function Integration({
   const p = useScenePlay(on, 1400);
   return (
     <div className="wire">
-      <p className="film__eyebrow">{data.eyebrow}</p>
+      <p className="wire__label">{data.eyebrow}</p>
       <div className="wire__body">
         <ul className="wire__from" style={{ "--p": p } as React.CSSProperties}>
           <li className="wire__from-label">{data.fromLabel}</li>
