@@ -655,7 +655,7 @@ const es: SiteContent = {
   seo: {
     homeTitle: "Inveenta — engineering intelligent business",
     homeDescription:
-      "Software empresarial a medida que convierte operaciones complejas y manuales en sistemas gobernados y escalables. Opere con menos. Escale más rápido. Rinda mejor.",
+      "Sistemas empresariales a medida que no solo informan sobre sus operaciones — las ejecutan. IA en el núcleo, para los procesos de gran escala que ningún producto gestiona.",
     industryDescriptionFallback: "Software empresarial a medida para sectores regulados y orientados a datos.",
     privacyTitle: "Política de Privacidad — Inveenta",
     imprintTitle: "Aviso Legal — Inveenta",

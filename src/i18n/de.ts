@@ -655,7 +655,7 @@ const de: SiteContent = {
   seo: {
     homeTitle: "Inveenta — engineering intelligent business",
     homeDescription:
-      "Individuelle Unternehmenssoftware, die komplexe, manuelle Abläufe in steuerbare, skalierbare Systeme verwandelt. Schlanker arbeiten. Schneller skalieren. Mehr leisten.",
+      "Maßgeschneiderte Unternehmenssysteme, die Ihre Abläufe nicht nur berichten — sie führen sie aus. KI im Kern, für die großskaligen Prozesse, die kein Produkt bewältigen kann.",
     industryDescriptionFallback: "Individuelle Unternehmenssoftware für regulierte, datengetriebene Branchen.",
     privacyTitle: "Datenschutz — Inveenta",
     imprintTitle: "Impressum — Inveenta",

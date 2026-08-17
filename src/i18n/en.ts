@@ -653,7 +653,7 @@ const en: SiteContent = {
   seo: {
     homeTitle: "Inveenta — engineering intelligent business",
     homeDescription:
-      "Custom enterprise software that turns complex, manual operations into governed, scalable systems. Run leaner. Scale faster. Perform better.",
+      "Custom enterprise systems that don't just report your operations — they run them. AI built into the core, for the large-scale processes no product was built to handle.",
     industryDescriptionFallback: "Custom enterprise software for regulated, data-driven industries.",
     privacyTitle: "Privacy Policy — Inveenta",
     imprintTitle: "Imprint — Inveenta",
