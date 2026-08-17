@@ -29,9 +29,11 @@ export default function Layers() {
             {layers.rows.map((row) => (
               <li className={`slab${row.focus ? " is-focus" : ""}`} key={row.id}>
                 <div className="slab__layer">
-                  <h3 className="slab__name">{row.name}</h3>
+                  <h3 className="slab__name">
+                    {row.name}
+                    {row.focus && <span className="slab__focus">{layers.focusLabel}</span>}
+                  </h3>
                   <p className="slab__items">{row.items}</p>
-                  {row.focus && <span className="slab__focus">{layers.focusLabel}</span>}
                 </div>
                 <p className="slab__agent">{row.agent}</p>
               </li>

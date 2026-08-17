@@ -97,8 +97,8 @@ const es: SiteContent = {
         "Seguimiento de transporte por carretera, ferrocarril y mar, con flujos multi-estado, modelos de datos con claves compuestas y alternativas, flujos de orquestación y paneles operativos — diseñados para mantener el movimiento complejo de mercancías visible y trazable.",
       experience: [
         "Seguimiento multi-estado del transporte (incl. un flujo ferroviario de 24 estados)",
-        "Modelos de Dataverse con claves compuestas y alternativas",
-        "Orquestación y notificaciones con Power Automate",
+        "Modelos de datos con claves compuestas y alternativas",
+        "Flujos de orquestación y notificaciones",
         "Paneles operativos para equipos de logística",
       ],
     },
@@ -114,7 +114,7 @@ const es: SiteContent = {
         "Seguimiento de defectos y calidad en contextos de automoción regulados",
         "Inspección móvil con escaneo de código de barras y QR",
         "Pistas de auditoría, acceso por roles y controles de calidad de datos",
-        "Captura de fotos y evidencias sincronizada con Dataverse — en lugar de listas en papel",
+        "Captura de fotos y evidencias sincronizada con el registro — en lugar de listas en papel",
       ],
     },
     {
@@ -172,7 +172,7 @@ const es: SiteContent = {
         "Monitoreo de estado con umbrales y automatización de alertas tempranas que envía las excepciones a quienes pueden actuar, en el momento en que algo se desvía — convirtiendo el control de una mirada mensual hacia atrás en una señal en vivo.",
       experience: [
         "Automatización de alertas tempranas ante desviaciones de estado",
-        "Notificaciones de excepción vía Power Automate",
+        "Notificaciones de excepción enrutadas automáticamente",
         "Informes de control sobre flujos de trabajo paralelos",
         "Monitoreo de KPI basado en umbrales",
       ],
@@ -345,13 +345,13 @@ const es: SiteContent = {
       icon: "sparkle",
       image: "cap-ai",
       title: "IA & Agentes",
-      short: "Agentes de Copilot Studio y autonomía inteligente que reducen el esfuerzo manual.",
+      short: "Agentes y autonomía inteligente que reducen el esfuerzo manual.",
       detail:
         "Agentes conversacionales y de tareas acotados a sus datos y procesos empresariales, más la automatización de los flujos repetitivos y propensos a error que agotan a los equipos en silencio — mostrando la información donde ya se trabaja, con una reducción de fricción medible.",
       experience: [
         "Automatización de flujos repetitivos y propensos a error",
         "Agentes acotados a datos y procesos empresariales",
-        "Integraciones en SharePoint, Dataverse, Azure & cloud",
+        "Integraciones entre repositorios documentales, bases de datos y servicios cloud",
         "Reducción medible del esfuerzo manual",
       ],
     },    {
@@ -361,11 +361,11 @@ const es: SiteContent = {
       title: "Datos & Business Intelligence",
       short: "Información lista para decidir sobre modelos de datos que siguen siendo correctos al crecer.",
       detail:
-        "Convertimos fuentes dispersas y desnormalizadas en modelos dimensionales gobernados, y luego las mostramos a través de un Power BI claro y rápido — bandas de KPI, mapas de calor y drill-through en los que los decisores realmente confían. Diseñado modelo-primero, para que las cifras aguanten a medida que crecen los datos.",
+        "Convertimos fuentes dispersas y desnormalizadas en modelos dimensionales gobernados, y luego las mostramos a través de paneles claros y rápidos — bandas de KPI, mapas de calor y drill-through en los que los decisores realmente confían. Diseñado modelo-primero, para que las cifras aguanten a medida que crecen los datos.",
       experience: [
         "Modelos en esquema de estrella reconstruidos desde exportaciones desnormalizadas",
         "Paneles de varias páginas con bandas de KPI y mapas de calor",
-        "Medidas DAX e inteligencia de tiempo",
+        "Modelos de cálculo e inteligencia de tiempo",
         "Maquetas clicables alineadas con las partes interesadas antes de construir",
       ],
     },
@@ -389,13 +389,13 @@ const es: SiteContent = {
       icon: "grid",
       image: "cap-apps",
       title: "Desarrollo de Aplicaciones",
-      short: "Apps de negocio y portales gobernados sobre Power Apps, Power Pages & Dataverse.",
+      short: "Apps de negocio y portales gobernados sobre un núcleo de datos modelado.",
       detail:
-        "Apps canvas y basadas en modelo, más portales Power Pages para las personas fuera de sus cuatro paredes — arquitectura elegida con criterio, modelo de datos y claves diseñados de antemano, entornos y ALM alineados con la gobernanza empresarial. Componentes reutilizables y UI consistente dentro del modelo de renderizado de la plataforma.",
+        "Aplicaciones low-code y basadas en modelo, más portales para las personas fuera de sus cuatro paredes — arquitectura elegida con criterio, modelo de datos y claves diseñados de antemano, entornos y gestión de releases alineados con la gobernanza empresarial. Componentes reutilizables y una interfaz consistente en todo el conjunto.",
       experience: [
         "Una cartera de seis apps de negocio dentro de una cuenta empresarial",
-        "Modelos de Dataverse con claves compuestas y alternativas",
-        "Portales Power Pages y sitios de cara al exterior",
+        "Modelos de datos con claves compuestas y alternativas",
+        "Portales y sitios de cara al exterior",
         "Componentes reutilizables, controles HTML/SVG y branding en la app",
       ],
     },
@@ -406,7 +406,7 @@ const es: SiteContent = {
       title: "Autonomía de Procesos",
       short: "Aprobaciones, orquestación e integraciones que funcionan sin que nadie las persiga.",
       detail:
-        "Flujos de Power Automate que sustituyen los traspasos manuales — aprobaciones, notificaciones, trabajos programados e integración entre sistemas — construidos para ser observables y resilientes, con fallos de variables de entorno y conexión depurados para que no fallen en silencio.",
+        "Flujos de orquestación que sustituyen los traspasos manuales — aprobaciones, notificaciones, trabajos programados e integración entre sistemas — construidos para ser observables y resilientes, con fallos de variables de entorno y conexión depurados para que no fallen en silencio.",
       experience: [
         "Flujos de orquestación y aprobación",
         "Automatización de alertas tempranas y notificaciones",
@@ -421,12 +421,12 @@ const es: SiteContent = {
       title: "Integración & Data Engineering",
       short: "Datos limpios y conectados que fluyen entre los sistemas que ya usa.",
       detail:
-        "Dataflows de Power Query (M) que gestionan deduplicación, recorte, lógica de semana ISO y propagación de nulos, alimentando modelos dimensionales — más los conectores y el pegamento entre SharePoint, Dataverse, SQL, Azure, Google Cloud y SAP para que los datos se muevan sin copiar y pegar.",
+        "Dataflows que gestionan deduplicación, recorte, lógica de semana ISO y propagación de nulos, alimentando modelos dimensionales — más los conectores y el pegamento entre repositorios documentales, bases de datos, almacenes y sistemas operativos para que los datos se muevan sin copiar y pegar.",
       experience: [
         "Modelos dimensionales derivados de fuentes desnormalizadas",
         "Dataflows con dedup y lógica de semana ISO",
         "Integraciones de conectores y API entre sistemas",
-        "Consolidación de SharePoint en lugar de listas fragmentadas",
+        "Consolidación de listas fragmentadas en una sola fuente",
       ],
     },
     {
@@ -434,12 +434,12 @@ const es: SiteContent = {
       icon: "lock",
       image: "cap-governance",
       title: "Gobernanza & Seguridad",
-      short: "Acceso por roles, pistas de auditoría y ALM que resisten el escrutinio.",
+      short: "Acceso por roles, pistas de auditoría y gobernanza del ciclo de vida que resisten el escrutinio.",
       detail:
-        "Seguridad y gobernanza incorporadas desde el primer día, no añadidas después — acceso a nivel de fila y de objeto, pistas de auditoría y configuración de entornos, conexiones y ALM alineada con la práctica empresarial. Tratamiento de datos diseñado para entornos regulados donde se revisan el acceso y la trazabilidad.",
+        "Seguridad y gobernanza incorporadas desde el primer día, no añadidas después — acceso a nivel de fila y de objeto, pistas de auditoría y configuración de entornos, conexiones y releases alineada con la práctica empresarial. Tratamiento de datos diseñado para entornos regulados donde se revisan el acceso y la trazabilidad.",
       experience: [
         "Modelos de acceso por roles y a nivel de objeto",
-        "Gobernanza de entornos, conexiones y ALM",
+        "Gobernanza de entornos, conexiones y releases",
         "Pistas de auditoría y controles de tratamiento de datos",
         "Gestión de soluciones y variables de entorno",
       ],

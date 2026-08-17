@@ -97,8 +97,8 @@ const de: SiteContent = {
         "Transportverfolgung über Straße, Schiene und See, mit mehrstufigen Workflows, Datenmodellen mit zusammengesetzten und alternativen Schlüsseln, Orchestrierungs-Flows und operativen Dashboards — damit komplexe Warenbewegungen sichtbar und nachvollziehbar bleiben.",
       experience: [
         "Mehrstufige Transportverfolgung (inkl. eines 24-Status-Bahn-Workflows)",
-        "Dataverse-Modelle mit zusammengesetzten und alternativen Schlüsseln",
-        "Power-Automate-Orchestrierung und Benachrichtigungen",
+        "Datenmodelle mit zusammengesetzten und alternativen Schlüsseln",
+        "Orchestrierungs-Flows und Benachrichtigungen",
         "Operative Dashboards für Logistikteams",
       ],
     },
@@ -114,7 +114,7 @@ const de: SiteContent = {
         "Fehler- und Qualitätsverfolgung in regulierten Automotive-Kontexten",
         "Mobile Prüfung mit Barcode- & QR-Scan",
         "Audit-Trails, rollenbasierter Zugriff und Datenqualitätskontrollen",
-        "Foto- und Nachweiserfassung synchron mit Dataverse — statt Papier-Checklisten",
+        "Foto- und Nachweiserfassung direkt am Datensatz — statt Papier-Checklisten",
       ],
     },
     {
@@ -172,7 +172,7 @@ const de: SiteContent = {
         "Status-Monitoring mit Schwellenwerten und Frühwarn-Automatisierung, die Ausnahmen an die Menschen weitergibt, die handeln können — im Moment, in dem etwas abweicht. So wird Controlling vom monatlichen Rückblick zum Live-Signal.",
       experience: [
         "Frühwarn-Automatisierung bei Statusabweichungen",
-        "Ausnahme-Benachrichtigungen über Power Automate",
+        "Ausnahme-Benachrichtigungen, automatisch zugestellt",
         "Controlling-Berichte über parallele Arbeitsstränge",
         "Schwellenwertbasiertes KPI-Monitoring",
       ],
@@ -345,13 +345,13 @@ const de: SiteContent = {
       icon: "sparkle",
       image: "cap-ai",
       title: "KI & Agenten",
-      short: "Copilot-Studio-Agenten und intelligente Autonomie, die manuellen Aufwand senken.",
+      short: "Agenten und intelligente Autonomie, die manuellen Aufwand senken.",
       detail:
         "Konversations- und Aufgabenagenten, zugeschnitten auf Ihre Unternehmensdaten und -prozesse, dazu Automatisierung der wiederkehrenden, fehleranfälligen Abläufe, die Teams stillschweigend auslaugen — Informationen dort, wo gearbeitet wird, mit messbarer Reibungsreduktion.",
       experience: [
         "Automatisierung wiederkehrender, fehleranfälliger Abläufe",
         "Agenten, zugeschnitten auf Unternehmensdaten und -prozesse",
-        "Integrationen über SharePoint, Dataverse, Azure & Cloud",
+        "Integrationen über Dokumentenablagen, Datenbanken und Cloud-Dienste",
         "Messbare Reduktion manuellen Aufwands",
       ],
     },    {
@@ -361,11 +361,11 @@ const de: SiteContent = {
       title: "Daten & Business Intelligence",
       short: "Entscheidungsreife Erkenntnisse auf Datenmodellen, die auch beim Wachsen korrekt bleiben.",
       detail:
-        "Wir machen aus verstreuten, denormalisierten Quellen steuerbare dimensionale Modelle und bringen sie über klares, schnelles Power BI an die Oberfläche — KPI-Leisten, Heatmaps und Drill-through, denen Entscheider wirklich vertrauen. Modell-first konzipiert, damit die Zahlen auch bei wachsenden Daten halten.",
+        "Wir machen aus verstreuten, denormalisierten Quellen steuerbare dimensionale Modelle und bringen sie über klare, schnelle Dashboards an die Oberfläche — KPI-Leisten, Heatmaps und Drill-through, denen Entscheider wirklich vertrauen. Modell-first konzipiert, damit die Zahlen auch bei wachsenden Daten halten.",
       experience: [
         "Stern-Schema-Modelle, aus denormalisierten Exporten neu aufgebaut",
         "Mehrseitige Dashboards mit KPI-Leisten und Heatmaps",
-        "DAX-Measures und Zeitintelligenz",
+        "Berechnungsmodelle und Zeitintelligenz",
         "Klickbare Mock-ups, vor dem Bau mit Stakeholdern abgestimmt",
       ],
     },
@@ -389,13 +389,13 @@ const de: SiteContent = {
       icon: "grid",
       image: "cap-apps",
       title: "Anwendungsentwicklung",
-      short: "Steuerbare Business-Apps und Portale auf Power Apps, Power Pages & Dataverse.",
+      short: "Steuerbare Business-Apps und Portale auf einem modellierten Datenkern.",
       detail:
-        "Canvas- und modellgesteuerte Apps sowie Power-Pages-Portale für die Menschen außerhalb Ihrer vier Wände — bewusst gewählte Architektur, vorab konzipiertes Datenmodell und Schlüssel, Umgebungen und ALM auf Enterprise-Governance ausgerichtet. Wiederverwendbare Komponenten und konsistentes UI innerhalb des Rendering-Modells der Plattform.",
+        "Low-Code- und modellgesteuerte Anwendungen sowie Portale für die Menschen außerhalb Ihrer vier Wände — bewusst gewählte Architektur, vorab konzipiertes Datenmodell und Schlüssel, Umgebungen und Release-Management auf Enterprise-Governance ausgerichtet. Wiederverwendbare Komponenten und eine konsistente Oberfläche über die gesamte Landschaft.",
       experience: [
         "Ein Portfolio von sechs Business-Apps innerhalb eines Enterprise-Kontos",
-        "Dataverse-Modelle mit zusammengesetzten und alternativen Schlüsseln",
-        "Power-Pages-Portale und nach außen gerichtete Websites",
+        "Datenmodelle mit zusammengesetzten und alternativen Schlüsseln",
+        "Portale und nach außen gerichtete Websites",
         "Wiederverwendbare Komponenten, HTML/SVG-Steuerelemente und In-App-Branding",
       ],
     },
@@ -406,7 +406,7 @@ const de: SiteContent = {
       title: "Prozessautonomie",
       short: "Freigaben, Orchestrierung und Integrationen, die laufen, ohne dass jemand hinterhertelefoniert.",
       detail:
-        "Power-Automate-Flows, die manuelle Übergaben ersetzen — Freigaben, Benachrichtigungen, geplante Jobs und System-zu-System-Integration — beobachtbar und belastbar gebaut, mit Umgebungsvariablen- und Verbindungsfehlern so debuggt, dass sie nicht stillschweigend scheitern.",
+        "Orchestrierungs-Flows, die manuelle Übergaben ersetzen — Freigaben, Benachrichtigungen, geplante Jobs und System-zu-System-Integration — beobachtbar und belastbar gebaut, mit Umgebungsvariablen- und Verbindungsfehlern so debuggt, dass sie nicht stillschweigend scheitern.",
       experience: [
         "Orchestrierungs- und Freigabe-Flows",
         "Frühwarn- und Benachrichtigungsautomatisierung",
@@ -421,12 +421,12 @@ const de: SiteContent = {
       title: "Integration & Data Engineering",
       short: "Saubere, vernetzte Daten, die zwischen Ihren bestehenden Systemen fließen.",
       detail:
-        "Power-Query-(M-)Dataflows, die Deduplizierung, Trimmen, ISO-Wochen-Logik und Null-Propagierung übernehmen und dimensionale Modelle speisen — dazu die Konnektoren und das Bindeglied zwischen SharePoint, Dataverse, SQL, Azure, Google Cloud und SAP, damit Daten ohne Copy-Paste fließen.",
+        "Dataflows, die Deduplizierung, Trimmen, ISO-Wochen-Logik und Null-Propagierung übernehmen und dimensionale Modelle speisen — dazu die Konnektoren und das Bindeglied zwischen Dokumentenablagen, Datenbanken, Warehouses und operativen Systemen, damit Daten ohne Copy-Paste fließen.",
       experience: [
         "Dimensionale Modelle aus denormalisierten Quellen abgeleitet",
         "Dataflows mit Dedup und ISO-Wochen-Logik",
         "Konnektor- und API-Integrationen über Systeme hinweg",
-        "SharePoint-Konsolidierung statt fragmentierter Listen",
+        "Konsolidierung fragmentierter Listen zu einer Quelle",
       ],
     },
     {
@@ -434,12 +434,12 @@ const de: SiteContent = {
       icon: "lock",
       image: "cap-governance",
       title: "Governance & Sicherheit",
-      short: "Rollenbasierter Zugriff, Audit-Trails und ALM, die einer Prüfung standhalten.",
+      short: "Rollenbasierter Zugriff, Audit-Trails und Lifecycle-Governance, die einer Prüfung standhalten.",
       detail:
-        "Sicherheit und Governance von Tag eins eingebaut, nicht nachträglich aufgesetzt — Zeilen- und Objektebenen-Zugriff, Audit-Trails sowie Umgebungs-, Verbindungs- und ALM-Konfiguration nach Enterprise-Praxis. Datenverarbeitung konzipiert für regulierte Umgebungen, in denen Zugriff und Nachvollziehbarkeit geprüft werden.",
+        "Sicherheit und Governance von Tag eins eingebaut, nicht nachträglich aufgesetzt — Zeilen- und Objektebenen-Zugriff, Audit-Trails sowie Umgebungs-, Verbindungs- und Release-Konfiguration nach Enterprise-Praxis. Datenverarbeitung konzipiert für regulierte Umgebungen, in denen Zugriff und Nachvollziehbarkeit geprüft werden.",
       experience: [
         "Rollen- und objektebenenbasierte Zugriffsmodelle",
-        "Umgebungs-, Verbindungs- und ALM-Governance",
+        "Umgebungs-, Verbindungs- und Release-Governance",
         "Audit-Trails und Datenverarbeitungskontrollen",
         "Solution- und Umgebungsvariablen-Management",
       ],

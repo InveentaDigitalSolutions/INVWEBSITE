@@ -95,8 +95,8 @@ const en: SiteContent = {
         "Transport tracking across road, rail and sea, with multi-state workflows, composite- and alternate-key data models, orchestration flows and operational dashboards — built to keep complex movement of goods visible and accountable.",
       experience: [
         "Multi-state transport tracking (incl. a 24-state rail workflow)",
-        "Composite and alternate-key Dataverse models",
-        "Power Automate orchestration and notifications",
+        "Composite and alternate-key data models",
+        "Orchestration flows and notifications",
         "Operational dashboards for logistics teams",
       ],
     },
@@ -112,7 +112,7 @@ const en: SiteContent = {
         "Defect and quality tracking in regulated automotive contexts",
         "Mobile inspection with barcode & QR scanning",
         "Audit trails, role-based access and data-quality controls",
-        "Photo and evidence capture synced to Dataverse — replacing paper checklists",
+        "Photo and evidence capture synced straight to the record — replacing paper checklists",
       ],
     },
     {
@@ -170,7 +170,7 @@ const en: SiteContent = {
         "Status monitoring with thresholds and early-warning automation that pushes exceptions to the people who can act, the moment something drifts — turning controlling from a monthly look-back into a live signal.",
       experience: [
         "Early-warning automation flagging status drift",
-        "Exception notifications via Power Automate",
+        "Exception notifications routed automatically",
         "Controlling reports across parallel workstreams",
         "Threshold-based KPI monitoring",
       ],
@@ -343,13 +343,13 @@ const en: SiteContent = {
       icon: "sparkle",
       image: "cap-ai",
       title: "AI & Agents",
-      short: "Copilot Studio agents and intelligent autonomy that cut manual effort.",
+      short: "Agents and intelligent autonomy that cut manual effort.",
       detail:
         "Conversational and task agents scoped to your enterprise data and processes, plus automation of the repetitive, error-prone workflows that quietly drain teams — surfacing information where work already happens, with measurable friction reduction.",
       experience: [
         "Automation of repetitive, error-prone workflows",
         "Agents scoped to enterprise data and processes",
-        "Integrations across SharePoint, Dataverse, Azure & cloud",
+        "Integrations across document stores, databases and cloud services",
         "Measurable reduction in manual effort",
       ],
     },    {
@@ -359,11 +359,11 @@ const en: SiteContent = {
       title: "Data & Business Intelligence",
       short: "Decision-ready insight on data models that stay correct as they grow.",
       detail:
-        "We turn scattered, denormalized sources into governed dimensional models, then surface them through clear, fast Power BI — KPI bands, heatmaps and drill-through that decision-makers actually trust. Designed model-first, so the numbers hold up as the data grows.",
+        "We turn scattered, denormalized sources into governed dimensional models, then surface them through clear, fast dashboards — KPI bands, heatmaps and drill-through that decision-makers actually trust. Designed model-first, so the numbers hold up as the data grows.",
       experience: [
         "Star-schema models rebuilt from denormalized exports",
         "Multi-page dashboards with KPI bands and heatmaps",
-        "DAX measures and time-intelligence",
+        "Calculation models and time-intelligence",
         "Clickable mock-ups aligned with stakeholders before build",
       ],
     },
@@ -387,13 +387,13 @@ const en: SiteContent = {
       icon: "grid",
       image: "cap-apps",
       title: "Application Development",
-      short: "Governed business apps and portals on Power Apps, Power Pages & Dataverse.",
+      short: "Governed business apps and portals, built on a modelled data core.",
       detail:
-        "Canvas and model-driven apps, plus Power Pages portals for the people outside your four walls — architecture chosen deliberately, data model and keys designed up front, environments and ALM aligned to enterprise governance. Reusable components and consistent UI within the platform's rendering model.",
+        "Low-code and model-driven applications, plus portals for the people outside your four walls — architecture chosen deliberately, data model and keys designed up front, environments and release management aligned to enterprise governance. Reusable components and a consistent interface across the estate.",
       experience: [
         "A portfolio of six business apps within one enterprise account",
-        "Dataverse models with composite and alternate keys",
-        "Power Pages portals and external-facing sites",
+        "Data models with composite and alternate keys",
+        "Portals and external-facing sites",
         "Reusable components, HTML/SVG controls and in-app branding",
       ],
     },
@@ -404,7 +404,7 @@ const en: SiteContent = {
       title: "Process Autonomy",
       short: "Approvals, orchestration and integrations that run without anyone chasing them.",
       detail:
-        "Power Automate flows that replace manual handoffs — approvals, notifications, scheduled jobs and system-to-system integration — built to be observable and resilient, with environment-variable and connection failures debugged so they don't fail silently.",
+        "Orchestration flows that replace manual handoffs — approvals, notifications, scheduled jobs and system-to-system integration — built to be observable and resilient, with environment-variable and connection failures debugged so they don't fail silently.",
       experience: [
         "Orchestration and approval flows",
         "Early-warning and notification automation",
@@ -419,12 +419,12 @@ const en: SiteContent = {
       title: "Integration & Data Engineering",
       short: "Clean, connected data flowing between the systems you already use.",
       detail:
-        "Power Query (M) dataflows that handle deduplication, trimming, ISO-week logic and null propagation, feeding dimensional models — plus the connectors and glue between SharePoint, Dataverse, SQL, Azure, Google Cloud and SAP so data moves without copy-paste.",
+        "Dataflows that handle deduplication, trimming, ISO-week logic and null propagation, feeding dimensional models — plus the connectors and glue between document stores, databases, warehouses and line-of-business systems, so data moves without copy-paste.",
       experience: [
         "Dimensional models derived from denormalized sources",
         "Dataflows with dedup and ISO-week logic",
         "Connector and API integrations across systems",
-        "SharePoint consolidation replacing fragmented lists",
+        "Consolidation of fragmented lists into one source",
       ],
     },
     {
@@ -432,12 +432,12 @@ const en: SiteContent = {
       icon: "lock",
       image: "cap-governance",
       title: "Governance & Security",
-      short: "Role-based access, audit trails and ALM that stand up to scrutiny.",
+      short: "Role-based access, audit trails and lifecycle governance that stand up to scrutiny.",
       detail:
-        "Security and governance built in from day one, not bolted on — row- and object-level access, audit trails, and environment, connection and ALM configuration aligned to enterprise practice. Data handling designed for regulated environments where access and traceability are reviewed.",
+        "Security and governance built in from day one, not bolted on — row- and object-level access, audit trails, and environment, connection and release configuration aligned to enterprise practice. Data handling designed for regulated environments where access and traceability are reviewed.",
       experience: [
         "Role-based and object-level access models",
-        "Environment, connection and ALM governance",
+        "Environment, connection and release governance",
         "Audit trails and data-handling controls",
         "Solution and environment-variable management",
       ],
