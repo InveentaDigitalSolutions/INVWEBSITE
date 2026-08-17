@@ -66,7 +66,7 @@ const es: SiteContent = {
 
   shiftSection: {
     eyebrow: "El cambio",
-    h2: "Qué cambia cuando se puede actuar sobre los datos.",
+    h2: "Un cambio enorme — y una tasa de fracaso a la altura.",
     prev: "Anterior",
     next: "Siguiente",
     panels: [

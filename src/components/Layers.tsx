@@ -1,12 +1,13 @@
 import { useC } from "../i18n/LocaleContext";
 
 /**
- * Where we operate, as a stack.
+ * Where we operate, drawn as the stack it is.
  *
- * The maturity ladder above says how far an operation has come; this says
- * which parts of it we build. Agents run alongside every layer rather than
- * sitting on top of one, and governance runs the full height — both are
- * properties of the whole stack, not a feature of any single layer.
+ * Governance is a pillar down the left, spanning every layer, because that is
+ * what it does — one model, holding all four. As a band underneath it read as
+ * a footnote; rotated down a 54px gutter it was unreadable. As a column with
+ * the layers connected into it, the drawing states the relationship without
+ * needing a sentence to explain it.
  */
 export default function Layers() {
   const { layers } = useC();
@@ -21,37 +22,38 @@ export default function Layers() {
         </div>
 
         <div className="stack">
-          <div className="stack__labels" aria-hidden="true">
-            <span className="stack__colhead">{layers.agentsLabel}</span>
-          </div>
-
-          <ol className="stack__rows">
-            {layers.rows.map((row) => (
-              <li className={`slab${row.focus ? " is-focus" : ""}`} key={row.id}>
-                <div className="slab__layer">
-                  <h3 className="slab__name">
-                    {row.name}
-                    {row.focus && <span className="slab__focus">{layers.focusLabel}</span>}
-                  </h3>
-                  <p className="slab__items">{row.items}</p>
-                </div>
-                <p className="slab__agent">{row.agent}</p>
-              </li>
-            ))}
-          </ol>
-
-          {/* One governance model, applied to everything above. Spanning the
-              full width says "all four layers" far better than rotated type
-              down the side did — that was unreadable, and never said why it
-              was vertical. */}
-          <div className="stack__gov">
-            <span className="stack__gov-label">{layers.governanceLabel}</span>
-            <span className="stack__gov-items">
+          {/* the pillar: one governance model, holding every layer */}
+          <aside className="pillar">
+            <h3 className="pillar__label">{layers.governanceLabel}</h3>
+            <ul className="pillar__items">
               {layers.governanceItems.map((g) => (
-                <span key={g}>{g}</span>
+                <li key={g}>{g}</li>
               ))}
+            </ul>
+            <p className="pillar__note">{layers.governanceNote}</p>
+          </aside>
+
+          <div className="stack__body">
+            <span className="stack__colhead" aria-hidden="true">
+              {layers.agentsLabel}
             </span>
-            <p className="stack__gov-note">{layers.governanceNote}</p>
+
+            <ol className="stack__rows">
+              {layers.rows.map((row) => (
+                <li className={`slab${row.focus ? " is-focus" : ""}`} key={row.id}>
+                  <div className="slab__layer">
+                    <h3 className="slab__name">
+                      {row.name}
+                      {row.focus && <span className="slab__focus">{layers.focusLabel}</span>}
+                    </h3>
+                    <p className="slab__items">{row.items}</p>
+                  </div>
+                  {/* the tie from the layer to the agent working it */}
+                  <span className="slab__tie" aria-hidden="true" />
+                  <p className="slab__agent">{row.agent}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
 

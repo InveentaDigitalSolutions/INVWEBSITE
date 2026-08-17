@@ -66,7 +66,7 @@ const de: SiteContent = {
 
   shiftSection: {
     eyebrow: "Der Wandel",
-    h2: "Was sich ändert, wenn Daten handlungsfähig werden.",
+    h2: "Ein gewaltiger Umbruch — und eine Fehlerquote, die dazu passt.",
     prev: "Zurück",
     next: "Weiter",
     panels: [

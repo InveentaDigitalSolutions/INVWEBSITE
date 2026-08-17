@@ -64,7 +64,7 @@ const en: SiteContent = {
 
   shiftSection: {
     eyebrow: "The shift",
-    h2: "What changes when data can be acted on.",
+    h2: "An enormous shift — and a failure rate to match.",
     prev: "Previous",
     next: "Next",
     panels: [
